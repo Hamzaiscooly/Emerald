@@ -6,10 +6,12 @@
 <title>FruitTrade | Blox Fruits Trading</title>
 <style>
   /* Reset & base */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
   body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0d0d0d;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1c1c1c 100%);
     color: white;
     text-align: center;
     padding: 20px;
@@ -18,84 +20,124 @@
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    animation: fadeIn 1.5s ease forwards;
   }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
   header {
-    background-color: #1a1a1a;
-    padding: 20px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #facc15;
+    background: linear-gradient(270deg, #facc15, #fbbf24, #facc15);
+    background-size: 600% 600%;
+    animation: shimmer 12s ease infinite;
+    padding: 20px 40px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #111;
     width: 100%;
     max-width: 900px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px #facc15aa;
+    border-radius: 20px;
+    box-shadow:
+      0 0 20px #facc15dd,
+      0 0 50px #facc15bb;
     user-select: none;
+    text-shadow: 0 0 10px #fff9c4aa;
+    letter-spacing: 2px;
   }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   nav {
-    margin: 30px 0;
+    margin: 35px 0 25px;
     width: 100%;
     max-width: 900px;
   }
+
   .nav-button {
     display: inline-block;
-    margin: 10px;
-    padding: 15px 30px;
-    background-color: #222;
-    color: white;
+    margin: 10px 15px;
+    padding: 16px 36px;
+    background: linear-gradient(45deg, #facc15, #fbbf24);
+    color: #111;
     border: none;
-    border-radius: 12px;
-    font-size: 1.2rem;
+    border-radius: 16px;
+    font-size: 1.3rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.3s ease;
+    box-shadow:
+      0 0 10px #facc1544,
+      0 0 25px #facc1555;
     text-decoration: none;
-    box-shadow: 0 0 6px transparent;
+    user-select: none;
+    text-shadow: 0 0 3px #fff9c4cc;
   }
   .nav-button:hover {
-    background-color: #facc15;
-    color: black;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #facc15;
+    background: linear-gradient(45deg, #fde047, #facc15);
+    color: #222;
+    transform: scale(1.12);
+    box-shadow:
+      0 0 25px #fde047cc,
+      0 0 50px #fde047ee;
   }
 
   .intro {
-    margin-top: 40px;
-    font-size: 1.3rem;
-    color: #ccc;
+    margin-top: 30px;
+    font-size: 1.35rem;
+    color: #ddd;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.5;
+    line-height: 1.6;
     user-select: none;
+    text-shadow: 0 0 5px #0008;
   }
 
   /* Stack sections vertically */
   .sections {
-    margin-top: 50px;
+    margin-top: 45px;
     max-width: 900px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 55px;
     padding-bottom: 50px;
   }
 
   /* Section style */
   .section {
-    background: #151515;
-    border-radius: 18px;
-    padding: 25px 20px;
-    box-shadow: 0 0 18px #facc1555;
+    background: #222222cc;
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow:
+      0 0 22px #facc1555,
+      inset 0 0 20px #facc1511;
     color: #fff;
     user-select: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
   .section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 26px;
     color: #facc15;
-    font-size: 1.8rem;
-    text-shadow: 0 0 8px #facc15aa;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px #facc15bb;
+    letter-spacing: 1px;
   }
 
   /* Tips for Traders */
@@ -103,202 +145,191 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    gap: 18px;
+    gap: 22px;
     justify-content: center;
     margin-top: 10px;
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
   }
   .tip-box {
-    background: rgba(250, 204, 21, 0.15);
-    border: 1.5px solid #facc15;
-    border-radius: 15px;
-    padding: 18px 22px;
-    font-size: 1.1rem;
+    background: rgba(250, 204, 21, 0.2);
+    border: 2px solid #facc15;
+    border-radius: 20px;
+    padding: 22px 28px;
+    font-size: 1.2rem;
     color: #fff;
     text-align: center;
     box-shadow:
-      0 0 8px #facc15,
-      0 0 20px #facc15,
-      0 0 30px #facc15;
-    animation: float-glow 4s ease-in-out infinite;
+      0 0 10px #facc15cc,
+      0 0 28px #facc15aa,
+      0 0 40px #facc15bb;
+    animation: float-glow 5s ease-in-out infinite;
     cursor: default;
     user-select: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease;
   }
   .tip-box:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-12px) scale(1.07);
     box-shadow:
-      0 0 12px #fde047,
-      0 0 28px #fde047,
-      0 0 40px #fde047;
+      0 0 20px #fde047ee,
+      0 0 40px #fde047ee,
+      0 0 60px #fde047ff;
   }
   @keyframes float-glow {
     0%, 100% {
       transform: translateY(0);
       box-shadow:
-        0 0 8px #facc15,
-        0 0 20px #facc15,
-        0 0 30px #facc15;
+        0 0 10px #facc15cc,
+        0 0 28px #facc15aa,
+        0 0 40px #facc15bb;
     }
     50% {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
       box-shadow:
-        0 0 14px #fde047,
-        0 0 36px #fde047,
-        0 0 50px #fde047;
+        0 0 18px #fde047cc,
+        0 0 50px #fde047cc,
+        0 0 70px #fde047dd;
     }
   }
 
-  /* Recommended fruits */
+  /* Recommended Fruits: Card style */
   .fruits-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 320px;
-    user-select: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    max-width: 700px;
   }
-  .fruits-list li {
-    background: #222;
-    border-radius: 12px;
-    margin: 12px 0;
-    padding: 14px 18px;
-    font-size: 1.15rem;
-    box-shadow: 0 0 8px #facc1544;
-    transition: background-color 0.3s ease;
+  .fruit-card {
+    background: linear-gradient(135deg, #333333ee, #1a1a1aff);
+    border-radius: 24px;
+    padding: 24px 32px;
+    width: 200px;
+    box-shadow:
+      0 0 18px #facc15aa,
+      inset 0 0 12px #facc1522;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: default;
+    user-select: none;
+    color: #ffef9e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    text-shadow: 0 0 6px #0008;
   }
-  .fruits-list li:hover {
-    background-color: #facc15;
-    color: black;
-    box-shadow: 0 0 16px #facc15cc;
+  .fruit-card:hover {
+    transform: translateY(-10px) scale(1.08);
+    box-shadow:
+      0 0 35px #fde047ff,
+      inset 0 0 30px #fde04755;
+    color: #222;
+    background: linear-gradient(135deg, #fff8b4, #facc15ff);
+  }
+  .fruit-icon {
+    font-size: 3.6rem;
+    margin-bottom: 14px;
+    filter: drop-shadow(0 0 4px #facc15cc);
+  }
+  .fruit-name {
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+  }
+  .fruit-desc {
+    font-size: 1rem;
+    color: #f5f3c1cc;
+    line-height: 1.4;
+  }
+
+  /* Timers: digital style */
+  .timer-box {
+    background: #111111dd;
+    border-radius: 18px;
+    padding: 25px 30px;
+    box-shadow:
+      0 0 30px #facc1588,
+      inset 0 0 30px #facc1544;
+    font-size: 1.6rem;
+    font-weight: 700;
+    user-select: none;
+    width: 280px;
+    margin: 12px 0;
+    font-family: 'Orbitron', monospace;
+    color: #facc15;
+    letter-spacing: 2px;
+    text-shadow:
+      0 0 14px #facc15cc,
+      0 0 30px #fde047bb;
+  }
+  .timer-label {
+    font-size: 1.15rem;
+    color: #fde047cc;
+    margin-bottom: 10px;
+    text-shadow: 0 0 12px #fde047cc;
   }
 
   /* Social media section */
   .social-icons {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 10px;
+    gap: 36px;
+    margin-top: 15px;
   }
   .social-icons a {
     color: #facc15;
-    font-size: 2.4rem;
+    font-size: 3rem;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease, color 0.3s ease;
+    user-select: none;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #facc1555;
+    background: linear-gradient(45deg, #222, #111);
   }
   .social-icons a:hover {
-    transform: scale(1.3);
-    color: #fde047;
-  }
-
-  /* Timer boxes */
-  .timer-box {
-    background: #222;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 0 20px #facc1544;
-    font-size: 1.25rem;
-    font-weight: bold;
-    user-select: none;
-    width: 100%;
-    max-width: 320px;
-    margin: 10px 0;
-  }
-  .timer-label {
-    font-size: 1.1rem;
-    color: #facc15;
-    margin-bottom: 8px;
-    text-shadow: 0 0 8px #facc15aa;
+    transform: scale(1.35);
+    color: #fff2a6;
+    box-shadow:
+      0 0 35px #fde047cc,
+      0 0 45px #fde047cc;
   }
 </style>
+<!-- Orbitron font for timer -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
 </head>
 <body>
 
 <header>🍍 FruitTrade | Blox Fruits Trading</header>
 
 <nav>
-  <a href="tierlist.html" class="nav-button">📊 Tier List</a>
-  <a href="post.html" class="nav-button">📝 Submit Trade</a>
-  <a href="browse.html" class="nav-button">🔍 Browse Trades</a>
+  <a href="tierlist.html" class="nav-button" aria-label="Tier List">📊 Tier List</a>
+  <a href="post.html" class="nav-button" aria-label="Submit Trade">📝 Submit Trade</a>
+  <a href="browse.html" class="nav-button" aria-label="Browse Trades">🔍 Browse Trades</a>
 </nav>
 
-<div class="intro">
+<div class="intro" aria-live="polite">
   Welcome to <strong>FruitTrade</strong> — your go-to site for Blox Fruits trading info.<br />
   Check out our fruit tier list, post your trades, or find great deals from other players.<br />
   Everything you need to trade smarter in Blox Fruits!
 </div>
 
-<div class="sections">
+<div class="sections" role="main">
 
   <!-- Tips for Traders -->
-  <div class="section">
-    <h2>💡 Tips for Traders</h2>
+  <div class="section" aria-labelledby="tips-title">
+    <h2 id="tips-title">💡 Tips for Traders</h2>
     <div class="tips-container">
-      <div class="tip-box">📈 Use the tier list to evaluate fruits before trading.</div>
-      <div class="tip-box">🔐 Always double-check the trade contents to avoid scams.</div>
-      <div class="tip-box">💰 Store valuable fruits in inventory before dealing.</div>
-      <div class="tip-box">🧠 Know your fruit's demand — some are rare and OP!</div>
+      <div class="tip-box" tabindex="0">📈 Use the tier list to evaluate fruits before trading.</div>
+      <div class="tip-box" tabindex="0">🔐 Always double-check the trade contents to avoid scams.</div>
+      <div class="tip-box" tabindex="0">💰 Store valuable fruits in inventory before dealing.</div>
+      <div class="tip-box" tabindex="0">🧠 Know your fruit's demand — some are rare and OP!</div>
     </div>
   </div>
 
   <!-- Recommended Fruits -->
-  <div class="section">
-    <h2>🍒 Recommended Fruits</h2>
-    <ul class="fruits-list">
-      <li>🐉 Buddha: Perfect in all seas!</li>
-      <li>🦊 Dragon: Best fruit in the game!!</li>
-      <li>❄️ Dough: Perfect for PVP Users!</li>
-    </ul>
-  </div>
-
-  <!-- Timers: Mirage & Stock -->
-  <div class="section">
-    <h2>⏳ Timers</h2>
-    <div class="timer-box">
-      <div class="timer-label">Mirage Timer</div>
-      <div id="mirage-timer">02:00:00</div>
-    </div>
-    <div class="timer-box">
-      <div class="timer-label">Stock Timer</div>
-      <div id="stock-timer">02:00:00</div>
-    </div>
-  </div>
-
-  <!-- Social Media -->
-  <div class="section">
-    <h2>🌐 Social Media</h2>
-    <div class="social-icons">
-      <a href="https://discord.gg/yourdiscordlink" target="_blank" aria-label="Discord">🟣 Discord</a>
-    </div>
-  </div>
-
-</div>
-
-<script>
-  // Mirage and Stock timers: loop 2 hours countdown each
-  function startCountdown(id) {
-    let timerSeconds = 7200; // 2 hours in seconds
-
-    function updateTimer() {
-      let hours = Math.floor(timerSeconds / 3600);
-      let minutes = Math.floor((timerSeconds % 3600) / 60);
-      let seconds = timerSeconds % 60;
-
-      document.getElementById(id).textContent =
-        `${String(hours).padStart(2, '0')}:` +
-        `${String(minutes).padStart(2, '0')}:` +
-        `${String(seconds).padStart(2, '0')}`;
-
-      timerSeconds--;
-
-      if (timerSeconds < 0) {
-        timerSeconds = 7200; // reset to 2 hours
-      }
-    }
-
-    update
+  <div class="section" aria-labelledby="recommended-title">
+    <h2 id="recommended-title">🍒 Recommended Fruits
 
 
 
@@ -306,15 +337,7 @@
 
 
 ChatGPT said:
-Timer();
-return setInterval(updateTimer, 1000);
-}
-
-startCountdown('mirage-timer');
-startCountdown('stock-timer');
-</script>
-
-</body> </html> ```
+</h2> <div class="fruits-list" role="list" aria-label="Recommended Fruits"> <div class="fruit-card" role="listitem" tabindex="0"> <div class="fruit-icon">🔥</div> <div class="fruit-name">Magma</div> <div class="fruit-desc">High damage, great for PvP and farming.</div> </div> <div class="fruit-card" role="listitem" tabindex="0"> <div class="fruit-icon">⚡</div> <div class="fruit-name">Light</div> <div class="fruit-desc">Super fast attacks and mobility.</div> </div> <div class="fruit-card" role="listitem" tabindex="0"> <div class="fruit-icon">🌪️</div> <div class="fruit-name">Tornado</div> <div class="fruit-desc">Strong AoE attacks and crowd control.</div> </div> <div class="fruit-card" role="listitem" tabindex="0"> <div class="fruit-icon">💧</div> <div class="fruit-name">Ice</div> <div class="fruit-desc">Great for freezing enemies and defense.</div> </div> </div> </div> <!-- Timers --> <div class="section" aria-labelledby="timers-title"> <h2 id="timers-title">⏳ Time Until Next Fruit Spawn</h2> <div class="timer-box" aria-live="polite" aria-atomic="true"> <div class="timer-label">Magma Fruit</div> <div id="magma-timer">Loading...</div> </div> <div class="timer-box" aria-live="polite" aria-atomic="true"> <div class="timer-label">Light Fruit</div> <div id="light-timer">Loading...</div> </div> </div> <!-- Social media --> <div class="section" aria-labelledby="social-title"> <h2 id="social-title">🔗 Connect with Us</h2> <div class="social-icons"> <a href="https://discord.gg/yourserver" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord Server">🗨️ Discord</a> <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">🐦 Twitter</a> <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube Channel">▶️ YouTube</a> </div> </div> </div> <script> // Countdown timer function: format MM:SS function formatTime(seconds) { let m = Math.floor(seconds / 60); let s = seconds % 60; return `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`; } // Example timers for fruit spawn countdown (random start time 4-9 mins) let magmaSeconds = 300 + Math.floor(Math.random() * 300); // 5-10 min range let lightSeconds = 420 + Math.floor(Math.random() * 300); // 7-12 min range function updateTimers() { if (magmaSeconds >= 0) { document.getElementById('magma-timer').textContent = formatTime(magmaSeconds); magmaSeconds--; } else { document.getElementById('magma-timer').textContent = 'Ready to spawn!'; } if (lightSeconds >= 0) { document.getElementById('light-timer').textContent = formatTime(lightSeconds); lightSeconds--; } else { document.getElementById('light-timer').textContent = 'Ready to spawn!'; } } // Start timers on page load updateTimers(); setInterval(updateTimers, 1000); </script> </body> </html> ```
 
 
 
