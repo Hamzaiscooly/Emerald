@@ -1,9 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FruitTrade | Blox Fruits Trading</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 20px;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #facc15;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #facc15aa;
+    }
+
+    nav {
+      margin: 30px 0;
+    }
+
+    .nav-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background-color: #222;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      box-shadow: 0 0 5px transparent;
+    }
+
+    .nav-button:hover {
+      background-color: #facc15;
+      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #facc15cc;
+    }
+
+    .intro {
+      margin-top: 40px;
+      font-size: 1.3rem;
+      color: #ccc;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    .featured {
+      margin-top: 50px;
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 10px #facc15aa;
+    }
+
+    .featured h2 {
+      margin-top: 0;
+      color: #facc15;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 600px) {
+      .nav-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+
+      .intro {
+        font-size: 1.1rem;
+        max-width: 90%;
+      }
+
+      .featured {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
 <body>
 
   <header>🍍 FruitTrade | Blox Fruits Trading</header>
-
-  <!-- Hero Image -->
-  <img src="https://i.imgur.com/f9uW1hk.png" alt="Fruit Banner" style="width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px; margin-top: 20px; box-shadow: 0 0 10px #facc15aa;" />
 
   <nav>
     <a href="tierlist.html" class="nav-button">📊 Tier List</a>
@@ -17,33 +121,15 @@
     Everything you need to trade smarter in Blox Fruits!
   </div>
 
-  <!-- Tips for Traders -->
-  <div class="featured" style="margin-top: 40px; background-color: #151515;">
-    <h2>💡 Tips for Traders</h2>
-    <ul style="list-style-type: none; padding-left: 0; color: #ccc;">
-      <li>✔️ Always check the current value in the tier list before trading.</li>
-      <li>✔️ Avoid rushing trades — patience leads to better deals.</li>
-      <li>✔️ Use trusted platforms and never trade outside safe zones.</li>
-      <li>✔️ Limited fruits rise in value — watch for updates!</li>
-    </ul>
+  <div class="featured">
+    <h2>🔥 Featured Fruit: Dragon 🐉</h2>
+    <p><strong>Grinding:</strong> 10/10 &nbsp;&nbsp; | &nbsp;&nbsp; <strong>PVP:</strong> 10/10 &nbsp;&nbsp; | &nbsp;&nbsp; <strong>Trading:</strong> 10/10</p>
+    <p>Dragon fruit is one of the strongest in the game with amazing abilities, making it perfect for both grinding and PVP battles. Always a hot trade choice!</p>
   </div>
 
-  <!-- Recommended Fruits -->
-  <div class="featured" style="margin-top: 30px; background-color: #181818;">
-    <h2>🔥 Recommended Fruits</h2>
-    <p style="font-size: 1.1rem;">
-      🐉 <strong>Dragon</strong> – Amazing for PVP and always in demand.<br>
-      🧊 <strong>Yeti</strong> – Excellent mobility and grinding.<br>
-      🍩 <strong>Dough</strong> – Strong rework, still a top-tier trade.
-    </p>
-  </div>
-
-  <!-- Footer -->
   <footer>
     &copy; 2025 FruitTrade. Created by You. | <a href="mailto:contact@fruittrade.com" style="color:#facc15; text-decoration:none;">Contact Us</a>
   </footer>
 
 </body>
-
-
-
+</html>
