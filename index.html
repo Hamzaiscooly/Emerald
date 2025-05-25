@@ -12,14 +12,20 @@
       color: white;
       text-align: center;
       padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     header {
       background-color: #1a1a1a;
       padding: 20px;
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: bold;
       color: #facc15;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #facc15aa;
     }
 
     nav {
@@ -38,21 +44,64 @@
       cursor: pointer;
       transition: all 0.2s ease-in-out;
       text-decoration: none;
+      box-shadow: 0 0 5px transparent;
     }
 
     .nav-button:hover {
       background-color: #facc15;
       color: black;
       transform: scale(1.05);
+      box-shadow: 0 0 15px #facc15cc;
     }
 
     .intro {
       margin-top: 40px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #ccc;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+
+    .featured {
+      margin-top: 50px;
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      box-shadow: 0 0 10px #facc15aa;
+    }
+
+    .featured h2 {
+      margin-top: 0;
+      color: #facc15;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 15px 0;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 600px) {
+      .nav-button {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+
+      .intro {
+        font-size: 1.1rem;
+        max-width: 90%;
+      }
+
+      .featured {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
@@ -72,6 +121,17 @@
     Everything you need to trade smarter in Blox Fruits!
   </div>
 
+  <div class="featured">
+    <h2>🔥 Featured Fruit: Dragon 🐉</h2>
+    <p><strong>Grinding:</strong> 10/10 &nbsp;&nbsp; | &nbsp;&nbsp; <strong>PVP:</strong> 10/10 &nbsp;&nbsp; | &nbsp;&nbsp; <strong>Trading:</strong> 10/10</p>
+    <p>Dragon fruit is one of the strongest in the game with amazing abilities, making it perfect for both grinding and PVP battles. Always a hot trade choice!</p>
+  </div>
+
+  <footer>
+    &copy; 2025 FruitTrade. Created by You. | <a href="mailto:contact@fruittrade.com" style="color:#facc15; text-decoration:none;">Contact Us</a>
+  </footer>
+
 </body>
 </html>
+
 
