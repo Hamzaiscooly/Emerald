@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BLOX TRADE HUB | #1 Best Trading Hub in Blox Fruits</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLOX TRADE HUB | #1 Trading Platform</title>
   <style>
     /* === ULTRA-PREMIUM STYLING === */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Bungee&display=swap');
-
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Bungee&family=Orbitron:wght@700&display=swap');
+    
     :root {
       --gold: #FFD700;
       --gold-light: #FFEE99;
       --gold-dark: #FFC000;
+      --diamond: #00FFFF;
+      --ruby: #FF0055;
       --neon-glow: 0 0 15px var(--gold), 0 0 30px var(--gold-dark);
       --bg-dark: #0a0a0a;
       --bg-darker: #050505;
     }
-
+    
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -33,18 +35,18 @@
       overflow-x: hidden;
       animation: fadeIn 1.5s ease forwards;
     }
-
+    
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-    /* === HEADER WITH GLOWING #1 BADGE === */
+    
+    /* === GLOWING HEADER WITH #1 BADGE === */
     header {
       position: relative;
       background: linear-gradient(145deg, var(--gold), var(--gold-dark), var(--gold));
       background-size: 400% 400%;
-      animation: gradientShift 8s ease infinite;
+      animation: gradientShift 8s ease infinite, floatHeader 6s ease-in-out infinite;
       padding: 25px 50px;
       font-size: 3.5rem;
       font-weight: 900;
@@ -52,44 +54,57 @@
       width: 100%;
       max-width: 1000px;
       border-radius: 25px;
-      box-shadow: var(--neon-glow), 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 
+        var(--neon-glow),
+        0 10px 30px rgba(0,0,0,0.5);
       user-select: none;
-      text-shadow: 2px 2px 0px rgba(255,255,255,0.3);
+      text-shadow: 
+        2px 2px 0px rgba(255,255,255,0.3),
+        0 0 20px rgba(255, 255, 200, 0.7);
       letter-spacing: 3px;
       font-family: 'Bungee', cursive;
       margin-top: 20px;
       border: 3px solid rgba(255, 255, 255, 0.2);
       transform-style: preserve-3d;
       transition: all 0.5s ease;
+      z-index: 10;
     }
-
+    
     header::after {
       content: "#1 TRADING HUB";
       position: absolute;
       top: -15px;
       right: -15px;
-      background: linear-gradient(45deg, #FF0000, #FF4500);
+      background: linear-gradient(45deg, var(--ruby), #FF4500);
       color: white;
       font-size: 1.2rem;
       padding: 5px 15px;
       border-radius: 20px;
-      box-shadow: 0 0 20px #FF0000, 0 0 40px #FF4500;
+      box-shadow: 
+        0 0 20px var(--ruby),
+        0 0 40px #FF4500;
       animation: pulseBadge 2s infinite;
       z-index: 10;
+      font-family: 'Orbitron', sans-serif;
     }
-
+    
     @keyframes pulseBadge {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
     }
-
+    
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
-
-    /* === NAVIGATION BUTTONS === */
+    
+    @keyframes floatHeader {
+      0%, 100% { transform: translateY(0) rotateX(0); }
+      50% { transform: translateY(-15px) rotateX(5deg); }
+    }
+    
+    /* === DIAMOND NAVIGATION BUTTONS === */
     nav {
       margin: 45px 0 35px;
       width: 100%;
@@ -97,8 +112,9 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      perspective: 1000px;
     }
-
+    
     .nav-button {
       position: relative;
       margin: 15px;
@@ -111,50 +127,233 @@
       font-weight: 700;
       cursor: pointer;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+      box-shadow: 
+        0 5px 15px rgba(255, 215, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
       text-decoration: none;
       user-select: none;
       text-shadow: 0 1px 2px rgba(255, 255, 200, 0.8);
       overflow: hidden;
       z-index: 1;
       min-width: 180px;
+      transform-style: preserve-3d;
     }
-
+    
+    .nav-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, var(--gold-dark), var(--gold));
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
     .nav-button:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.6);
+      transform: translateY(-5px) scale(1.1) rotateX(5deg);
+      box-shadow: 
+        0 15px 30px rgba(255, 215, 0, 0.6),
+        0 0 40px rgba(255, 200, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5);
+      text-shadow: 0 2px 5px rgba(255, 255, 200, 0.9);
     }
-
-    /* === SLOGAN SECTION === */
+    
+    .nav-button:hover::before {
+      opacity: 1;
+    }
+    
+    /* === DIAMOND SLOGAN === */
     .slogan-container {
       position: relative;
       max-width: 900px;
       width: 100%;
       margin: 30px auto;
+      perspective: 1000px;
     }
-
+    
     .slogan {
-      font-family: 'Bungee', cursive;
+      font-family: 'Orbitron', sans-serif;
       font-size: 2.8rem;
-      color: var(--gold);
+      color: var(--diamond);
       margin: 20px 0;
-      text-shadow: var(--neon-glow);
-      letter-spacing: 2px;
+      text-shadow: 
+        0 0 10px var(--diamond),
+        0 0 20px rgba(0, 255, 255, 0.7);
+      letter-spacing: 3px;
       animation: pulse 2s ease-in-out infinite alternate;
       background: rgba(10, 10, 10, 0.7);
       backdrop-filter: blur(10px);
-      padding: 20px;
+      padding: 25px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      border: 2px solid var(--gold);
+      box-shadow: 
+        0 10px 30px rgba(0,0,0,0.5),
+        inset 0 0 20px rgba(0, 255, 255, 0.2);
+      border: 2px solid var(--diamond);
+      transform: rotateX(5deg);
+      text-transform: uppercase;
     }
-
+    
     @keyframes pulse {
-      from { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold-dark); }
-      to { text-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold-dark); }
+      from { 
+        text-shadow: 0 0 10px var(--diamond), 0 0 20px rgba(0, 255, 255, 0.5);
+        transform: rotateX(5deg) scale(1);
+      }
+      to { 
+        text-shadow: 0 0 20px var(--diamond), 0 0 40px rgba(0, 255, 255, 0.8);
+        transform: rotateX(5deg) scale(1.03);
+      }
     }
-
-    /* === PREMIUM FRUIT CARDS === */
+    
+    /* === PREMIUM SECTIONS === */
+    .sections {
+      margin-top: 60px;
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 70px;
+      padding-bottom: 80px;
+    }
+    
+    .section {
+      position: relative;
+      background: rgba(30, 30, 30, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: 
+        0 20px 50px rgba(0,0,0,0.5),
+        inset 0 0 30px rgba(255, 215, 0, 0.2);
+      color: #fff;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark), var(--gold));
+      background-size: 200% 200%;
+      animation: gradientShift 3s ease infinite;
+    }
+    
+    .section:hover {
+      transform: translateY(-10px);
+      box-shadow: 
+        0 30px 70px rgba(0,0,0,0.7),
+        inset 0 0 40px rgba(255, 215, 0, 0.3);
+    }
+    
+    .section h2 {
+      margin-bottom: 35px;
+      color: var(--gold);
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 
+        0 0 15px var(--gold),
+        0 0 30px var(--gold-dark);
+      letter-spacing: 2px;
+      position: relative;
+      display: inline-block;
+      font-family: 'Bungee', cursive;
+    }
+    
+    .section h2::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 3px;
+    }
+    
+    /* === ELITE TRADER TIPS === */
+    .tips-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+    
+    .tip-box {
+      position: relative;
+      background: rgba(20, 20, 20, 0.8);
+      border: 2px solid var(--gold);
+      border-radius: 25px;
+      padding: 30px;
+      font-size: 1.3rem;
+      color: #fff;
+      text-align: center;
+      box-shadow: 
+        0 10px 30px rgba(0,0,0,0.5),
+        inset 0 0 20px rgba(255, 215, 0, 0.2);
+      animation: float-glow 6s ease-in-out infinite;
+      cursor: default;
+      user-select: none;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      backdrop-filter: blur(5px);
+      overflow: hidden;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .tip-box::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
+      animation: rotateGradient 15s linear infinite;
+      z-index: -1;
+    }
+    
+    .tip-box:hover {
+      transform: translateY(-15px) scale(1.08);
+      box-shadow: 
+        0 20px 50px rgba(255, 200, 0, 0.5),
+        0 0 60px rgba(255, 215, 0, 0.4);
+      border-color: var(--gold-light);
+      background: rgba(30, 30, 30, 0.9);
+    }
+    
+    @keyframes float-glow {
+      0%, 100% {
+        transform: translateY(0);
+        box-shadow: 
+          0 10px 30px rgba(0,0,0,0.5),
+          inset 0 0 20px rgba(255, 215, 0, 0.2);
+      }
+      50% {
+        transform: translateY(-15px);
+        box-shadow: 
+          0 20px 50px rgba(255, 200, 0, 0.5),
+          inset 0 0 30px rgba(255, 215, 0, 0.3);
+      }
+    }
+    
+    /* === LEGENDARY FRUIT CARDS === */
     .fruits-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -163,13 +362,15 @@
       width: 100%;
       max-width: 900px;
     }
-
+    
     .fruit-card {
       position: relative;
       background: linear-gradient(145deg, #252525, #1a1a1a);
       border-radius: 25px;
       padding: 30px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      box-shadow: 
+        0 15px 40px rgba(0,0,0,0.5),
+        inset 0 0 20px rgba(255, 215, 0, 0.1);
       transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       cursor: default;
       user-select: none;
@@ -183,39 +384,122 @@
       overflow: hidden;
       z-index: 1;
     }
-
+    
+    .fruit-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
     .fruit-card:hover {
       transform: translateY(-15px) scale(1.05);
-      box-shadow: 0 25px 60px rgba(255, 200, 0, 0.4);
+      box-shadow: 
+        0 25px 60px rgba(255, 200, 0, 0.4),
+        inset 0 0 40px rgba(255, 215, 0, 0.2);
       color: #fff;
       background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
     }
-
+    
+    .fruit-card:hover::before {
+      opacity: 1;
+    }
+    
     .fruit-icon {
       font-size: 4.5rem;
       margin-bottom: 20px;
       filter: drop-shadow(0 0 10px var(--gold));
-      transition: transform 0.5s ease;
+      transition: transform 0.5s ease, filter 0.5s ease;
     }
-
+    
     .fruit-card:hover .fruit-icon {
       transform: scale(1.2) rotate(10deg);
       filter: drop-shadow(0 0 20px var(--gold));
     }
-
+    
     .fruit-name {
       font-size: 1.5rem;
       margin-bottom: 12px;
       font-weight: 700;
       color: var(--gold);
+      transition: all 0.5s ease;
     }
-
+    
+    .fruit-card:hover .fruit-name {
+      text-shadow: 0 0 15px var(--gold);
+    }
+    
     .fruit-desc {
       font-size: 1.1rem;
       color: #ddd;
       line-height: 1.5;
+      transition: color 0.5s ease;
     }
-
+    
+    .fruit-card:hover .fruit-desc {
+      color: #fff;
+    }
+    
+    /* === DIAMOND FOOTER === */
+    footer {
+      margin-top: auto;
+      padding: 30px 0;
+      width: 100%;
+      background: rgba(10, 10, 10, 0.7);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 215, 0, 0.1);
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+    }
+    
+    .footer-text {
+      color: #aaa;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .copyright {
+      color: var(--gold);
+      font-size: 1rem;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    /* === FLOATING FRUIT BACKGROUND === */
+    .bg-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .bg-element {
+      position: absolute;
+      opacity: 0.1;
+      filter: blur(2px);
+      animation: float 15s infinite linear;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+      }
+    }
+    
     /* === RESPONSIVE DESIGN === */
     @media (max-width: 768px) {
       header {
@@ -223,13 +507,26 @@
         padding: 20px 30px;
       }
       
+      header::after {
+        font-size: 1rem;
+        padding: 3px 10px;
+        top: -10px;
+        right: -10px;
+      }
+      
       .slogan {
         font-size: 2rem;
+        padding: 15px;
       }
       
       .nav-button {
         padding: 15px 30px;
         font-size: 1.2rem;
+        min-width: 160px;
+      }
+      
+      .tips-container {
+        grid-template-columns: 1fr;
       }
       
       .fruits-list {
@@ -239,6 +536,15 @@
   </style>
 </head>
 <body>
+
+<!-- === FLOATING FRUIT BACKGROUND === -->
+<div class="bg-elements">
+  <div class="bg-element" style="top: 10%; left: 5%; font-size: 5rem; animation-delay: 0s;">🍍</div>
+  <div class="bg-element" style="top: 20%; left: 80%; font-size: 4rem; animation-delay: 2s;">🍒</div>
+  <div class="bg-element" style="top: 50%; left: 15%; font-size: 6rem; animation-delay: 4s;">🍊</div>
+  <div class="bg-element" style="top: 70%; left: 70%; font-size: 5rem; animation-delay: 6s;">🍋</div>
+  <div class="bg-element" style="top: 30%; left: 50%; font-size: 4rem; animation-delay: 8s;">🍉</div>
+</div>
 
 <!-- === MAIN WEBSITE === -->
 <header>🍍 BLOX TRADE HUB 🍍</header>
@@ -253,12 +559,38 @@
   <div class="slogan">#1 BEST TRADING HUB IN BLOX FRUITS</div>
 </div>
 
-<!-- === PREMIUM FRUIT SECTION === -->
-<div class="sections">
+<div class="sections" role="main">
+
+  <!-- === ELITE TRADER TIPS === -->
+  <div class="section" aria-labelledby="tips-title">
+    <h2 id="tips-title">💎 ELITE TRADER WISDOM</h2>
+    <div class="tips-container">
+      <div class="tip-box" tabindex="0">
+        📈 <strong>Market Analysis:</strong> Track fruit values daily - prices change with updates!
+      </div>
+      <div class="tip-box" tabindex="0">
+        🔐 <strong>Trade Security:</strong> Always record trades to prevent scams!
+      </div>
+      <div class="tip-box" tabindex="0">
+        💰 <strong>Inventory Control:</strong> Store rare fruits safely before trading!
+      </div>
+      <div class="tip-box" tabindex="0">
+        🧠 <strong>Negotiation Tactics:</strong> Patience gets the best deals!
+      </div>
+      <div class="tip-box" tabindex="0">
+        ⏳ <strong>Timing Matters:</strong> Trade during peak hours for better offers!
+      </div>
+      <div class="tip-box" tabindex="0">
+        🔄 <strong>Diversify:</strong> Don't put all your fruits in one trade!
+      </div>
+    </div>
+  </div>
+
+  <!-- === LEGENDARY FRUITS === -->
   <div class="section" aria-labelledby="fruits-title">
-    <h2 id="fruits-title">🔥 TOP-TIER FRUITS 🔥</h2>
+    <h2 id="fruits-title">🔥 LEGENDARY FRUITS 🔥</h2>
     <div class="fruits-list">
-      <!-- LEGENDARY FRUITS -->
+      <!-- MYTHICAL TIER -->
       <div class="fruit-card">
         <div class="fruit-icon">🐉</div>
         <div class="fruit-name">DRAGON (V2)</div>
@@ -270,7 +602,7 @@
         <div class="fruit-desc">Paramecia - Godly combos & insane damage output</div>
       </div>
       
-      <!-- MYTHICAL FRUITS -->
+      <!-- LEGENDARY TIER -->
       <div class="fruit-card">
         <div class="fruit-icon">👁️</div>
         <div class="fruit-name">VENOM (AWAKENED)</div>
@@ -282,7 +614,7 @@
         <div class="fruit-desc">Stealth-based moves with teleportation</div>
       </div>
       
-      <!-- RARE FRUITS -->
+      <!-- RARE TIER -->
       <div class="fruit-card">
         <div class="fruit-icon">⚡</div>
         <div class="fruit-name">LEOPARD (V2)</div>
@@ -294,7 +626,7 @@
         <div class="fruit-desc">Great for PVP with freeze combos</div>
       </div>
       
-      <!-- GRINDING FRUITS -->
+      <!-- GRINDING TIER -->
       <div class="fruit-card">
         <div class="fruit-icon">🧘</div>
         <div class="fruit-name">BUDDHA</div>
@@ -309,10 +641,10 @@
   </div>
 </div>
 
-<!-- === FOOTER === -->
+<!-- === DIAMOND FOOTER === -->
 <footer>
-  <div style="color: #aaa; margin-bottom: 10px;">TRADE WITH THE BEST - BLOX TRADE HUB</div>
-  <div style="color: var(--gold);">© 2023 BLOX TRADE HUB | #1 Trading Platform</div>
+  <div class="footer-text">TRADE WITH THE BEST - BLOX TRADE HUB</div>
+  <div class="copyright">© 2023 BLOX TRADE HUB | #1 Trading Platform</div>
 </footer>
 
 </body>
