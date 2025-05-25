@@ -1,735 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FruitTrade Elite | Premium Blox Fruits Trading</title>
-<style>
-  /* Ultra Premium Styling */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BLOX TRADE HUB | #1 Best Trading Hub in Blox Fruits</title>
+  <style>
+    /* === ULTRA-PREMIUM STYLING === */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Bungee&display=swap');
 
-  :root {
-    --gold-primary: #FFD700;
-    --gold-secondary: #FFC000;
-    --gold-tertiary: #FFEE99;
-    --dark-bg: #0a0a0a;
-    --darker-bg: #050505;
-    --neon-glow: 0 0 15px var(--gold-primary), 0 0 30px var(--gold-secondary);
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: 
-      radial-gradient(circle at 20% 30%, #1a1a1a 0%, var(--dark-bg) 70%),
-      linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
-    color: white;
-    text-align: center;
-    padding: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-    animation: fadeIn 1.5s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-
-  /* Premium Header with 3D Effect */
-  header {
-    position: relative;
-    background: linear-gradient(145deg, #FFD700, #FFC000, #FFD700);
-    background-size: 400% 400%;
-    animation: gradientShift 8s ease infinite, floatHeader 6s ease-in-out infinite;
-    padding: 25px 50px;
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: #111;
-    width: 100%;
-    max-width: 1000px;
-    border-radius: 25px;
-    box-shadow: 
-      var(--neon-glow),
-      0 10px 30px rgba(0,0,0,0.5);
-    user-select: none;
-    text-shadow: 
-      2px 2px 0px rgba(255,255,255,0.3),
-      0 0 20px rgba(255, 255, 200, 0.7);
-    letter-spacing: 3px;
-    font-family: 'Bungee', cursive;
-    margin-top: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    transform-style: preserve-3d;
-    transform: perspective(500px);
-    transition: all 0.5s ease;
-  }
-
-  header::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, #FFD700, #FFEE99, #FFD700);
-    z-index: -1;
-    border-radius: 30px;
-    opacity: 0.7;
-    filter: blur(15px);
-    animation: gradientShift 8s ease infinite reverse;
-  }
-
-  header:hover {
-    transform: perspective(500px) rotateX(5deg) scale(1.03);
-    box-shadow: 
-      0 0 40px var(--gold-primary),
-      0 0 80px var(--gold-secondary),
-      0 20px 40px rgba(0,0,0,0.6);
-  }
-
-  @keyframes gradientShift {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-  }
-
-  @keyframes floatHeader {
-    0%, 100% {transform: perspective(500px) translateY(0);}
-    50% {transform: perspective(500px) translateY(-15px);}
-  }
-
-  /* Premium Navigation Buttons */
-  nav {
-    margin: 45px 0 35px;
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .nav-button {
-    position: relative;
-    display: inline-block;
-    margin: 15px;
-    padding: 20px 40px;
-    background: linear-gradient(145deg, var(--gold-primary), var(--gold-secondary));
-    color: #111;
-    border: none;
-    border-radius: 20px;
-    font-size: 1.4rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow:
-      0 5px 15px rgba(255, 215, 0, 0.4),
-      inset 0 1px 1px rgba(255, 255, 255, 0.3);
-    text-decoration: none;
-    user-select: none;
-    text-shadow: 0 1px 2px rgba(255, 255, 200, 0.8);
-    overflow: hidden;
-    z-index: 1;
-    min-width: 180px;
-  }
-
-  .nav-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(145deg, var(--gold-secondary), var(--gold-primary));
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .nav-button:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow:
-      0 15px 30px rgba(255, 215, 0, 0.6),
-      0 0 40px rgba(255, 200, 0, 0.4),
-      inset 0 1px 1px rgba(255, 255, 255, 0.5);
-    text-shadow: 0 2px 5px rgba(255, 255, 200, 0.9);
-  }
-
-  .nav-button:hover::before {
-    opacity: 1;
-  }
-
-  .nav-button:active {
-    transform: translateY(0) scale(0.98);
-  }
-
-  /* Premium Intro with Slogan */
-  .intro-container {
-    position: relative;
-    max-width: 900px;
-    width: 100%;
-    margin: 30px auto;
-    perspective: 1000px;
-  }
-
-  .intro {
-    position: relative;
-    font-size: 1.5rem;
-    color: #fff;
-    background: rgba(10, 10, 10, 0.7);
-    backdrop-filter: blur(10px);
-    padding: 30px 40px;
-    border-radius: 20px;
-    line-height: 1.7;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    box-shadow:
-      0 10px 30px rgba(0,0,0,0.5),
-      inset 0 0 20px rgba(255, 215, 0, 0.2);
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    transform-style: preserve-3d;
-    transform: rotateX(1deg);
-    z-index: 1;
-    overflow: hidden;
-  }
-
-  .intro::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
-    animation: rotateGradient 20s linear infinite;
-    z-index: -1;
-  }
-
-  .intro strong {
-    color: var(--gold-tertiary);
-    font-weight: 700;
-    text-shadow: 0 0 10px rgba(255, 238, 153, 0.7);
-  }
-
-  .slogan {
-    font-family: 'Bungee', cursive;
-    font-size: 2.5rem;
-    color: var(--gold-primary);
-    margin: 20px 0;
-    text-shadow: 
-      0 0 15px var(--gold-primary),
-      0 0 30px var(--gold-secondary);
-    letter-spacing: 2px;
-    animation: pulse 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes pulse {
-    from {text-shadow: 0 0 10px var(--gold-primary), 0 0 20px var(--gold-secondary);}
-    to {text-shadow: 0 0 20px var(--gold-primary), 0 0 40px var(--gold-secondary);}
-  }
-
-  @keyframes rotateGradient {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-  }
-
-  /* Premium Sections */
-  .sections {
-    margin-top: 60px;
-    max-width: 1100px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-    padding-bottom: 80px;
-  }
-
-  .section {
-    position: relative;
-    background: rgba(30, 30, 30, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    padding: 40px;
-    box-shadow:
-      0 20px 50px rgba(0,0,0,0.5),
-      inset 0 0 30px rgba(255, 215, 0, 0.2);
-    color: #fff;
-    user-select: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-  }
-
-  .section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary), var(--gold-primary));
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease infinite;
-  }
-
-  .section:hover {
-    transform: translateY(-10px);
-    box-shadow:
-      0 30px 70px rgba(0,0,0,0.7),
-      inset 0 0 40px rgba(255, 215, 0, 0.3);
-  }
-
-  .section h2 {
-    margin-bottom: 35px;
-    color: var(--gold-primary);
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-shadow: 
-      0 0 15px var(--gold-primary),
-      0 0 30px var(--gold-secondary);
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-    font-family: 'Bungee', cursive;
-  }
-
-  .section h2::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-    border-radius: 3px;
-  }
-
-  /* Premium Tips Section */
-  .tips-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    justify-content: center;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 900px;
-  }
-
-  .tip-box {
-    position: relative;
-    background: rgba(20, 20, 20, 0.8);
-    border: 2px solid var(--gold-primary);
-    border-radius: 25px;
-    padding: 30px;
-    font-size: 1.3rem;
-    color: #fff;
-    text-align: center;
-    box-shadow:
-      0 10px 30px rgba(0,0,0,0.5),
-      inset 0 0 20px rgba(255, 215, 0, 0.2);
-    animation: float-glow 6s ease-in-out infinite;
-    cursor: default;
-    user-select: none;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    backdrop-filter: blur(5px);
-    overflow: hidden;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .tip-box::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
-    animation: rotateGradient 15s linear infinite;
-    z-index: -1;
-  }
-
-  .tip-box:hover {
-    transform: translateY(-15px) scale(1.08);
-    box-shadow:
-      0 20px 50px rgba(255, 200, 0, 0.5),
-      0 0 60px rgba(255, 215, 0, 0.4);
-    border-color: var(--gold-tertiary);
-    background: rgba(30, 30, 30, 0.9);
-  }
-
-  @keyframes float-glow {
-    0%, 100% {
-      transform: translateY(0);
-      box-shadow:
-        0 10px 30px rgba(0,0,0,0.5),
-        inset 0 0 20px rgba(255, 215, 0, 0.2);
+    :root {
+      --gold: #FFD700;
+      --gold-light: #FFEE99;
+      --gold-dark: #FFC000;
+      --neon-glow: 0 0 15px var(--gold), 0 0 30px var(--gold-dark);
+      --bg-dark: #0a0a0a;
+      --bg-darker: #050505;
     }
-    50% {
-      transform: translateY(-15px);
-      box-shadow:
-        0 20px 50px rgba(255, 200, 0, 0.5),
-        inset 0 0 30px rgba(255, 215, 0, 0.3);
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: 
+        radial-gradient(circle at 20% 30%, #1a1a1a 0%, var(--bg-dark) 70%),
+        linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      animation: fadeIn 1.5s ease forwards;
     }
-  }
 
-  /* Premium Fruit Cards */
-  .fruits-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    justify-content: center;
-    width: 100%;
-    max-width: 900px;
-  }
-
-  .fruit-card {
-    position: relative;
-    background: linear-gradient(145deg, #252525, #1a1a1a);
-    border-radius: 25px;
-    padding: 30px;
-    box-shadow:
-      0 15px 40px rgba(0,0,0,0.5),
-      inset 0 0 20px rgba(255, 215, 0, 0.1);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: default;
-    user-select: none;
-    color: var(--gold-tertiary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 600;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  .fruit-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  .fruit-card:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow:
-      0 25px 60px rgba(255, 200, 0, 0.4),
-      inset 0 0 40px rgba(255, 215, 0, 0.2);
-    color: #fff;
-    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
-  }
-
-  .fruit-card:hover::before {
-    opacity: 1;
-  }
-
-  .fruit-icon {
-    font-size: 4.5rem;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 10px var(--gold-primary));
-    transition: transform 0.5s ease, filter 0.5s ease;
-  }
-
-  .fruit-card:hover .fruit-icon {
-    transform: scale(1.2) rotate(10deg);
-    filter: drop-shadow(0 0 20px var(--gold-primary));
-  }
-
-  .fruit-name {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-    font-weight: 700;
-    color: var(--gold-primary);
-    transition: all 0.5s ease;
-  }
-
-  .fruit-card:hover .fruit-name {
-    text-shadow: 0 0 15px var(--gold-primary);
-  }
-
-  .fruit-desc {
-    font-size: 1.1rem;
-    color: #ddd;
-    line-height: 1.5;
-    transition: color 0.5s ease;
-  }
-
-  .fruit-card:hover .fruit-desc {
-    color: #fff;
-  }
-
-  /* Premium Social Media Section */
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 25px;
-    flex-wrap: wrap;
-  }
-
-  .social-icon {
-    position: relative;
-    color: var(--gold-primary);
-    font-size: 3.5rem;
-    text-decoration: none;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    user-select: none;
-    font-weight: 700;
-    padding: 15px 25px;
-    border-radius: 15px;
-    box-shadow:
-      0 10px 30px rgba(0,0,0,0.5),
-      inset 0 0 15px rgba(255, 215, 0, 0.2);
-    background: linear-gradient(145deg, #252525, #1a1a1a);
-    border: 1px solid rgba(255, 215, 0, 0.1);
-    min-width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .social-icon::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(255,215,0,0.1), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
-  }
-
-  .social-icon:hover {
-    transform: translateY(-10px) scale(1.1);
-    color: #fff;
-    box-shadow:
-      0 20px 50px rgba(255, 200, 0, 0.5),
-      inset 0 0 30px rgba(255, 215, 0, 0.3);
-    text-shadow: 0 0 15px var(--gold-primary);
-  }
-
-  .social-icon:hover::before {
-    transform: translateX(100%);
-  }
-
-  .social-label {
-    font-size: 1.1rem;
-    margin-top: 10px;
-    color: var(--gold-tertiary);
-    transition: all 0.5s ease;
-  }
-
-  .social-icon:hover .social-label {
-    color: #fff;
-    text-shadow: 0 0 10px var(--gold-primary);
-  }
-
-  /* Premium Footer */
-  footer {
-    margin-top: auto;
-    padding: 30px 0;
-    width: 100%;
-    background: rgba(10, 10, 10, 0.7);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 215, 0, 0.1);
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
-  }
-
-  .footer-text {
-    color: #aaa;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-  }
-
-  .copyright {
-    color: var(--gold-primary);
-    font-size: 1rem;
-    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-  }
-
-  /* Premium Background Elements */
-  .bg-elements {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-  }
-
-  .bg-element {
-    position: absolute;
-    opacity: 0.1;
-    filter: blur(2px);
-    animation: float 15s infinite linear;
-  }
-
-  @keyframes float {
-    0% {
-      transform: translateY(0) rotate(0deg);
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
-    100% {
-      transform: translateY(-1000px) rotate(720deg);
-    }
-  }
 
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
+    /* === HEADER WITH GLOWING #1 BADGE === */
     header {
-      font-size: 2.5rem;
-      padding: 20px 30px;
+      position: relative;
+      background: linear-gradient(145deg, var(--gold), var(--gold-dark), var(--gold));
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      padding: 25px 50px;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #111;
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 25px;
+      box-shadow: var(--neon-glow), 0 10px 30px rgba(0,0,0,0.5);
+      user-select: none;
+      text-shadow: 2px 2px 0px rgba(255,255,255,0.3);
+      letter-spacing: 3px;
+      font-family: 'Bungee', cursive;
+      margin-top: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
     }
-    
-    .slogan {
-      font-size: 2rem;
-    }
-    
-    .nav-button {
-      padding: 15px 30px;
+
+    header::after {
+      content: "#1 TRADING HUB";
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: linear-gradient(45deg, #FF0000, #FF4500);
+      color: white;
       font-size: 1.2rem;
-      min-width: 160px;
+      padding: 5px 15px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #FF0000, 0 0 40px #FF4500;
+      animation: pulseBadge 2s infinite;
+      z-index: 10;
     }
-    
-    .tips-container {
-      grid-template-columns: 1fr;
+
+    @keyframes pulseBadge {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
-    
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* === NAVIGATION BUTTONS === */
+    nav {
+      margin: 45px 0 35px;
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-button {
+      position: relative;
+      margin: 15px;
+      padding: 20px 40px;
+      background: linear-gradient(145deg, var(--gold), var(--gold-dark));
+      color: #111;
+      border: none;
+      border-radius: 20px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+      text-decoration: none;
+      user-select: none;
+      text-shadow: 0 1px 2px rgba(255, 255, 200, 0.8);
+      overflow: hidden;
+      z-index: 1;
+      min-width: 180px;
+    }
+
+    .nav-button:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 15px 30px rgba(255, 215, 0, 0.6);
+    }
+
+    /* === SLOGAN SECTION === */
+    .slogan-container {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      margin: 30px auto;
+    }
+
+    .slogan {
+      font-family: 'Bungee', cursive;
+      font-size: 2.8rem;
+      color: var(--gold);
+      margin: 20px 0;
+      text-shadow: var(--neon-glow);
+      letter-spacing: 2px;
+      animation: pulse 2s ease-in-out infinite alternate;
+      background: rgba(10, 10, 10, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 2px solid var(--gold);
+    }
+
+    @keyframes pulse {
+      from { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold-dark); }
+      to { text-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold-dark); }
+    }
+
+    /* === PREMIUM FRUIT CARDS === */
     .fruits-list {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      width: 100%;
+      max-width: 900px;
     }
-    
-    .social-icons {
-      gap: 20px;
+
+    .fruit-card {
+      position: relative;
+      background: linear-gradient(145deg, #252525, #1a1a1a);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: default;
+      user-select: none;
+      color: var(--gold-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 600;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      overflow: hidden;
+      z-index: 1;
     }
-    
-    .social-icon {
-      font-size: 3rem;
-      padding: 12px 20px;
-      min-width: 130px;
+
+    .fruit-card:hover {
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 25px 60px rgba(255, 200, 0, 0.4);
+      color: #fff;
+      background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
     }
-  }
-</style>
+
+    .fruit-icon {
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px var(--gold));
+      transition: transform 0.5s ease;
+    }
+
+    .fruit-card:hover .fruit-icon {
+      transform: scale(1.2) rotate(10deg);
+      filter: drop-shadow(0 0 20px var(--gold));
+    }
+
+    .fruit-name {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .fruit-desc {
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.5;
+    }
+
+    /* === RESPONSIVE DESIGN === */
+    @media (max-width: 768px) {
+      header {
+        font-size: 2.5rem;
+        padding: 20px 30px;
+      }
+      
+      .slogan {
+        font-size: 2rem;
+      }
+      
+      .nav-button {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+      }
+      
+      .fruits-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Background Elements -->
-<div class="bg-elements">
-  <div class="bg-element" style="top: 10%; left: 5%; font-size: 5rem; animation-delay: 0s;">🍍</div>
-  <div class="bg-element" style="top: 20%; left: 80%; font-size: 4rem; animation-delay: 2s;">🍒</div>
-  <div class="bg-element" style="top: 50%; left: 15%; font-size: 6rem; animation-delay: 4s;">🍊</div>
-  <div class="bg-element" style="top: 70%; left: 70%; font-size: 5rem; animation-delay: 6s;">🍋</div>
-  <div class="bg-element" style="top: 30%; left: 50%; font-size: 4rem; animation-delay: 8s;">🍉</div>
-</div>
-
-<header>🍍 FRUIT TRADE ELITE 🍍</header>
+<!-- === MAIN WEBSITE === -->
+<header>🍍 BLOX TRADE HUB 🍍</header>
 
 <nav>
-  <a href="tierlist.html" class="nav-button" aria-label="Tier List">📊 FRUIT TIERS</a>
-  <a href="post.html" class="nav-button" aria-label="Submit Trade">📝 POST TRADE</a>
-  <a href="browse.html" class="nav-button" aria-label="Browse Trades">🔍 BROWSE TRADES</a>
+  <a href="tierlist.html" class="nav-button">📊 FRUIT TIERS</a>
+  <a href="post.html" class="nav-button">📝 POST TRADE</a>
+  <a href="browse.html" class="nav-button">🔍 BROWSE TRADES</a>
 </nav>
 
-<div class="intro-container">
-  <div class="intro" aria-live="polite">
-    <div class="slogan">"TRADE LIKE A KING, EAT LIKE A GOD!"</div>
-    Welcome to <strong>FRUIT TRADE ELITE</strong> — the ultimate premium trading hub for Blox Fruits connoisseurs.<br />
-    Where elite traders meet to exchange the rarest fruits with style and security.<br />
-    Our cutting-edge platform gives you the competitive edge in the Blox Fruits economy.
-  </div>
+<div class="slogan-container">
+  <div class="slogan">#1 BEST TRADING HUB IN BLOX FRUITS</div>
 </div>
 
-<div class="sections" role="main">
-
-  <!-- Premium Tips for Traders -->
-  <div class="section" aria-labelledby="tips-title">
-    <h2 id="tips-title">💎 PRO TRADER SECRETS</h2>
-    <div class="tips-container">
-      <div class="tip-box" tabindex="0">
-        📈 <strong>Market Mastery:</strong> Track fruit values daily - prices fluctuate with game updates!
+<!-- === PREMIUM FRUIT SECTION === -->
+<div class="sections">
+  <div class="section" aria-labelledby="fruits-title">
+    <h2 id="fruits-title">🔥 TOP-TIER FRUITS 🔥</h2>
+    <div class="fruits-list">
+      <!-- LEGENDARY FRUITS -->
+      <div class="fruit-card">
+        <div class="fruit-icon">🐉</div>
+        <div class="fruit-name">DRAGON (V2)</div>
+        <div class="fruit-desc">Mythical Zoan - Best for PVP with flight & transformation</div>
       </div>
-      <div class="tip-box" tabindex="0">
-        🔐 <strong>Ironclad Security:</strong> Always record trades - protection against scammers!
-      </div>
-      <div class="tip-box" tabindex="0">
-        💰 <strong>Inventory Strategy:</strong> Keep rare fruits in storage - never trade from hotbar!
-      </div>
-      <div class="tip-box" tabindex="0">
-        🧠 <strong>Psychology Wins:</strong> Learn to negotiate - the best deals go to patient traders!
-      </div>
-    </div>
-  </div>
-
-  <!-- Premium Recommended Fruits -->
-  <div class="section" aria-labelledby="recommended-title">
-    <h2 id="recommended-title">🌟 ELITE FRUIT SELECTION</h2>
-    <div class="fruits-list" role="list" aria-label="Recommended Fruits">
-      <div class="fruit-card" role="listitem" tabindex="0">
-        <div class="fruit-icon">🧘</div>
-        <div class="fruit-name">BUDDHA</div>
-        <div class="fruit-desc">The ultimate grinding fruit with massive AOE and defense boosts</div>
-      </div>
-      <div class="fruit-card" role="listitem" tabindex="0">
+      <div class="fruit-card">
         <div class="fruit-icon">🍩</div>
-        <div class="fruit-name">DOUGH</div>
-        <div class="fruit-desc">Dominates PVP with insane combos and awakening potential</div>
+        <div class="fruit-name">DOUGH (AWAKENED)</div>
+        <div class="fruit-desc">Paramecia - Godly combos & insane damage output</div>
       </div>
-      <div class="fruit-card" role="listitem" tabindex="0">
+      
+      <!-- MYTHICAL FRUITS -->
+      <div class="fruit-card">
+        <div class="fruit-icon">👁️</div>
+        <div class="fruit-name">VENOM (AWAKENED)</div>
+        <div class="fruit-desc">Best for grinding & PVP with poison DOT</div>
+      </div>
+      <div class="fruit-card">
         <div class="fruit-icon">🌑</div>
         <div class="fruit-name">SHADOW</div>
-        <div class="fruit-desc">Stealthy assassin with teleportation and high burst damage</div>
+        <div class="fruit-desc">Stealth-based moves with teleportation</div>
       </div>
-      <div class="fruit-card" role="listitem" tabindex="0">
-        <div class="fruit-icon">🐉</div>
-        <div class="fruit-name">DRAGON</div>
-        <div class="fruit-desc">Legendary flying beast with devastating transformation</div>
+      
+      <!-- RARE FRUITS -->
+      <div class="fruit-card">
+        <div class="fruit-icon">⚡</div>
+        <div class="fruit-name">LEOPARD (V2)</div>
+        <div class="fruit-desc">Fastest fruit in the game with high mobility</div>
       </div>
-    </div>
-  </div>
-
-  <!-- Premium Social media -->
-  <div class="section" aria-labelledby="social-title">
-    <h2 id="social-title">🌐 JOIN THE ELITE CIRCLE</h2>
-    <div class="social-icons">
-      <a href="https://discord.gg/elitetraders" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord Server">
-        <span>💎</span>
-        <span class="social-label">DISCORD</span>
-      </a>
-      <a href="https://twitter.com/fruittradeelite" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
-        <span>🐦</span>
-        <span class="social-label">TWITTER</span>
-      </a>
-      <a href="https://youtube.com/fruittradeelite" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube Channel">
-        <span>🎥</span>
-        <span class="social-label">YOUTUBE</span>
-      </a>
+      <div class="fruit-card">
+        <div class="fruit-icon">🧊</div>
+        <div class="fruit-name">ICE (AWAKENED)</div>
+        <div class="fruit-desc">Great for PVP with freeze combos</div>
+      </div>
+      
+      <!-- GRINDING FRUITS -->
+      <div class="fruit-card">
+        <div class="fruit-icon">🧘</div>
+        <div class="fruit-name">BUDDHA</div>
+        <div class="fruit-desc">Best grinding fruit with huge AOE range</div>
+      </div>
+      <div class="fruit-card">
+        <div class="fruit-icon">🌋</div>
+        <div class="fruit-name">MAGMA (AWAKENED)</div>
+        <div class="fruit-desc">Amazing for sea events & PVP</div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- === FOOTER === -->
 <footer>
-  <div class="footer-text">The most sophisticated trading platform in the Blox Fruits universe</div>
-  <div class="copyright">© 2023 FRUIT TRADE ELITE | All Rights Reserved</div>
+  <div style="color: #aaa; margin-bottom: 10px;">TRADE WITH THE BEST - BLOX TRADE HUB</div>
+  <div style="color: var(--gold);">© 2023 BLOX TRADE HUB | #1 Trading Platform</div>
 </footer>
 
 </body>
