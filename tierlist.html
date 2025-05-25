@@ -1,124 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FruitTrade - Fruit Tier List</title>
-  <style>
-    /* Reset & base */
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      background-color: #121212;
-      color: #eee;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: #facc15;
-      text-align: center;
-      text-shadow: 0 0 8px #facc15;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      max-width: 700px;
-      background-color: #1f1f1f;
-      box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    thead {
-      background: linear-gradient(90deg, #facc15, #d99a00);
-    }
-
-    thead th {
-      padding: 15px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #121212;
-      text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.15);
-    }
-
-    thead th:last-child {
-      border-right: none;
-    }
-
-    tbody tr {
-      border-bottom: 1px solid #333;
-      transition: background-color 0.3s ease;
-      cursor: default;
-    }
-
-    tbody tr:hover {
-      background-color: #333333;
-    }
-
-    tbody td {
-      padding: 15px;
-      font-size: 1rem;
-      text-align: center;
-      color: #ddd;
-      border-right: 1px solid rgba(255,255,255,0.1);
-    }
-
-    tbody td:first-child {
-      font-weight: 600;
-      text-align: left;
-      padding-left: 20px;
-      color: #facc15;
-    }
-
-    tbody td:last-child {
-      border-right: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      body {
-        padding: 20px 10px;
-      }
-      table {
-        font-size: 0.9rem;
-      }
-      thead th, tbody td {
-        padding: 10px 8px;
-      }
-    }
-
-    /* Back link */
-    .back-link {
-      align-self: flex-start;
-      margin-bottom: 20px;
-      font-weight: 600;
-      color: #facc15;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    .back-link:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FruitTrade - Mythical Tier List</title>
+<style>
+  body {
+    background-color: #121212;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #facc15;
+    text-align: center;
+    text-shadow: 0 0 8px #facc15;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 900px;
+    background-color: #1f1f1f;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  thead {
+    background: linear-gradient(90deg, #facc15, #d99a00);
+  }
+  thead th {
+    padding: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #121212;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  thead th:last-child {
+    border-right: none;
+  }
+  tbody tr {
+    border-bottom: 1px solid #333;
+    transition: background-color 0.3s ease;
+  }
+  tbody tr:hover {
+    background-color: #333333;
+  }
+  tbody td {
+    padding: 15px;
+    font-size: 1rem;
+    text-align: center;
+    color: #ddd;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  tbody td:first-child {
+    font-weight: 600;
+    text-align: left;
+    padding-left: 20px;
+  }
+  tbody td:last-child {
+    border-right: none;
+  }
+</style>
 </head>
 <body>
 
-  <a href="index.html" class="back-link">← Back to Home</a>
-
-  <h2>Fruit Tier List</h2>
+  <h2>🍍 FruitTrade - Blox Fruits Tier List (Mythicals First) 🍍</h2>
 
   <table>
     <thead>
@@ -130,99 +84,36 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Dragon 🐉</td>
-        <td>10/10</td>
-        <td>10/10</td>
-        <td>10/10</td>
-      </tr>
-      <tr>
-        <td>Kitsune 🦊</td>
-        <td>10/10</td>
-        <td>10/10</td>
-        <td>10/10</td>
-      </tr>
-      <tr>
-        <td>Yeti ❄️</td>
-        <td>10/10</td>
-        <td>10/10</td>
-        <td>10/10</td>
-      </tr>
-      <tr>
-        <td>Leopard 🐆</td>
-        <td>10/10</td>
-        <td>10/10</td>
-        <td>10/10</td>
-      </tr>
-      <tr>
-        <td>Gravity 🌌</td>
-        <td>6/10</td>
-        <td>6/10</td>
-        <td>5/10</td>
-      </tr>
-      <tr>
-        <td>Gravity (Reworked) 🌌</td>
-        <td>7/10</td>
-        <td>6/10</td>
-        <td>6/10</td>
-      </tr>
-      <tr>
-        <td>Dough 🌍</td>
-        <td>6/10</td>
-        <td>10/10</td>
-        <td>7/10</td>
-      </tr>
-      <tr>
-        <td>T-rex 🦖</td>
-        <td>7/10</td>
-        <td>7/10</td>
-        <td>8/10</td>
-      </tr>
-      <tr>
-        <td>Flame 🔥</td>
-        <td>8/10</td>
-        <td>8/10</td>
-        <td>7/10</td>
-      </tr>
-      <tr>
-        <td>Ice ❄️</td>
-        <td>7/10</td>
-        <td>8/10</td>
-        <td>6/10</td>
-      </tr>
-      <tr>
-        <td>Light 💡</td>
-        <td>6/10</td>
-        <td>9/10</td>
-        <td>8/10</td>
-      </tr>
-      <tr>
-        <td>Bomb 💣</td>
-        <td>7/10</td>
-        <td>7/10</td>
-        <td>5/10</td>
-      </tr>
-      <tr>
-        <td>Bird 🐦</td>
-        <td>4/10</td>
-        <td>6/10</td>
-        <td>4/10</td>
-      </tr>
-      <tr>
-        <td>Quake 🌍</td>
-        <td>8/10</td>
-        <td>7/10</td>
-        <td>6/10</td>
-      </tr>
-      <tr>
-        <td>Chop 🪓</td>
-        <td>5/10</td>
-        <td>5/10</td>
-        <td>3/10</td>
-      </tr>
+      <!-- Mythical Fruits -->
+      <tr><td>Dragon 🐉</td><td>10/10</td><td>10/10</td><td>10/10</td></tr>
+      <tr><td>Kitsune 🦊</td><td>9/10</td><td>9/10</td><td>9/10</td></tr>
+      <tr><td>Leopard 🐆</td><td>9/10</td><td>8/10</td><td>8/10</td></tr>
+      <tr><td>Yeti ❄️</td><td>8/10</td><td>9/10</td><td>7/10</td></tr>
+      <tr><td>Venom 🕷️</td><td>7/10</td><td>8/10</td><td>7/10</td></tr>
+      <tr><td>Light 💡</td><td>9/10</td><td>9/10</td><td>8/10</td></tr>
+      <tr><td>Dough 🌍</td><td>7/10</td><td>8/10</td><td>7/10</td></tr>
+      <tr><td>Bird 🦅</td><td>6/10</td><td>7/10</td><td>6/10</td></tr>
+      
+      <!-- Legendary Fruits -->
+      <tr><td>Rubber 🦾</td><td>8/10</td><td>7/10</td><td>8/10</td></tr>
+      <tr><td>Flame 🔥</td><td>7/10</td><td>8/10</td><td>7/10</td></tr>
+      <tr><td>Ice ❄️</td><td>7/10</td><td>8/10</td><td>7/10</td></tr>
+      <tr><td>Sand 🏜️</td><td>6/10</td><td>6/10</td><td>6/10</td></tr>
+      <tr><td>Smoke 💨</td><td>5/10</td><td>7/10</td><td>6/10</td></tr>
+      <tr><td>Darkness 🌑</td><td>7/10</td><td>8/10</td><td>7/10</td></tr>
+      <tr><td>Magma 🌋</td><td>6/10</td><td>7/10</td><td>6/10</td></tr>
+
+      <!-- Regular Fruits -->
+      <tr><td>Bomb 💣</td><td>5/10</td><td>6/10</td><td>6/10</td></tr>
+      <tr><td>Spike 🦔</td><td>5/10</td><td>6/10</td><td>5/10</td></tr>
+      <tr><td>Chop 🪓</td><td>4/10</td><td>5/10</td><td>4/10</td></tr>
+      <tr><td>Spring 🌸</td><td>3/10</td><td>5/10</td><td>3/10</td></tr>
+      <tr><td>Dark ⚫</td><td>6/10</td><td>7/10</td><td>6/10</td></tr>
+      <tr><td>Bird 🐦</td><td>6/10</td><td>6/10</td><td>6/10</td></tr>
     </tbody>
   </table>
 
 </body>
 </html>
+
 
