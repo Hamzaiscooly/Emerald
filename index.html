@@ -241,33 +241,6 @@
     line-height: 1.4;
   }
 
-  /* Timers: digital style */
-  .timer-box {
-    background: #111111dd;
-    border-radius: 18px;
-    padding: 25px 30px;
-    box-shadow:
-      0 0 30px #facc1588,
-      inset 0 0 30px #facc1544;
-    font-size: 1.6rem;
-    font-weight: 700;
-    user-select: none;
-    width: 280px;
-    margin: 12px 0;
-    font-family: 'Orbitron', monospace;
-    color: #facc15;
-    letter-spacing: 2px;
-    text-shadow:
-      0 0 14px #facc15cc,
-      0 0 30px #fde047bb;
-  }
-  .timer-label {
-    font-size: 1.15rem;
-    color: #fde047cc;
-    margin-bottom: 10px;
-    text-shadow: 0 0 12px #fde047cc;
-  }
-
   /* Social media section */
   .social-icons {
     display: flex;
@@ -295,8 +268,6 @@
       0 0 45px #fde047cc;
   }
 </style>
-<!-- Orbitron font for timer -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -329,8 +300,41 @@
 
   <!-- Recommended Fruits -->
   <div class="section" aria-labelledby="recommended-title">
-    <h2 id="recommended-title">🍒 Recommended Fruits
-</h2> <div class="fruits-list" role="list" aria-label="Recommended Fruits"> <div class="fruit-card" role="listitem" tabindex="0"> <div class="fruit-icon">🧘</div> <div class="fruit-name">Buddha</div> <div class="fruit-desc">Perfect for Grinding users and PVP! High Damage!</div> </div> <div class="fruit-card" role="listitem" tabindex="0"> <div class="fruit-icon">⚡</div> <div class="fruit-name">Light</div> <div class="fruit-desc">Super fast attacks and mobility.</div> </div> <div class="fruit-card" role="listitem" tabindex="0"> <div class="fruit-icon">🍩</div> <div class="fruit-name">Dough</div> <div class="fruit-desc">Strong for PVP and does High Damage!.</div> </div> <div class="fruit-card" role="listitem" tabindex="0"> <div class="fruit-icon">🌋</div> <div class="fruit-name">Magma</div> <div class="fruit-desc">Really good for sea events! Decent for PVP!</div> </div> </div> </div> <!-- Timers --> <div class="section" aria-labelledby="timers-title"> <h2 id="timers-title">⏳ Time Until Next Fruit Spawn</h2> <div class="timer-box" aria-live="polite" aria-atomic="true"> <div class="timer-label">Magma Fruit</div> <div id="magma-timer">Loading...</div> </div> <div class="timer-box" aria-live="polite" aria-atomic="true"> <div class="timer-label">Light Fruit</div> <div id="light-timer">Loading...</div> </div> </div> <!-- Social media --> <div class="section" aria-labelledby="social-title"> <h2 id="social-title">🔗 Connect with Us</h2> <div class="social-icons"> <a href="https://discord.gg/yourserver" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord Server">🗨️ Discord</a> <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">🐦 Twitter</a> <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube Channel">▶️ YouTube</a> </div> </div> </div> <script> // Countdown timer function: format MM:SS function formatTime(seconds) { let m = Math.floor(seconds / 60); let s = seconds % 60; return `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`; } // Example timers for fruit spawn countdown (random start time 4-9 mins) let magmaSeconds = 300 + Math.floor(Math.random() * 300); // 5-10 min range let lightSeconds = 420 + Math.floor(Math.random() * 300); // 7-12 min range function updateTimers() { if (magmaSeconds >= 0) { document.getElementById('magma-timer').textContent = formatTime(magmaSeconds); magmaSeconds--; } else { document.getElementById('magma-timer').textContent = 'Ready to spawn!'; } if (lightSeconds >= 0) { document.getElementById('light-timer').textContent = formatTime(lightSeconds); lightSeconds--; } else { document.getElementById('light-timer').textContent = 'Ready to spawn!'; } } // Start timers on page load updateTimers(); setInterval(updateTimers, 1000); </script> </body> </html> ```
+    <h2 id="recommended-title">🍒 Recommended Fruits</h2>
+    <div class="fruits-list" role="list" aria-label="Recommended Fruits">
+      <div class="fruit-card" role="listitem" tabindex="0">
+        <div class="fruit-icon">🧘</div>
+        <div class="fruit-name">Buddha</div>
+        <div class="fruit-desc">Perfect for Grinding users and PVP! High Damage!</div>
+      </div>
+      <div class="fruit-card" role="listitem" tabindex="0">
+        <div class="fruit-icon">⚡</div>
+        <div class="fruit-name">Light</div>
+        <div class="fruit-desc">Super fast attacks and mobility.</div>
+      </div>
+      <div class="fruit-card" role="listitem" tabindex="0">
+        <div class="fruit-icon">🍩</div>
+        <div class="fruit-name">Dough</div>
+        <div class="fruit-desc">Strong for PVP and does High Damage!.</div>
+      </div>
+      <div class="fruit-card" role="listitem" tabindex="0">
+        <div class="fruit-icon">🌋</div>
+        <div class="fruit-name">Magma</div>
+        <div class="fruit-desc">Really good for sea events! Decent for PVP!</div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Social media -->
+  <div class="section" aria-labelledby="social-title">
+    <h2 id="social-title">🔗 Connect with Us</h2>
+    <div class="social-icons">
+      <a href="https://discord.gg/yourserver" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord Server">🗨️ Discord</a>
+      <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">🐦 Twitter</a>
+      <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to our YouTube Channel">▶️ YouTube</a>
+    </div>
+  </div>
+</div>
 
-
+</body>
+</html>
