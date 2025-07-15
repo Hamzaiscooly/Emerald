@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FRUITTRADE | Blox Fruits Trading & Values Platform</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #FF6B00;
@@ -20,6 +21,8 @@
       --success: #4CAF50;
       --danger: #F44336;
       --warning: #FFC107;
+      --info: #2196F3;
+      --gradient: linear-gradient(135deg, var(--primary), var(--accent));
     }
 
     * {
@@ -40,8 +43,9 @@
         radial-gradient(circle at 90% 80%, rgba(0, 168, 255, 0.1) 0%, transparent 30%);
     }
 
+    /* Header & Navigation */
     header {
-      background: rgba(18, 18, 18, 0.9);
+      background: rgba(18, 18, 18, 0.95);
       backdrop-filter: blur(10px);
       padding: 1rem 2rem;
       display: flex;
@@ -51,6 +55,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     }
 
     .logo {
@@ -61,14 +66,16 @@
 
     .logo img {
       height: 50px;
+      filter: drop-shadow(0 0 5px var(--primary));
     }
 
     .logo-text {
       font-size: 1.8rem;
       font-weight: 700;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .badge {
@@ -96,6 +103,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      position: relative;
     }
 
     .nav-link:hover {
@@ -106,12 +114,69 @@
     .nav-link.active {
       background: var(--primary);
       color: white;
+      box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
     }
 
     .nav-link i {
       font-size: 1.1rem;
     }
 
+    .header-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .icon-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .icon-btn:hover {
+      background: rgba(255, 107, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .icon-btn .badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: var(--danger);
+    }
+
+    .user-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+    }
+
+    /* Main Content */
     main {
       flex: 1;
       padding: 2rem;
@@ -147,9 +212,11 @@
     .hero-title {
       font-size: 3rem;
       margin-bottom: 1rem;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
+      background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      letter-spacing: 1px;
     }
 
     .hero-subtitle {
@@ -157,6 +224,7 @@
       color: #AAA;
       max-width: 800px;
       margin: 0 auto 2rem;
+      line-height: 1.6;
     }
 
     .search-bar {
@@ -167,6 +235,7 @@
       border-radius: 50px;
       overflow: hidden;
       border: 1px solid rgba(255, 107, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .search-input {
@@ -189,12 +258,14 @@
       padding: 0 1.5rem;
       cursor: pointer;
       transition: background 0.3s ease;
+      font-weight: 600;
     }
 
     .search-button:hover {
       background: var(--primary-dark);
     }
 
+    /* Stats Grid */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -211,11 +282,14 @@
       align-items: center;
       border: 1px solid rgba(255, 107, 0, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .stat-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: var(--primary);
     }
 
     .stat-icon {
@@ -236,6 +310,7 @@
       font-size: 0.9rem;
     }
 
+    /* Section Titles */
     .section-title {
       font-size: 2rem;
       margin: 2rem 0 1rem;
@@ -243,18 +318,33 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
     }
 
     .section-title i {
       color: var(--primary);
     }
 
+    /* Tables */
     .table-container {
       background: rgba(45, 45, 45, 0.7);
       border-radius: 10px;
       overflow: hidden;
       margin-bottom: 2rem;
       border: 1px solid rgba(255, 107, 0, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     table {
@@ -290,14 +380,16 @@
 
     .fruit-icon {
       font-size: 1.5rem;
+      width: 30px;
+      text-align: center;
     }
 
     .value-change {
       display: inline-flex;
       align-items: center;
-      padding: 0.2rem 0.5rem;
+      padding: 0.2rem 0.8rem;
       border-radius: 5px;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 600;
     }
 
@@ -311,6 +403,39 @@
       color: var(--danger);
     }
 
+    .rarity-badge {
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .rarity-mythical {
+      background: rgba(156, 39, 176, 0.2);
+      color: #9C27B0;
+    }
+
+    .rarity-legendary {
+      background: rgba(255, 152, 0, 0.2);
+      color: #FF9800;
+    }
+
+    .rarity-rare {
+      background: rgba(33, 150, 243, 0.2);
+      color: var(--info);
+    }
+
+    .rarity-uncommon {
+      background: rgba(76, 175, 80, 0.2);
+      color: var(--success);
+    }
+
+    .rarity-common {
+      background: rgba(158, 158, 158, 0.2);
+      color: #9E9E9E;
+    }
+
+    /* Trading Cards */
     .trading-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -324,11 +449,13 @@
       padding: 1.5rem;
       border: 1px solid rgba(255, 107, 0, 0.2);
       transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .trade-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: var(--primary);
     }
 
     .trade-header {
@@ -354,6 +481,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: 600;
+      background: var(--gradient);
+      color: white;
     }
 
     .user-name {
@@ -369,23 +499,38 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 1rem;
+      position: relative;
     }
 
     .trade-items {
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
+      width: 45%;
     }
 
     .trade-item {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      padding: 0.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+    }
+
+    .trade-arrow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+      color: var(--primary);
     }
 
     .trade-actions {
       display: flex;
       gap: 0.5rem;
+      justify-content: space-between;
     }
 
     .btn {
@@ -398,15 +543,20 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      flex: 1;
+      justify-content: center;
     }
 
     .btn-primary {
       background: var(--primary);
       color: white;
+      box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3);
     }
 
     .btn-primary:hover {
       background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
     }
 
     .btn-secondary {
@@ -416,8 +566,10 @@
 
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
 
+    /* Timers */
     .timers-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -432,6 +584,7 @@
       border: 1px solid var(--secondary);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .timer-card::before {
@@ -459,23 +612,127 @@
       color: var(--accent);
       text-align: center;
       margin: 1rem 0;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
     }
 
     .timer-description {
       color: #AAA;
       font-size: 0.9rem;
+      text-align: center;
     }
 
+    /* New Features */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-card {
+      background: rgba(45, 45, 45, 0.7);
+      border-radius: 10px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 107, 0, 0.2);
+      text-align: center;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      border-color: var(--primary);
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--light);
+    }
+
+    .feature-description {
+      color: #AAA;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Trading Value Chart */
+    .chart-container {
+      background: rgba(45, 45, 45, 0.7);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 107, 0, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .chart-title {
+      font-size: 1.5rem;
+      color: var(--light);
+    }
+
+    .chart-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chart {
+      height: 300px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      gap: 10px;
+    }
+
+    .chart-bar {
+      flex: 1;
+      background: var(--primary);
+      position: relative;
+      border-radius: 5px 5px 0 0;
+      transition: height 0.5s ease;
+    }
+
+    .chart-bar-label {
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #AAA;
+    }
+
+    /* Footer */
     footer {
       background: rgba(18, 18, 18, 0.9);
       padding: 2rem;
       text-align: center;
       border-top: 1px solid rgba(255, 107, 0, 0.3);
+      margin-top: 2rem;
     }
 
     .footer-links {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 2rem;
       margin-bottom: 1rem;
     }
@@ -484,22 +741,60 @@
       color: #AAA;
       text-decoration: none;
       transition: color 0.3s ease;
+      font-weight: 500;
     }
 
     .footer-link:hover {
       color: var(--primary);
     }
 
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--light);
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
     .copyright {
       color: #666;
       font-size: 0.9rem;
+      margin-top: 1rem;
     }
 
+    /* Animations */
     @keyframes rotate {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
 
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(255, 107, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -538,6 +833,24 @@
         padding: 1rem;
         width: 100%;
       }
+
+      .trade-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .trade-items {
+        width: 100%;
+      }
+
+      .trade-arrow {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        text-align: center;
+        margin: 0.5rem 0;
+      }
     }
   </style>
 </head>
@@ -550,20 +863,29 @@
     </div>
     <nav>
       <a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-      <a href="tierlist.html" class="nav-link"><i class="fas fa-chart-line"></i> Values</a>
+      <a href="#" class="nav-link"><i class="fas fa-chart-line"></i> Values</a>
       <a href="#" class="nav-link"><i class="fas fa-exchange-alt"></i> Trades</a>
       <a href="#" class="nav-link"><i class="fas fa-calculator"></i> Calculator</a>
       <a href="#" class="nav-link"><i class="fas fa-users"></i> Community</a>
     </nav>
+    <div class="header-actions">
+      <button class="icon-btn pulse">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </button>
+      <div class="user-menu">
+        <div class="user-avatar">PT</div>
+      </div>
+    </div>
   </header>
 
   <main>
     <section class="hero">
       <h1 class="hero-title">Blox Fruits Trading Hub</h1>
-      <p class="hero-subtitle">The most accurate fruit values, real-time trading, and market analytics for Blox Fruits players</p>
+      <p class="hero-subtitle">The most accurate fruit values, real-time trading, and market analytics for Blox Fruits players. Trade smarter with our verified values and community-driven marketplace.</p>
       <div class="search-bar">
         <input type="text" class="search-input" placeholder="Search fruits, trades, or users...">
-        <button class="search-button"><i class="fas fa-search"></i></button>
+        <button class="search-button"><i class="fas fa-search"></i> Search</button>
       </div>
     </section>
 
@@ -602,6 +924,11 @@
         <div class="timer-value" id="mirage-timer">01:12:45</div>
         <div class="timer-description">Mirage stock refreshes every 2 hours</div>
       </div>
+      <div class="timer-card">
+        <div class="timer-header"><i class="fas fa-store"></i> Premium Stock</div>
+        <div class="timer-value" id="premium-timer">12:38:21</div>
+        <div class="timer-description">Premium stock refreshes every 24 hours</div>
+      </div>
     </div>
 
     <h2 class="section-title"><i class="fas fa-chart-line"></i> Top Fruit Values</h2>
@@ -624,7 +951,7 @@
                 <span>Kitsune</span>
               </div>
             </td>
-            <td>Mythical</td>
+            <td><span class="rarity-badge rarity-mythical">Mythical</span></td>
             <td>50,000,000</td>
             <td>Extreme</td>
             <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 7.5%</span></td>
@@ -636,7 +963,7 @@
                 <span>Dragon (V2)</span>
               </div>
             </td>
-            <td>Mythical</td>
+            <td><span class="rarity-badge rarity-mythical">Mythical</span></td>
             <td>45,000,000</td>
             <td>Very High</td>
             <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 5.2%</span></td>
@@ -648,7 +975,7 @@
                 <span>Dough (Awakened)</span>
               </div>
             </td>
-            <td>Mythical</td>
+            <td><span class="rarity-badge rarity-mythical">Mythical</span></td>
             <td>38,500,000</td>
             <td>High</td>
             <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 2.1%</span></td>
@@ -660,7 +987,7 @@
                 <span>Buddha</span>
               </div>
             </td>
-            <td>Legendary</td>
+            <td><span class="rarity-badge rarity-legendary">Legendary</span></td>
             <td>30,000,000</td>
             <td>Very High</td>
             <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 3.8%</span></td>
@@ -672,7 +999,7 @@
                 <span>Yeti</span>
               </div>
             </td>
-            <td>Legendary</td>
+            <td><span class="rarity-badge rarity-legendary">Legendary</span></td>
             <td>28,000,000</td>
             <td>Medium</td>
             <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 1.5%</span></td>
@@ -684,7 +1011,7 @@
                 <span>Magma (Awakened)</span>
               </div>
             </td>
-            <td>Legendary</td>
+            <td><span class="rarity-badge rarity-legendary">Legendary</span></td>
             <td>26,500,000</td>
             <td>High</td>
             <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 2.7%</span></td>
@@ -698,7 +1025,7 @@
       <div class="trade-card">
         <div class="trade-header">
           <div class="trade-user">
-            <div class="user-avatar"><i class="fas fa-user"></i></div>
+            <div class="user-avatar">PT</div>
             <div class="user-name">ProTrader123</div>
           </div>
           <div class="trade-time">5 min ago</div>
@@ -709,31 +1036,35 @@
               <span class="fruit-icon">🦊</span>
               <span>Kitsune</span>
             </div>
-            <div class="trade-item">
-              <i class="fas fa-arrow-right"></i>
-            </div>
+          </div>
+          <div class="trade-arrow">
+            <i class="fas fa-long-arrow-alt-right"></i>
           </div>
           <div class="trade-items">
             <div class="trade-item">
               <span class="fruit-icon">🐉</span>
-              <span>Dragon +</span>
+              <span>Dragon</span>
             </div>
             <div class="trade-item">
               <span class="fruit-icon">🧘</span>
               <span>Buddha</span>
             </div>
+            <div class="trade-item">
+              <i class="fas fa-coins"></i>
+              <span>$2,000,000</span>
+            </div>
           </div>
         </div>
         <div class="trade-actions">
           <button class="btn btn-secondary"><i class="fas fa-comment"></i> Chat</button>
-          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer Trade</button>
+          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer</button>
         </div>
       </div>
 
       <div class="trade-card">
         <div class="trade-header">
           <div class="trade-user">
-            <div class="user-avatar"><i class="fas fa-user"></i></div>
+            <div class="user-avatar">FM</div>
             <div class="user-name">FruitMaster</div>
           </div>
           <div class="trade-time">12 min ago</div>
@@ -742,17 +1073,17 @@
           <div class="trade-items">
             <div class="trade-item">
               <span class="fruit-icon">❄️</span>
-              <span>Yeti +</span>
+              <span>Yeti</span>
             </div>
             <div class="trade-item">
               <span class="fruit-icon">🌋</span>
               <span>Magma</span>
             </div>
           </div>
+          <div class="trade-arrow">
+            <i class="fas fa-long-arrow-alt-right"></i>
+          </div>
           <div class="trade-items">
-            <div class="trade-item">
-              <i class="fas fa-arrow-right"></i>
-            </div>
             <div class="trade-item">
               <span class="fruit-icon">🍩</span>
               <span>Dough (Awakened)</span>
@@ -761,14 +1092,14 @@
         </div>
         <div class="trade-actions">
           <button class="btn btn-secondary"><i class="fas fa-comment"></i> Chat</button>
-          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer Trade</button>
+          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer</button>
         </div>
       </div>
 
       <div class="trade-card">
         <div class="trade-header">
           <div class="trade-user">
-            <div class="user-avatar"><i class="fas fa-user"></i></div>
+            <div class="user-avatar">TK</div>
             <div class="user-name">TradingKing</div>
           </div>
           <div class="trade-time">23 min ago</div>
@@ -779,25 +1110,62 @@
               <span class="fruit-icon">🧘</span>
               <span>Buddha</span>
             </div>
-            <div class="trade-item">
-              <i class="fas fa-arrow-right"></i>
-            </div>
+          </div>
+          <div class="trade-arrow">
+            <i class="fas fa-long-arrow-alt-right"></i>
           </div>
           <div class="trade-items">
             <div class="trade-item">
               <span class="fruit-icon">🌋</span>
-              <span>Magma +</span>
+              <span>Magma</span>
             </div>
             <div class="trade-item">
               <span class="fruit-icon">🧊</span>
-              <span>Ice + $2.5M</span>
+              <span>Ice</span>
+            </div>
+            <div class="trade-item">
+              <i class="fas fa-coins"></i>
+              <span>$2,500,000</span>
             </div>
           </div>
         </div>
         <div class="trade-actions">
           <button class="btn btn-secondary"><i class="fas fa-comment"></i> Chat</button>
-          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer Trade</button>
+          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer</button>
         </div>
+      </div>
+    </div>
+
+    <h2 class="section-title"><i class="fas fa-chart-bar"></i> Trading Value Trends</h2>
+    <div class="chart-container">
+      <div class="chart-header">
+        <div class="chart-title">Top Fruits Value Change (Last 7 Days)</div>
+        <div class="chart-actions">
+          <button class="btn btn-secondary">Weekly</button>
+          <button class="btn btn-primary">Monthly</button>
+        </div>
+      </div>
+      <div class="chart" id="value-chart">
+        <!-- Chart will be generated by JS -->
+      </div>
+    </div>
+
+    <h2 class="section-title"><i class="fas fa-star"></i> New Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="feature-title">Trade Verification</div>
+        <div class="feature-description">All trades are verified by our team to ensure fair values and prevent scams.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+        <div class="feature-title">Real-time Updates</div>
+        <div class="feature-description">Get instant notifications when fruit values change or new trades are posted.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div class="feature-title">Mobile App</div>
+        <div class="feature-description">Trade on the go with our mobile app available for iOS and Android devices.</div>
       </div>
     </div>
   </main>
@@ -810,8 +1178,15 @@
       <a href="#" class="footer-link">Privacy Policy</a>
       <a href="#" class="footer-link">Contact</a>
     </div>
+    <div class="social-links">
+      <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
+    </div>
     <div class="copyright">
-      © 2023 FRUITTRADE HUB | Not affiliated with Roblox or Blox Fruits
+      © 2023 FRUITTRADE HUB | Not affiliated with Roblox or Blox Fruits<br>
+      All game content and assets are trademarks of their respective owners
     </div>
   </footer>
 
@@ -836,17 +1211,54 @@
       }, 1000);
     }
 
+    // Generate value chart
+    function generateValueChart() {
+      const fruits = ['Kitsune', 'Dragon', 'Dough', 'Buddha', 'Yeti', 'Magma'];
+      const chart = document.getElementById('value-chart');
+      
+      fruits.forEach(fruit => {
+        const maxHeight = 280; // Max height in pixels
+        const randomValue = Math.floor(Math.random() * maxHeight) + 20;
+        
+        const bar = document.createElement('div');
+        bar.className = 'chart-bar';
+        bar.style.height = `${randomValue}px`;
+        
+        const label = document.createElement('div');
+        label.className = 'chart-bar-label';
+        label.textContent = fruit;
+        
+        bar.appendChild(label);
+        chart.appendChild(bar);
+        
+        // Animate the bar
+        setTimeout(() => {
+          bar.style.height = `${randomValue}px`;
+        }, 100);
+      });
+    }
+
+    // Initialize when page loads
     window.onload = function () {
-      // Set initial times (4 hours in seconds for stock, 2 hours for mirage)
+      // Set initial times (4 hours in seconds for stock, 2 hours for mirage, 24 hours for premium)
       const stockDisplay = document.getElementById('stock-timer');
       const mirageDisplay = document.getElementById('mirage-timer');
+      const premiumDisplay = document.getElementById('premium-timer');
       
       // Start with random times for demo purposes
-      const randomStockTime = Math.floor(Math.random() * 14400);
-      const randomMirageTime = Math.floor(Math.random() * 7200);
+      startTimer(Math.floor(Math.random() * 14400), stockDisplay);
+      startTimer(Math.floor(Math.random() * 7200), mirageDisplay);
+      startTimer(Math.floor(Math.random() * 86400), premiumDisplay);
       
-      startTimer(randomStockTime, stockDisplay);
-      startTimer(randomMirageTime, mirageDisplay);
+      // Generate the value chart
+      generateValueChart();
+      
+      // Add pulse animation to notification bell
+      const bell = document.querySelector('.icon-btn.pulse');
+      setInterval(() => {
+        bell.classList.toggle('pulse');
+        setTimeout(() => bell.classList.toggle('pulse'), 100);
+      }, 4000);
     };
   </script>
 </body>
