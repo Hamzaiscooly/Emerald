@@ -474,6 +474,12 @@
             color: #586069;
         }
         
+        .legal-content .section-number {
+            display: inline-block;
+            width: 30px;
+            font-weight: bold;
+        }
+        
         /* Footer */
         footer {
             background-color: #1f2428;
@@ -850,51 +856,98 @@
             <div class="container">
                 <div class="legal-content">
                     <h1>Privacy Policy</h1>
-                    <p>Last updated: <span id="privacy-date"></span></p>
+                    <p><strong>Last updated:</strong> <span id="privacy-date"></span></p>
                     
-                    <p>Thank you for using Emerald Bot. This Privacy Policy explains how we collect, use, and protect your information when you use our Discord bot.</p>
+                    <p>This Privacy Policy explains how Emerald Bot ("we", "us", or "our") collects, uses, and protects your information when you use our Discord bot. We are committed to protecting your privacy and complying with applicable data protection laws, including the General Data Protection Regulation (GDPR).</p>
                     
-                    <h2>1. Information We Collect</h2>
-                    <p>Emerald Bot may collect and store the following information:</p>
+                    <h2>1. Data Controller Information</h2>
+                    <p>The data controller for Emerald Bot is based in the Netherlands. For any questions about this Privacy Policy or our data practices, please contact us through our <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">support server</a>.</p>
+                    
+                    <h2>2. Information We Collect</h2>
+                    <p>Emerald Bot collects and processes the following categories of personal data:</p>
                     <ul>
-                        <li><strong>Server Information:</strong> Basic server details such as server ID, name, and configuration settings</li>
-                        <li><strong>User Information:</strong> User IDs and usernames for functionality like moderation, leveling, and welcome messages</li>
-                        <li><strong>Message Content:</strong> Limited message content for moderation purposes (filtered for inappropriate content)</li>
-                        <li><strong>Command Usage:</strong> Data about commands used to improve our services</li>
+                        <li><strong>Server Information:</strong> Server ID, name, configuration settings, and channel IDs necessary for bot functionality</li>
+                        <li><strong>User Information:</strong> User IDs, usernames, and discriminators for features like moderation, leveling, and welcome messages</li>
+                        <li><strong>Message Content:</strong> Limited message content for moderation purposes (filtered for inappropriate content) and command processing</li>
+                        <li><strong>Usage Data:</strong> Command usage statistics, feature interaction data, and error logs to improve our services</li>
+                        <li><strong>Configuration Data:</strong> Your custom settings, preferences, and bot configurations for your server</li>
                     </ul>
                     
-                    <h2>2. How We Use Your Information</h2>
-                    <p>We use the collected information to:</p>
+                    <h2>3. Legal Basis for Processing</h2>
+                    <p>We process your personal data based on the following legal grounds:</p>
                     <ul>
-                        <li>Provide and maintain the bot's functionality</li>
-                        <li>Improve and customize the user experience</li>
-                        <li>Monitor for abuse and enforce our Terms of Service</li>
-                        <li>Respond to user support requests</li>
+                        <li><strong>Performance of Contract:</strong> To provide the bot services you requested when adding Emerald to your server</li>
+                        <li><strong>Legitimate Interests:</strong> To improve our services, ensure security, and prevent abuse</li>
+                        <li><strong>Consent:</strong> For optional features where we explicitly request your consent</li>
                     </ul>
                     
-                    <h2>3. Data Storage and Security</h2>
-                    <p>We implement appropriate security measures to protect your data. However, no method of transmission over the Internet is 100% secure.</p>
-                    
-                    <h2>4. Data Retention</h2>
-                    <p>We retain data only as long as necessary to provide our services. You can request data deletion by contacting us through our support server.</p>
-                    
-                    <h2>5. Third-Party Services</h2>
-                    <p>We do not sell or share your data with third parties. The bot only interacts with Discord's API to provide its services.</p>
-                    
-                    <h2>6. Your Rights</h2>
-                    <p>You have the right to:</p>
+                    <h2>4. How We Use Your Information</h2>
+                    <p>We use the collected information for the following purposes:</p>
                     <ul>
-                        <li>Access the personal data we hold about you</li>
-                        <li>Request correction or deletion of your data</li>
-                        <li>Object to our use of your data</li>
-                        <li>Request data portability</li>
+                        <li>To provide and maintain the bot's core functionality (moderation, welcome messages, etc.)</li>
+                        <li>To improve and customize the user experience</li>
+                        <li>To monitor for abuse and enforce our Terms of Service</li>
+                        <li>To respond to user support requests and troubleshoot issues</li>
+                        <li>To develop new features and improve existing ones</li>
+                        <li>To ensure the security and integrity of our services</li>
                     </ul>
                     
-                    <h2>7. Changes to This Policy</h2>
-                    <p>We may update this Privacy Policy from time to time. We will notify users of any material changes through our support server.</p>
+                    <h2>5. Data Storage and Security</h2>
+                    <p>We implement appropriate technical and organizational security measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+                    <ul>
+                        <li>Encryption of data in transit using SSL/TLS protocols</li>
+                        <li>Secure server infrastructure with regular security updates</li>
+                        <li>Access controls limiting data access to authorized personnel only</li>
+                        <li>Regular security assessments and monitoring</li>
+                    </ul>
+                    <p>While we strive to protect your personal data, no method of transmission over the Internet or electronic storage is 100% secure.</p>
                     
-                    <h2>8. Contact Us</h2>
-                    <p>If you have questions about this Privacy Policy, please contact us through our <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">support server</a>.</p>
+                    <h2>6. Data Retention</h2>
+                    <p>We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, including to satisfy any legal, accounting, or reporting requirements. Our retention periods are:</p>
+                    <ul>
+                        <li><strong>Server Data:</strong> Retained until the bot is removed from your server</li>
+                        <li><strong>User Data:</strong> Retained for the duration of your server membership where Emerald is present</li>
+                        <li><strong>Moderation Logs:</strong> Retained for 90 days to handle disputes and appeals</li>
+                        <li><strong>Analytics Data:</strong> Retained in anonymized form for up to 2 years</li>
+                    </ul>
+                    <p>You can request data deletion at any time by contacting us or removing the bot from your server.</p>
+                    
+                    <h2>7. Data Transfers</h2>
+                    <p>As we are based in the Netherlands, your data is processed within the European Economic Area (EEA). We do not transfer your personal data to countries outside the EEA unless adequate protection measures are in place.</p>
+                    
+                    <h2>8. Third-Party Services</h2>
+                    <p>Emerald Bot only interacts with Discord's API to provide its services. We do not sell or share your data with third parties for marketing purposes. We may use subprocessors for hosting and infrastructure, all of which are GDPR-compliant.</p>
+                    
+                    <h2>9. Your Rights Under GDPR</h2>
+                    <p>As a data subject, you have the following rights:</p>
+                    <ul>
+                        <li><strong>Right of Access:</strong> You can request a copy of the personal data we hold about you</li>
+                        <li><strong>Right to Rectification:</strong> You can request correction of inaccurate or incomplete data</li>
+                        <li><strong>Right to Erasure:</strong> You can request deletion of your personal data ("right to be forgotten")</li>
+                        <li><strong>Right to Restriction of Processing:</strong> You can request temporary restriction of processing in certain circumstances</li>
+                        <li><strong>Right to Data Portability:</strong> You can request your data in a structured, machine-readable format</li>
+                        <li><strong>Right to Object:</strong> You can object to our use of your data based on legitimate interests</li>
+                        <li><strong>Right to Withdraw Consent:</strong> You can withdraw consent for processing based on consent</li>
+                    </ul>
+                    <p>To exercise these rights, please contact us through our support server. We will respond to your request within 30 days.</p>
+                    
+                    <h2>10. Children's Privacy</h2>
+                    <p>Our services are not directed to individuals under the age of 16. We do not knowingly collect personal data from children under 16. If you become aware that a child has provided us with personal data, please contact us immediately.</p>
+                    
+                    <h2>11. Automated Decision-Making</h2>
+                    <p>Emerald Bot uses automated processes for moderation features (such as filtering inappropriate content). These automated decisions are necessary for the performance of our services. You have the right to request human intervention or challenge these decisions by contacting us.</p>
+                    
+                    <h2>12. Data Protection Officer</h2>
+                    <p>We have appointed a Data Protection Officer (DPO) to oversee compliance with this policy. You can contact our DPO through our support server.</p>
+                    
+                    <h2>13. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. We will notify users of any material changes through our support server and update the "Last updated" date. Continued use of Emerald Bot after changes constitutes acceptance of the updated policy.</p>
+                    
+                    <h2>14. Complaints</h2>
+                    <p>If you have concerns about our data practices, you have the right to lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens) or your local supervisory authority.</p>
+                    
+                    <h2>15. Contact Us</h2>
+                    <p>If you have questions about this Privacy Policy or our data practices, please contact us through our <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">support server</a>.</p>
                 </div>
             </div>
         </section>
@@ -906,53 +959,83 @@
             <div class="container">
                 <div class="legal-content">
                     <h1>Terms of Service</h1>
-                    <p>Last updated: <span id="tos-date"></span></p>
+                    <p><strong>Last updated:</strong> <span id="tos-date"></span></p>
                     
-                    <p>By using Emerald Bot ("the Bot"), you agree to these Terms of Service. Please read them carefully.</p>
+                    <p>By using Emerald Bot ("the Bot", "our", "we", or "us"), you agree to these Terms of Service. Please read them carefully. These Terms constitute a legally binding agreement between you and Emerald Bot.</p>
                     
                     <h2>1. Acceptance of Terms</h2>
-                    <p>By inviting and using Emerald Bot, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+                    <p>By inviting and using Emerald Bot on your Discord server, you acknowledge that you have read, understood, and agree to be bound by these Terms. If you are using the Bot on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.</p>
                     
                     <h2>2. Description of Service</h2>
-                    <p>Emerald Bot is a Discord bot that provides moderation, utility, and entertainment features for Discord servers. We reserve the right to modify or discontinue the service at any time.</p>
+                    <p>Emerald Bot is a Discord bot that provides moderation, utility, entertainment, and administrative features for Discord servers. We reserve the right to modify, suspend, or discontinue the service (or any part of it) at any time with or without notice.</p>
                     
-                    <h2>3. User Responsibilities</h2>
+                    <h2>3. Eligibility</h2>
+                    <p>To use Emerald Bot, you must:</p>
+                    <ul>
+                        <li>Be at least 16 years old (or the age of digital consent in your jurisdiction)</li>
+                        <li>Have the legal capacity to enter into binding contracts</li>
+                        <li>Comply with Discord's Terms of Service and Community Guidelines</li>
+                        <li>Have the necessary permissions to add bots to your Discord server</li>
+                    </ul>
+                    
+                    <h2>4. User Responsibilities</h2>
                     <p>You agree to:</p>
                     <ul>
+                        <li>Use the Bot in compliance with all applicable laws and regulations</li>
                         <li>Use the Bot in compliance with Discord's Terms of Service</li>
-                        <li>Not use the Bot for any illegal or unauthorized purpose</li>
-                        <li>Not abuse, harass, or exploit the Bot's features</li>
-                        <li>Not attempt to reverse engineer or modify the Bot</li>
+                        <li>Not use the Bot for any illegal, fraudulent, or unauthorized purpose</li>
+                        <li>Not abuse, harass, or exploit the Bot's features or API</li>
+                        <li>Not attempt to reverse engineer, decompile, or modify the Bot</li>
+                        <li>Not use the Bot to transmit malware, viruses, or other harmful code</li>
+                        <li>Not use the Bot to spam, phish, or engage in other deceptive practices</li>
+                        <li>Ensure that your use of the Bot complies with these Terms</li>
                     </ul>
                     
-                    <h2>4. Prohibited Uses</h2>
+                    <h2>5. Prohibited Uses</h2>
                     <p>You may not use the Bot to:</p>
                     <ul>
-                        <li>Harass, abuse, or harm others</li>
-                        <li>Distribute spam or malicious content</li>
-                        <li>Violate any applicable laws or regulations</li>
+                        <li>Harass, abuse, defame, threaten, or intimidate others</li>
+                        <li>Distribute spam, malicious content, or illegal material</li>
+                        <li>Violate any applicable laws, regulations, or third-party rights</li>
                         <li>Impersonate others or provide false information</li>
+                        <li>Collect or harvest personal information without consent</li>
+                        <li>Interfere with or disrupt the Bot's functionality or servers</li>
+                        <li>Engage in any activity that could damage, disable, or impair our services</li>
+                        <li>Promote or facilitate illegal activities</li>
+                        <li>Circumvent any security measures or access controls</li>
                     </ul>
                     
-                    <h2>5. Service Availability</h2>
-                    <p>We strive to maintain 99.9% uptime but cannot guarantee uninterrupted service. We reserve the right to temporarily suspend access for maintenance or security reasons.</p>
+                    <h2>6. Service Availability</h2>
+                    <p>We strive to maintain 99.9% uptime but cannot guarantee uninterrupted service. We reserve the right to temporarily suspend access for maintenance, security reasons, or to prevent abuse. We will make reasonable efforts to provide advance notice of planned downtime.</p>
                     
-                    <h2>6. Intellectual Property</h2>
-                    <p>All rights to the Bot, including its code, design, and features, are owned by Emerald Bot developers. You may not copy, modify, or distribute any part of the Bot without permission.</p>
+                    <h2>7. Intellectual Property</h2>
+                    <p>All rights to Emerald Bot, including its name, logo, code, design, features, and documentation, are owned by Emerald Bot developers or our licensors. You are granted a limited, non-exclusive, non-transferable license to use the Bot in accordance with these Terms. You may not copy, modify, distribute, or create derivative works based on the Bot without our express written permission.</p>
                     
-                    <h2>7. Limitation of Liability</h2>
-                    <p>We are not liable for any indirect, incidental, or consequential damages arising from your use of the Bot. Our total liability is limited to the amount you have paid for the service (if applicable).</p>
+                    <h2>8. User Content</h2>
+                    <p>You retain ownership of any content you create or share using the Bot. By using the Bot, you grant us a limited license to process and display your content solely for the purpose of providing the Bot's services. You are solely responsible for the content you create or share using the Bot.</p>
                     
-                    <h2>8. Termination</h2>
-                    <p>We reserve the right to terminate or suspend access to the Bot for any user who violates these Terms or for any other reason at our discretion.</p>
+                    <h2>9. Limitation of Liability</h2>
+                    <p>To the fullest extent permitted by applicable law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or goodwill, arising from your use of the Bot. Our total liability for any claims under these Terms shall not exceed the amount you have paid us for the service (if applicable) in the twelve months preceding the claim.</p>
                     
-                    <h2>9. Changes to Terms</h2>
-                    <p>We may update these Terms from time to time. Continued use of the Bot after changes constitutes acceptance of the new Terms.</p>
+                    <h2>10. Indemnification</h2>
+                    <p>You agree to indemnify and hold harmless Emerald Bot developers, employees, and affiliates from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising from your use of the Bot, your violation of these Terms, or your violation of any rights of another party.</p>
                     
-                    <h2>10. Governing Law</h2>
-                    <p>These Terms are governed by the laws of the United States. Any disputes shall be resolved in the courts of the United States.</p>
+                    <h2>11. Disclaimer of Warranties</h2>
+                    <p>The Bot is provided "as is" and "as available" without warranties of any kind, either express or implied. We disclaim all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Bot will be uninterrupted, error-free, or secure.</p>
                     
-                    <h2>11. Contact Information</h2>
+                    <h2>12. Termination</h2>
+                    <p>We reserve the right to terminate or suspend your access to the Bot at any time, with or without cause, and with or without notice. You may terminate these Terms by removing the Bot from your server. Upon termination, your right to use the Bot will immediately cease.</p>
+                    
+                    <h2>13. Governing Law and Dispute Resolution</h2>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of the Netherlands, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of the Bot shall be subject to the exclusive jurisdiction of the courts of the Netherlands.</p>
+                    
+                    <h2>14. Severability</h2>
+                    <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+                    
+                    <h2>15. Changes to Terms</h2>
+                    <p>We may update these Terms from time to time. We will notify users of material changes through our support server and update the "Last updated" date. Continued use of the Bot after changes constitutes acceptance of the new Terms.</p>
+                    
+                    <h2>16. Contact Information</h2>
                     <p>For questions about these Terms, please contact us through our <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">support server</a>.</p>
                 </div>
             </div>
