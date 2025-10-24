@@ -1,1265 +1,183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FRUITTRADE | Blox Fruits Trading & Values Platform</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #FF6B00;
-      --primary-dark: #E05A00;
-      --primary-light: #FF8C42;
-      --secondary: #00A8FF;
-      --secondary-dark: #0088CC;
-      --accent: #FFD700;
-      --dark: #121212;
-      --darker: #0A0A0A;
-      --light: #F5F5F5;
-      --gray: #2D2D2D;
-      --success: #4CAF50;
-      --danger: #F44336;
-      --warning: #FFC107;
-      --info: #2196F3;
-      --gradient: linear-gradient(135deg, var(--primary), var(--accent));
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emerald — Simple, Smart, Powerful</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    body {
-      background: var(--dark);
-      color: var(--light);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 107, 0, 0.1) 0%, transparent 30%),
-        radial-gradient(circle at 90% 80%, rgba(0, 168, 255, 0.1) 0%, transparent 30%);
-    }
-
-    /* Header & Navigation */
-    header {
-      background: rgba(18, 18, 18, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 107, 0, 0.3);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .logo img {
-      height: 50px;
-      filter: drop-shadow(0 0 5px var(--primary));
-    }
-
-    .logo-text {
-      font-size: 1.8rem;
-      font-weight: 700;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .badge {
-      background: var(--secondary);
-      color: white;
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      margin-left: 1rem;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .nav-link {
-      color: var(--light);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      position: relative;
-    }
-
-    .nav-link:hover {
-      background: rgba(255, 107, 0, 0.2);
-      color: var(--primary-light);
-    }
-
-    .nav-link.active {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
-    }
-
-    .nav-link i {
-      font-size: 1.1rem;
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-
-    .icon-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--light);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .icon-btn:hover {
-      background: rgba(255, 107, 0, 0.3);
-      transform: translateY(-2px);
-    }
-
-    .icon-btn .badge {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      font-size: 0.7rem;
-      padding: 0.2rem 0.5rem;
-      background: var(--danger);
-    }
-
-    .user-menu {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-    }
-
-    .user-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 600;
-      box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
-    }
-
-    /* Main Content */
-    main {
-      flex: 1;
-      padding: 2rem;
-      max-width: 1400px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, rgba(18, 18, 18, 0.8), rgba(10, 10, 10, 0.9));
-      border-radius: 15px;
-      padding: 3rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      border: 1px solid rgba(255, 107, 0, 0.2);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
-      animation: rotate 30s linear infinite;
-      z-index: -1;
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: #AAA;
-      max-width: 800px;
-      margin: 0 auto 2rem;
-      line-height: 1.6;
-    }
-
-    .search-bar {
-      display: flex;
-      max-width: 600px;
-      margin: 0 auto;
-      background: rgba(45, 45, 45, 0.7);
-      border-radius: 50px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 107, 0, 0.3);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .search-input {
-      flex: 1;
-      padding: 1rem 1.5rem;
-      background: transparent;
-      border: none;
-      color: var(--light);
-      font-size: 1rem;
-    }
-
-    .search-input::placeholder {
-      color: #666;
-    }
-
-    .search-button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0 1.5rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      font-weight: 600;
-    }
-
-    .search-button:hover {
-      background: var(--primary-dark);
-    }
-
-    /* Stats Grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .stat-card {
-      background: rgba(45, 45, 45, 0.7);
-      border-radius: 10px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 1px solid rgba(255, 107, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      border-color: var(--primary);
-    }
-
-    .stat-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .stat-value {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: var(--accent);
-    }
-
-    .stat-label {
-      color: #AAA;
-      font-size: 0.9rem;
-    }
-
-    /* Section Titles */
-    .section-title {
-      font-size: 2rem;
-      margin: 2rem 0 1rem;
-      color: var(--light);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .section-title::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--primary);
-      border-radius: 3px;
-    }
-
-    .section-title i {
-      color: var(--primary);
-    }
-
-    /* Tables */
-    .table-container {
-      background: rgba(45, 45, 45, 0.7);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 2rem;
-      border: 1px solid rgba(255, 107, 0, 0.2);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 1rem;
-      text-align: left;
-    }
-
-    th {
-      background: rgba(255, 107, 0, 0.2);
-      color: var(--primary-light);
-      font-weight: 600;
-    }
-
-    tr:nth-child(even) {
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    tr:hover {
-      background: rgba(255, 107, 0, 0.1);
-    }
-
-    .fruit-name {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-weight: 600;
-    }
-
-    .fruit-icon {
-      font-size: 1.5rem;
-      width: 30px;
-      text-align: center;
-    }
-
-    .value-change {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.2rem 0.8rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .value-change.up {
-      background: rgba(76, 175, 80, 0.2);
-      color: var(--success);
-    }
-
-    .value-change.down {
-      background: rgba(244, 67, 54, 0.2);
-      color: var(--danger);
-    }
-
-    .rarity-badge {
-      padding: 0.2rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .rarity-mythical {
-      background: rgba(156, 39, 176, 0.2);
-      color: #9C27B0;
-    }
-
-    .rarity-legendary {
-      background: rgba(255, 152, 0, 0.2);
-      color: #FF9800;
-    }
-
-    .rarity-rare {
-      background: rgba(33, 150, 243, 0.2);
-      color: var(--info);
-    }
-
-    .rarity-uncommon {
-      background: rgba(76, 175, 80, 0.2);
-      color: var(--success);
-    }
-
-    .rarity-common {
-      background: rgba(158, 158, 158, 0.2);
-      color: #9E9E9E;
-    }
-
-    /* Trading Cards */
-    .trading-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .trade-card {
-      background: rgba(45, 45, 45, 0.7);
-      border-radius: 10px;
-      padding: 1.5rem;
-      border: 1px solid rgba(255, 107, 0, 0.2);
-      transition: transform 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .trade-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      border-color: var(--primary);
-    }
-
-    .trade-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .trade-user {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .user-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--gray);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      background: var(--gradient);
-      color: white;
-    }
-
-    .user-name {
-      font-weight: 600;
-    }
-
-    .trade-time {
-      color: #AAA;
-      font-size: 0.8rem;
-    }
-
-    .trade-content {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-
-    .trade-items {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      width: 45%;
-    }
-
-    .trade-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 5px;
-    }
-
-    .trade-arrow {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-
-    .trade-actions {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-    }
-
-    .btn {
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex: 1;
-      justify-content: center;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      box-shadow: 0 3px 10px rgba(255, 107, 0, 0.3);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    /* Timers */
-    .timers-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .timer-card {
-      background: rgba(45, 45, 45, 0.7);
-      border-radius: 10px;
-      padding: 1.5rem;
-      border: 1px solid var(--secondary);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .timer-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--secondary);
-    }
-
-    .timer-header {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      color: var(--secondary);
-      font-weight: 600;
-    }
-
-    .timer-value {
-      font-size: 2rem;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--accent);
-      text-align: center;
-      margin: 1rem 0;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    }
-
-    .timer-description {
-      color: #AAA;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    /* New Features */
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .feature-card {
-      background: rgba(45, 45, 45, 0.7);
-      border-radius: 10px;
-      padding: 2rem;
-      border: 1px solid rgba(255, 107, 0, 0.2);
-      text-align: center;
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      border-color: var(--primary);
-    }
-
-    .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .feature-title {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--light);
-    }
-
-    .feature-description {
-      color: #AAA;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    /* Trading Value Chart */
-    .chart-container {
-      background: rgba(45, 45, 45, 0.7);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      border: 1px solid rgba(255, 107, 0, 0.2);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .chart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .chart-title {
-      font-size: 1.5rem;
-      color: var(--light);
-    }
-
-    .chart-actions {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .chart {
-      height: 300px;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 5px;
-      display: flex;
-      align-items: flex-end;
-      padding: 1rem;
-      gap: 10px;
-    }
-
-    .chart-bar {
-      flex: 1;
-      background: var(--primary);
-      position: relative;
-      border-radius: 5px 5px 0 0;
-      transition: height 0.5s ease;
-    }
-
-    .chart-bar-label {
-      position: absolute;
-      bottom: -25px;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #AAA;
-    }
-
-    /* Footer */
-    footer {
-      background: rgba(18, 18, 18, 0.9);
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(255, 107, 0, 0.3);
-      margin-top: 2rem;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .footer-link {
-      color: #AAA;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      font-weight: 500;
-    }
-
-    .footer-link:hover {
-      color: var(--primary);
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--light);
-      transition: all 0.3s ease;
-    }
-
-    .social-link:hover {
-      background: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    .copyright {
-      color: #666;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-    }
-
-    /* Animations */
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.4); }
-      70% { box-shadow: 0 0 0 10px rgba(255, 107, 0, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
-    }
-
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-      }
-
-      nav {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .hero {
-        padding: 2rem 1rem;
-      }
-
-      .hero-title {
-        font-size: 2rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1rem;
-      }
-
-      .search-bar {
-        flex-direction: column;
-        border-radius: 10px;
-      }
-
-      .search-input {
-        width: 100%;
-      }
-
-      .search-button {
-        padding: 1rem;
-        width: 100%;
-      }
-
-      .trade-content {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .trade-items {
-        width: 100%;
-      }
-
-      .trade-arrow {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        text-align: center;
-        margin: 0.5rem 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="https://i.imgur.com/JtLmQ4D.png" alt="FruitTrade Logo">
-      <span class="logo-text">FRUITTRADE</span>
-      <span class="badge">OFFICIAL</span>
-    </div>
-    <nav>
-      <a href="#" class="nav-link active"><i class="fas fa-home"></i> Home</a>
-      <a href="#" class="nav-link"><i class="fas fa-chart-line"></i> Values</a>
-      <a href="#" class="nav-link"><i class="fas fa-exchange-alt"></i> Trades</a>
-      <a href="#" class="nav-link"><i class="fas fa-calculator"></i> Calculator</a>
-      <a href="#" class="nav-link"><i class="fas fa-users"></i> Community</a>
-    </nav>
-    <div class="header-actions">
-      <button class="icon-btn pulse">
-        <i class="fas fa-bell"></i>
-        <span class="badge">3</span>
-      </button>
-      <div class="user-menu">
-        <div class="user-avatar">PT</div>
-      </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">
+        <!-- Simple emerald shield logo (inline SVG) -->
+        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#00FF84"/>
+              <stop offset="1" stop-color="#00c061"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#g)" d="M12 2l7 4v6c0 5-4 9-7 10-3-1-7-5-7-10V6l7-4z" />
+        </svg>
+        <span class="brand">Emerald</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#docs">Docs</a>
+        <a href="#support">Support</a>
+        <a href="#" class="btn ghost">Invite</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Open menu">☰</button>
     </div>
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="hero">
-      <h1 class="hero-title">Blox Fruits Trading Hub</h1>
-      <p class="hero-subtitle">The most accurate fruit values, real-time trading, and market analytics for Blox Fruits players. Trade smarter with our verified values and community-driven marketplace.</p>
-      <div class="search-bar">
-        <input type="text" class="search-input" placeholder="Search fruits, trades, or users...">
-        <button class="search-button"><i class="fas fa-search"></i> Search</button>
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">EMERALD: <span>Simple, Smart, Powerful.</span></h1>
+          <p class="lead">
+            Emerald is an all-in-one Discord bot for your server: moderation, leveling, tickets,
+            reaction roles, verification, anti-raid, logging, and handy utility commands — all in one place.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#" class="btn primary" id="invite-btn">+ Invite</a>
+            <a href="#" class="btn secondary" id="support-btn">? Support</a>
+          </div>
+
+          <div class="quick-stats">
+            <div><strong>✔️ Reliable</strong> Moderation</div>
+            <div><strong>🎫</strong> Ticketing & Support</div>
+            <div><strong>🏆</strong> Leveling & XP</div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- mockup cards -->
+          <div class="mockup">
+            <div class="phone">
+              <div class="phone-top"></div>
+              <div class="phone-screen">
+                <div class="card">
+                  <h4>Emerald • Invite</h4>
+                  <p>Manage, protect, and entertain your server — fast and simple.</p>
+                </div>
+                <div class="card small">
+                  <ul>
+                    <li>Moderation</li>
+                    <li>AutoMod</li>
+                    <li>Verification</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fas fa-apple-alt"></i></div>
-        <div class="stat-value">147</div>
-        <div class="stat-label">Fruits Tracked</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fas fa-exchange-alt"></i></div>
-        <div class="stat-value">892</div>
-        <div class="stat-label">Daily Trades</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fas fa-users"></i></div>
-        <div class="stat-value">24.5K</div>
-        <div class="stat-label">Active Traders</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fas fa-clock"></i></div>
-        <div class="stat-value">99.8%</div>
-        <div class="stat-label">Uptime</div>
-      </div>
-    </div>
+    <!-- Features -->
+    <section id="features" class="section container">
+      <h2 class="section-title">Features</h2>
+      <p class="section-sub">Everything you need to run a great Discord server.</p>
 
-    <h2 class="section-title"><i class="fas fa-clock"></i> Stock Timers</h2>
-    <div class="timers-container">
-      <div class="timer-card">
-        <div class="timer-header"><i class="fas fa-sync-alt"></i> Next Stock Reset</div>
-        <div class="timer-value" id="stock-timer">03:42:18</div>
-        <div class="timer-description">Regular stock refreshes every 4 hours</div>
-      </div>
-      <div class="timer-card">
-        <div class="timer-header"><i class="fas fa-cloud-sun"></i> Mirage Island</div>
-        <div class="timer-value" id="mirage-timer">01:12:45</div>
-        <div class="timer-description">Mirage stock refreshes every 2 hours</div>
-      </div>
-      <div class="timer-card">
-        <div class="timer-header"><i class="fas fa-store"></i> Premium Stock</div>
-        <div class="timer-value" id="premium-timer">12:38:21</div>
-        <div class="timer-description">Premium stock refreshes every 24 hours</div>
-      </div>
-    </div>
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="icon">🛡️</div>
+          <h3>Moderation</h3>
+          <p>Kick, ban, mute, purge messages, and AutoMod to keep your server clean.</p>
+        </article>
 
-    <h2 class="section-title"><i class="fas fa-chart-line"></i> Top Fruit Values</h2>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Fruit</th>
-            <th>Rarity</th>
-            <th>Value</th>
-            <th>Demand</th>
-            <th>Change (24h)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div class="fruit-name">
-                <span class="fruit-icon">🦊</span>
-                <span>Kitsune</span>
-              </div>
-            </td>
-            <td><span class="rarity-badge rarity-mythical">Mythical</span></td>
-            <td>50,000,000</td>
-            <td>Extreme</td>
-            <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 7.5%</span></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="fruit-name">
-                <span class="fruit-icon">🐉</span>
-                <span>Dragon (V2)</span>
-              </div>
-            </td>
-            <td><span class="rarity-badge rarity-mythical">Mythical</span></td>
-            <td>45,000,000</td>
-            <td>Very High</td>
-            <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 5.2%</span></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="fruit-name">
-                <span class="fruit-icon">🍩</span>
-                <span>Dough (Awakened)</span>
-              </div>
-            </td>
-            <td><span class="rarity-badge rarity-mythical">Mythical</span></td>
-            <td>38,500,000</td>
-            <td>High</td>
-            <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 2.1%</span></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="fruit-name">
-                <span class="fruit-icon">🧘</span>
-                <span>Buddha</span>
-              </div>
-            </td>
-            <td><span class="rarity-badge rarity-legendary">Legendary</span></td>
-            <td>30,000,000</td>
-            <td>Very High</td>
-            <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 3.8%</span></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="fruit-name">
-                <span class="fruit-icon">❄️</span>
-                <span>Yeti</span>
-              </div>
-            </td>
-            <td><span class="rarity-badge rarity-legendary">Legendary</span></td>
-            <td>28,000,000</td>
-            <td>Medium</td>
-            <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 1.5%</span></td>
-          </tr>
-          <tr>
-            <td>
-              <div class="fruit-name">
-                <span class="fruit-icon">🌋</span>
-                <span>Magma (Awakened)</span>
-              </div>
-            </td>
-            <td><span class="rarity-badge rarity-legendary">Legendary</span></td>
-            <td>26,500,000</td>
-            <td>High</td>
-            <td><span class="value-change up"><i class="fas fa-arrow-up"></i> 2.7%</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <article class="feature-card">
+          <div class="icon">🎫</div>
+          <h3>Tickets</h3>
+          <p>Support ticketing system for organised help channels between staff and members.</p>
+        </article>
 
-    <h2 class="section-title"><i class="fas fa-exchange-alt"></i> Recent Trades</h2>
-    <div class="trading-cards">
-      <div class="trade-card">
-        <div class="trade-header">
-          <div class="trade-user">
-            <div class="user-avatar">PT</div>
-            <div class="user-name">ProTrader123</div>
-          </div>
-          <div class="trade-time">5 min ago</div>
-        </div>
-        <div class="trade-content">
-          <div class="trade-items">
-            <div class="trade-item">
-              <span class="fruit-icon">🦊</span>
-              <span>Kitsune</span>
-            </div>
-          </div>
-          <div class="trade-arrow">
-            <i class="fas fa-long-arrow-alt-right"></i>
-          </div>
-          <div class="trade-items">
-            <div class="trade-item">
-              <span class="fruit-icon">🐉</span>
-              <span>Dragon</span>
-            </div>
-            <div class="trade-item">
-              <span class="fruit-icon">🧘</span>
-              <span>Buddha</span>
-            </div>
-            <div class="trade-item">
-              <i class="fas fa-coins"></i>
-              <span>$2,000,000</span>
-            </div>
-          </div>
-        </div>
-        <div class="trade-actions">
-          <button class="btn btn-secondary"><i class="fas fa-comment"></i> Chat</button>
-          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer</button>
-        </div>
-      </div>
+        <article class="feature-card">
+          <div class="icon">📜</div>
+          <h3>Logging</h3>
+          <p>Keep complete logs for moderation actions and important events.</p>
+        </article>
 
-      <div class="trade-card">
-        <div class="trade-header">
-          <div class="trade-user">
-            <div class="user-avatar">FM</div>
-            <div class="user-name">FruitMaster</div>
-          </div>
-          <div class="trade-time">12 min ago</div>
-        </div>
-        <div class="trade-content">
-          <div class="trade-items">
-            <div class="trade-item">
-              <span class="fruit-icon">❄️</span>
-              <span>Yeti</span>
-            </div>
-            <div class="trade-item">
-              <span class="fruit-icon">🌋</span>
-              <span>Magma</span>
-            </div>
-          </div>
-          <div class="trade-arrow">
-            <i class="fas fa-long-arrow-alt-right"></i>
-          </div>
-          <div class="trade-items">
-            <div class="trade-item">
-              <span class="fruit-icon">🍩</span>
-              <span>Dough (Awakened)</span>
-            </div>
-          </div>
-        </div>
-        <div class="trade-actions">
-          <button class="btn btn-secondary"><i class="fas fa-comment"></i> Chat</button>
-          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer</button>
-        </div>
-      </div>
+        <article class="feature-card">
+          <div class="icon">🔁</div>
+          <h3>Reaction Roles</h3>
+          <p>Let users self-assign roles via emoji reactions — perfect for roles and announcements.</p>
+        </article>
 
-      <div class="trade-card">
-        <div class="trade-header">
-          <div class="trade-user">
-            <div class="user-avatar">TK</div>
-            <div class="user-name">TradingKing</div>
-          </div>
-          <div class="trade-time">23 min ago</div>
-        </div>
-        <div class="trade-content">
-          <div class="trade-items">
-            <div class="trade-item">
-              <span class="fruit-icon">🧘</span>
-              <span>Buddha</span>
-            </div>
-          </div>
-          <div class="trade-arrow">
-            <i class="fas fa-long-arrow-alt-right"></i>
-          </div>
-          <div class="trade-items">
-            <div class="trade-item">
-              <span class="fruit-icon">🌋</span>
-              <span>Magma</span>
-            </div>
-            <div class="trade-item">
-              <span class="fruit-icon">🧊</span>
-              <span>Ice</span>
-            </div>
-            <div class="trade-item">
-              <i class="fas fa-coins"></i>
-              <span>$2,500,000</span>
-            </div>
-          </div>
-        </div>
-        <div class="trade-actions">
-          <button class="btn btn-secondary"><i class="fas fa-comment"></i> Chat</button>
-          <button class="btn btn-primary"><i class="fas fa-handshake"></i> Offer</button>
-        </div>
-      </div>
-    </div>
+        <article class="feature-card">
+          <div class="icon">🚫</div>
+          <h3>Anti-Raid</h3>
+          <p>Automatic detection and responses for raid-like activity and join spikes.</p>
+        </article>
 
-    <h2 class="section-title"><i class="fas fa-chart-bar"></i> Trading Value Trends</h2>
-    <div class="chart-container">
-      <div class="chart-header">
-        <div class="chart-title">Top Fruits Value Change (Last 7 Days)</div>
-        <div class="chart-actions">
-          <button class="btn btn-secondary">Weekly</button>
-          <button class="btn btn-primary">Monthly</button>
+        <article class="feature-card">
+          <div class="icon">🏆</div>
+          <h3>Leveling</h3>
+          <p>Engage your community with XP, levels, and rewards for active members.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Docs preview -->
+    <section id="docs" class="section dark-section">
+      <div class="container docs-grid">
+        <div>
+          <h2>Quick start & docs</h2>
+          <p>Commands, configuration, and dashboard docs to help you set up Emerald quickly.</p>
+          <a href="#" class="btn ghost">Read docs</a>
+        </div>
+        <div>
+          <h3>Get started</h3>
+          <ol>
+            <li>Invite Emerald to your server</li>
+            <li>Grant Manage Server permission</li>
+            <li>Use <code>/setup</code> to configure basics</li>
+          </ol>
         </div>
       </div>
-      <div class="chart" id="value-chart">
-        <!-- Chart will be generated by JS -->
-      </div>
-    </div>
+    </section>
 
-    <h2 class="section-title"><i class="fas fa-star"></i> New Features</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="feature-title">Trade Verification</div>
-        <div class="feature-description">All trades are verified by our team to ensure fair values and prevent scams.</div>
+    <!-- Support -->
+    <section id="support" class="section container">
+      <div class="support-grid">
+        <div class="support-left">
+          <h2>Need help?</h2>
+          <p>Join the support server or open a ticket — we're here to help.</p>
+          <a class="btn primary" href="#">Join Support</a>
+        </div>
+
+        <aside class="support-right">
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:hello@emerald.example">hello@emerald.example</a></p>
+          <p>Invite: <a href="#">placeholder invite</a></p>
+        </aside>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-        <div class="feature-title">Real-time Updates</div>
-        <div class="feature-description">Get instant notifications when fruit values change or new trades are posted.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-        <div class="feature-title">Mobile App</div>
-        <div class="feature-description">Trade on the go with our mobile app available for iOS and Android devices.</div>
-      </div>
-    </div>
+    </section>
   </main>
 
-  <footer>
-    <div class="footer-links">
-      <a href="#" class="footer-link">About Us</a>
-      <a href="#" class="footer-link">FAQ</a>
-      <a href="#" class="footer-link">Terms of Service</a>
-      <a href="#" class="footer-link">Privacy Policy</a>
-      <a href="#" class="footer-link">Contact</a>
-    </div>
-    <div class="social-links">
-      <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-      <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-      <a href="#" class="social-link"><i class="fab fa-reddit"></i></a>
-    </div>
-    <div class="copyright">
-      © 2023 FRUITTRADE HUB | Not affiliated with Roblox or Blox Fruits<br>
-      All game content and assets are trademarks of their respective owners
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Emerald Bot</div>
+      <div class="footer-links">
+        <a href="#">Invite</a> ·
+        <a href="#">Support</a> ·
+        <a href="#">Privacy</a>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Stock Timer Functionality
-    function startTimer(duration, display) {
-      let timer = duration, hours, minutes, seconds;
-      setInterval(function () {
-        hours = parseInt(timer / 3600, 10);
-        minutes = parseInt((timer % 3600) / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        hours = hours < 10 ? "0" + hours : hours;
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = hours + ":" + minutes + ":" + seconds;
-
-        if (--timer < 0) {
-          timer = duration;
-        }
-      }, 1000);
-    }
-
-    // Generate value chart
-    function generateValueChart() {
-      const fruits = ['Kitsune', 'Dragon', 'Dough', 'Buddha', 'Yeti', 'Magma'];
-      const chart = document.getElementById('value-chart');
-      
-      fruits.forEach(fruit => {
-        const maxHeight = 280; // Max height in pixels
-        const randomValue = Math.floor(Math.random() * maxHeight) + 20;
-        
-        const bar = document.createElement('div');
-        bar.className = 'chart-bar';
-        bar.style.height = `${randomValue}px`;
-        
-        const label = document.createElement('div');
-        label.className = 'chart-bar-label';
-        label.textContent = fruit;
-        
-        bar.appendChild(label);
-        chart.appendChild(bar);
-        
-        // Animate the bar
-        setTimeout(() => {
-          bar.style.height = `${randomValue}px`;
-        }, 100);
-      });
-    }
-
-    // Initialize when page loads
-    window.onload = function () {
-      // Set initial times (4 hours in seconds for stock, 2 hours for mirage, 24 hours for premium)
-      const stockDisplay = document.getElementById('stock-timer');
-      const mirageDisplay = document.getElementById('mirage-timer');
-      const premiumDisplay = document.getElementById('premium-timer');
-      
-      // Start with random times for demo purposes
-      startTimer(Math.floor(Math.random() * 14400), stockDisplay);
-      startTimer(Math.floor(Math.random() * 7200), mirageDisplay);
-      startTimer(Math.floor(Math.random() * 86400), premiumDisplay);
-      
-      // Generate the value chart
-      generateValueChart();
-      
-      // Add pulse animation to notification bell
-      const bell = document.querySelector('.icon-btn.pulse');
-      setInterval(() => {
-        bell.classList.toggle('pulse');
-        setTimeout(() => bell.classList.toggle('pulse'), 100);
-      }, 4000);
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
