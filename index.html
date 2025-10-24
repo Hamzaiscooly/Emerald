@@ -1,183 +1,641 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Emerald — Simple, Smart, Powerful</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerald Bot - Your AI Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2ea44f;
+            --primary-dark: #2c974b;
+            --text-color: #24292e;
+            --light-bg: #f6f8fa;
+            --border-color: #e1e4e8;
+            --shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+        
+        .logo i {
+            font-size: 24px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f6f8fa 0%, #e1e4e8 100%);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #586069;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light-bg);
+            transform: translateY(-2px);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #586069;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            background-color: var(--light-bg);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: #586069;
+        }
+        
+        /* Demo Section */
+        .demo {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .demo-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .demo-content {
+            flex: 1;
+        }
+        
+        .demo-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .demo-content p {
+            color: #586069;
+            margin-bottom: 30px;
+        }
+        
+        .demo-terminal {
+            flex: 1;
+            background-color: #24292e;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .terminal-header {
+            background-color: #1f2428;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-button.close {
+            background-color: #ff5f56;
+        }
+        
+        .terminal-button.minimize {
+            background-color: #ffbd2e;
+        }
+        
+        .terminal-button.maximize {
+            background-color: #27ca3f;
+        }
+        
+        .terminal-body {
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            color: #d1d5da;
+            min-height: 250px;
+        }
+        
+        .terminal-line {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .terminal-prompt {
+            color: #27ca3f;
+            margin-right: 10px;
+        }
+        
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background-color: #d1d5da;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1f2428;
+            color: #8b949e;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: #8b949e;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #30363d;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #30363d;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .demo-container {
+                flex-direction: column;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#">
-        <!-- Simple emerald shield logo (inline SVG) -->
-        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0" stop-color="#00FF84"/>
-              <stop offset="1" stop-color="#00c061"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#g)" d="M12 2l7 4v6c0 5-4 9-7 10-3-1-7-5-7-10V6l7-4z" />
-        </svg>
-        <span class="brand">Emerald</span>
-      </a>
-
-      <nav class="nav">
-        <a href="#features">Features</a>
-        <a href="#docs">Docs</a>
-        <a href="#support">Support</a>
-        <a href="#" class="btn ghost">Invite</a>
-      </nav>
-
-      <button class="nav-toggle" aria-label="Open menu">☰</button>
-    </div>
-  </header>
-
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <h1 class="hero-title">EMERALD: <span>Simple, Smart, Powerful.</span></h1>
-          <p class="lead">
-            Emerald is an all-in-one Discord bot for your server: moderation, leveling, tickets,
-            reaction roles, verification, anti-raid, logging, and handy utility commands — all in one place.
-          </p>
-
-          <div class="hero-cta">
-            <a href="#" class="btn primary" id="invite-btn">+ Invite</a>
-            <a href="#" class="btn secondary" id="support-btn">? Support</a>
-          </div>
-
-          <div class="quick-stats">
-            <div><strong>✔️ Reliable</strong> Moderation</div>
-            <div><strong>🎫</strong> Ticketing & Support</div>
-            <div><strong>🏆</strong> Leveling & XP</div>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <!-- mockup cards -->
-          <div class="mockup">
-            <div class="phone">
-              <div class="phone-top"></div>
-              <div class="phone-screen">
-                <div class="card">
-                  <h4>Emerald • Invite</h4>
-                  <p>Manage, protect, and entertain your server — fast and simple.</p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gem"></i>
+                    <span>Emerald Bot</span>
                 </div>
-                <div class="card small">
-                  <ul>
-                    <li>Moderation</li>
-                    <li>AutoMod</li>
-                    <li>Verification</li>
-                  </ul>
-                </div>
-              </div>
+                <nav>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </nav>
+                <button class="cta-button">Get Started</button>
             </div>
-          </div>
         </div>
-      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Meet Emerald, Your AI Assistant</h1>
+            <p>A powerful, intelligent bot designed to help you with tasks, answer questions, and automate workflows with natural language understanding.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-book"></i> Read Documentation
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="section container">
-      <h2 class="section-title">Features</h2>
-      <p class="section-sub">Everything you need to run a great Discord server.</p>
-
-      <div class="features-grid">
-        <article class="feature-card">
-          <div class="icon">🛡️</div>
-          <h3>Moderation</h3>
-          <p>Kick, ban, mute, purge messages, and AutoMod to keep your server clean.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="icon">🎫</div>
-          <h3>Tickets</h3>
-          <p>Support ticketing system for organised help channels between staff and members.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="icon">📜</div>
-          <h3>Logging</h3>
-          <p>Keep complete logs for moderation actions and important events.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="icon">🔁</div>
-          <h3>Reaction Roles</h3>
-          <p>Let users self-assign roles via emoji reactions — perfect for roles and announcements.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="icon">🚫</div>
-          <h3>Anti-Raid</h3>
-          <p>Automatic detection and responses for raid-like activity and join spikes.</p>
-        </article>
-
-        <article class="feature-card">
-          <div class="icon">🏆</div>
-          <h3>Leveling</h3>
-          <p>Engage your community with XP, levels, and rewards for active members.</p>
-        </article>
-      </div>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Emerald?</h2>
+                <p>Emerald comes packed with features that make it the perfect assistant for developers and teams.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Natural Language Processing</h3>
+                    <p>Emerald understands context and nuance in conversations, making interactions feel natural and intuitive.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Developer Friendly</h3>
+                    <p>Built with extensibility in mind. Easy to customize and integrate with your existing tools and workflows.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your data stays yours. Emerald processes information securely with privacy as a core principle.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Multiple Integrations</h3>
+                    <p>Connect Emerald with GitHub, Slack, Discord, and other platforms to streamline your workflow.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized for speed and performance. Get responses in milliseconds, even with complex queries.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Native</h3>
+                    <p>Deploy anywhere - on-premises, in the cloud, or hybrid environments. Emerald adapts to your infrastructure.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Docs preview -->
-    <section id="docs" class="section dark-section">
-      <div class="container docs-grid">
-        <div>
-          <h2>Quick start & docs</h2>
-          <p>Commands, configuration, and dashboard docs to help you set up Emerald quickly.</p>
-          <a href="#" class="btn ghost">Read docs</a>
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-content">
+                    <h2>Try Emerald Right Now</h2>
+                    <p>Interact with Emerald directly from your terminal. See how it can help with code generation, documentation lookup, and more.</p>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-terminal"></i> Install CLI Tool
+                    </a>
+                </div>
+                <div class="demo-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <div class="terminal-button close"></div>
+                            <div class="terminal-button minimize"></div>
+                            <div class="terminal-button maximize"></div>
+                        </div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> emerald --help
+                        </div>
+                        <div class="terminal-line">
+                            Emerald Bot CLI v1.2.0
+                        </div>
+                        <div class="terminal-line">
+                            Usage: emerald [command] [options]
+                        </div>
+                        <div class="terminal-line">
+                            <br>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> emerald generate component Button
+                        </div>
+                        <div class="terminal-line">
+                            Generating component 'Button'...
+                        </div>
+                        <div class="terminal-line">
+                            Component created at src/components/Button.js
+                        </div>
+                        <div class="terminal-line">
+                            <br>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> emerald explain git rebase
+                        </div>
+                        <div class="terminal-line">
+                            Git rebase is a command that allows you to...
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> <span class="terminal-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3>Get started</h3>
-          <ol>
-            <li>Invite Emerald to your server</li>
-            <li>Grant Manage Server permission</li>
-            <li>Use <code>/setup</code> to configure basics</li>
-          </ol>
-        </div>
-      </div>
     </section>
 
-    <!-- Support -->
-    <section id="support" class="section container">
-      <div class="support-grid">
-        <div class="support-left">
-          <h2>Need help?</h2>
-          <p>Join the support server or open a ticket — we're here to help.</p>
-          <a class="btn primary" href="#">Join Support</a>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Emerald Bot</h3>
+                    <p>An intelligent assistant designed to make developers' lives easier.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Releases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">GitHub Discussions</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Discord Server</a></li>
+                        <li><a href="#">Contributing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Emerald Bot. All rights reserved.</p>
+            </div>
         </div>
+    </footer>
 
-        <aside class="support-right">
-          <h4>Contact</h4>
-          <p>Email: <a href="mailto:hello@emerald.example">hello@emerald.example</a></p>
-          <p>Invite: <a href="#">placeholder invite</a></p>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> Emerald Bot</div>
-      <div class="footer-links">
-        <a href="#">Invite</a> ·
-        <a href="#">Support</a> ·
-        <a href="#">Privacy</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    <script>
+        // Simple animation for the terminal
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.terminal-cursor');
+            setInterval(() => {
+                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }, 500);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
