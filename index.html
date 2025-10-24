@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emerald Bot - Discord Moderation & Fun</title>
+    <title>Emerald Bot - Your All-In-One Discord Companion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -366,6 +366,31 @@
             50% { opacity: 0; }
         }
         
+        /* Why Choose Section */
+        .why-choose {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .benefit-icon {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-top: 5px;
+        }
+        
         /* Footer */
         footer {
             background-color: #1f2428;
@@ -485,10 +510,10 @@
                     </ul>
                 </nav>
                 <div class="header-buttons">
-                    <a href="#" class="secondary-button">
+                    <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" class="secondary-button" target="_blank">
                         <i class="fab fa-discord"></i> Join Support Server
                     </a>
-                    <a href="#" class="cta-button">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" class="cta-button" target="_blank">
                         <i class="fas fa-plus"></i> Invite to Server
                     </a>
                 </div>
@@ -499,13 +524,13 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Meet Emerald, Your Discord Assistant</h1>
-            <p>A powerful, intelligent Discord bot designed for moderation, fun commands, and server management with advanced features.</p>
+            <h1>🌿 Emerald — Your All-In-One Discord Companion 💎</h1>
+            <p>Meet Emerald, the ultimate bot built to keep your community safe, active, and thriving! 🌟<br>From moderation to leveling — Emerald does it all with style and simplicity. ⚙️</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">
+                <a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" class="btn btn-primary" target="_blank">
                     <i class="fas fa-plus"></i> Invite to Server
                 </a>
-                <a href="#" class="btn btn-secondary">
+                <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" class="btn btn-secondary" target="_blank">
                     <i class="fab fa-discord"></i> Join Support Server
                 </a>
             </div>
@@ -516,7 +541,7 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Emerald Bot Commands & Features</h2>
+                <h2>Emerald Bot Features</h2>
                 <p>Discover all the powerful features Emerald brings to your Discord server</p>
             </div>
             <div class="features-grid">
@@ -524,43 +549,91 @@
                     <div class="feature-icon">
                         <i class="fas fa-gavel"></i>
                     </div>
-                    <h3>Moderation Commands</h3>
-                    <p>Keep your server safe with kick, ban, mute, warn, and automated moderation features including bad word filtering.</p>
+                    <h3>🛡️ Moderation</h3>
+                    <p>Keep your server clean and under control with powerful tools. Kick, ban, mute, and warn users. Automatic logging & customizable filters. Quick commands to act fast when needed.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-music"></i>
+                        <i class="fas fa-door-open"></i>
                     </div>
-                    <h3>Music & Entertainment</h3>
-                    <p>Play music from YouTube, Spotify, and SoundCloud. Enjoy games, memes, and fun commands to engage your community.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Utility Commands</h3>
-                    <p>User info, server stats, avatar, weather, translation, and many more useful utilities for your server.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Auto Moderation</h3>
-                    <p>Automatically detect and take action against spam, bad words, excessive mentions, and other rule violations.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Leveling System</h3>
-                    <p>Reward active members with an XP leveling system, leaderboards, and customizable rank cards.</p>
+                    <h3>👋 Welcome & Goodbye</h3>
+                    <p>Make every member feel at home! Send beautiful welcome & leave messages (with embeds or images). Auto-assign roles to newcomers. Customizable messages for any channel.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-ticket-alt"></i>
                     </div>
-                    <h3>Ticketing System</h3>
-                    <p>Create support tickets, suggestion channels, and organized help systems for your community.</p>
+                    <h3>🎟️ Ticket System</h3>
+                    <p>Need help? Emerald's got you covered! Create and manage support tickets with ease. Secure, organized ticket channels. Optional transcripts for record-keeping.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>💠 Reaction Roles</h3>
+                    <p>Let your members choose their own roles! Add emojis to messages for role selection. Perfect for self-roles, access control, or fun community roles.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>🧱 Level System</h3>
+                    <p>Keep your community active and rewarded! Gain XP for chatting. Level up & unlock special roles. Track progress on leaderboards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>🧭 Information & Utilities</h3>
+                    <p>All the tools you need, all in one place! Server info & user lookup. Ping, uptime, and system stats. Helpful utility commands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>💚 Why Choose Emerald?</h2>
+                <p>Discover what makes Emerald the perfect choice for your Discord server</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h3>Easy Setup</h3>
+                        <p>Perfect for any community size with simple configuration</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div>
+                        <h3>Fast & Reliable</h3>
+                        <p>Lightning-fast responses with 99.9% uptime</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div>
+                        <h3>Fully Customizable</h3>
+                        <p>Tailor Emerald to match your server's style and needs</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h3>Active Support</h3>
+                        <p>Regular updates and dedicated support team</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -572,8 +645,8 @@
             <div class="demo-container">
                 <div class="demo-content">
                     <h2>See Emerald in Action</h2>
-                    <p>Watch how Emerald automatically moderates your server and keeps it clean from inappropriate content.</p>
-                    <a href="#" class="btn btn-primary">
+                    <p>Watch how Emerald automatically moderates your server and keeps it clean from inappropriate content while providing useful features to your community.</p>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" class="btn btn-primary" target="_blank">
                         <i class="fas fa-plus"></i> Invite Emerald
                     </a>
                 </div>
@@ -611,6 +684,16 @@
                             <span class="terminal-prompt">#</span> Auto-moderation: Removed inappropriate message in #general
                         </div>
                         <div class="terminal-line">
+                            <br>
+                        </div>
+                        <div class="discord-message bot-response">
+                            <div class="message-author">Emerald Bot:</div>
+                            <div class="message-content">🎉 Welcome to the server, NewUser123! Check out #rules and #roles to get started.</div>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">#</span> Welcome message sent to NewUser123
+                        </div>
+                        <div class="terminal-line">
                             <span class="terminal-prompt">#</span> <span class="terminal-cursor"></span>
                         </div>
                     </div>
@@ -629,16 +712,16 @@
                     <div class="social-links">
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#features">Commands</a></li>
-                        <li><a href="#">Invite Bot</a></li>
-                        <li><a href="#">Support Server</a></li>
-                        <li><a href="#">Documentation</a></li>
+                        <li><a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" target="_blank">Invite Bot</a></li>
+                        <li><a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">Support Server</a></li>
+                        <li><a href="#docs">Documentation</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -652,7 +735,7 @@
                 <div class="footer-column">
                     <h3>Support</h3>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">Contact Us</a></li>
                         <li><a href="#">FAQ</a></li>
                         <li><a href="#">Report a Bug</a></li>
                         <li><a href="#">Feature Request</a></li>
