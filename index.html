@@ -391,6 +391,89 @@
             margin-top: 5px;
         }
         
+        /* Status Page Styles */
+        .status-page {
+            padding: 80px 0;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .status-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .status-icon {
+            font-size: 64px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        /* Legal Pages Styles */
+        .legal-page {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+            min-height: 80vh;
+        }
+        
+        .legal-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .legal-content h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        
+        .legal-content h2 {
+            font-size: 24px;
+            margin: 30px 0 15px;
+            color: var(--text-color);
+        }
+        
+        .legal-content h3 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+            color: var(--text-color);
+        }
+        
+        .legal-content p {
+            margin-bottom: 15px;
+            color: #586069;
+        }
+        
+        .legal-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .legal-content li {
+            margin-bottom: 10px;
+            color: #586069;
+        }
+        
         /* Footer */
         footer {
             background-color: #1f2428;
@@ -458,6 +541,19 @@
             font-size: 14px;
         }
         
+        /* Page Navigation */
+        .page-nav {
+            display: none;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-content {
@@ -490,6 +586,10 @@
             .features-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .status-card, .legal-content {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -504,9 +604,10 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#demo">Privacy & Policy</a></li>
-                        <li><a href="#docs">Terms of Service</a></li>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="status">Status</a></li>
+                        <li><a href="#" class="nav-link" data-page="privacy">Privacy & Policy</a></li>
+                        <li><a href="#" class="nav-link" data-page="tos">Terms of Service</a></li>
                     </ul>
                 </nav>
                 <div class="header-buttons">
@@ -521,186 +622,342 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>🌿 Emerald — Your All-In-One Discord Companion 💎</h1>
-            <p>Meet Emerald, the ultimate bot built to keep your community safe, active, and thriving! 🌟<br>From moderation to leveling — Emerald does it all with style and simplicity. ⚙️</p>
-            <div class="hero-buttons">
-                <a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-plus"></i> Invite to Server
-                </a>
-                <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" class="btn btn-secondary" target="_blank">
-                    <i class="fab fa-discord"></i> Join Support Server
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Emerald Bot Features</h2>
-                <p>Discover all the powerful features Emerald brings to your Discord server</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3>🛡️ Moderation</h3>
-                    <p>Keep your server clean and under control with powerful tools. Kick, ban, mute, and warn users. Automatic logging & customizable filters. Quick commands to act fast when needed.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-door-open"></i>
-                    </div>
-                    <h3>👋 Welcome & Goodbye</h3>
-                    <p>Make every member feel at home! Send beautiful welcome & leave messages (with embeds or images). Auto-assign roles to newcomers. Customizable messages for any channel.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-ticket-alt"></i>
-                    </div>
-                    <h3>🎟️ Ticket System</h3>
-                    <p>Need help? Emerald's got you covered! Create and manage support tickets with ease. Secure, organized ticket channels. Optional transcripts for record-keeping.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-smile"></i>
-                    </div>
-                    <h3>💠 Reaction Roles</h3>
-                    <p>Let your members choose their own roles! Add emojis to messages for role selection. Perfect for self-roles, access control, or fun community roles.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>🧱 Level System</h3>
-                    <p>Keep your community active and rewarded! Gain XP for chatting. Level up & unlock special roles. Track progress on leaderboards.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-info-circle"></i>
-                    </div>
-                    <h3>🧭 Information & Utilities</h3>
-                    <p>All the tools you need, all in one place! Server info & user lookup. Ping, uptime, and system stats. Helpful utility commands.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Section -->
-    <section class="why-choose">
-        <div class="container">
-            <div class="section-title">
-                <h2>💚 Why Choose Emerald?</h2>
-                <p>Discover what makes Emerald the perfect choice for your Discord server</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div>
-                        <h3>Easy Setup</h3>
-                        <p>Perfect for any community size with simple configuration</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div>
-                        <h3>Fast & Reliable</h3>
-                        <p>Lightning-fast responses with 99.9% uptime</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <div>
-                        <h3>Fully Customizable</h3>
-                        <p>Tailor Emerald to match your server's style and needs</p>
-                    </div>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div>
-                        <h3>Active Support</h3>
-                        <p>Regular updates and dedicated support team</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo Section -->
-    <section class="demo" id="demo">
-        <div class="container">
-            <div class="demo-container">
-                <div class="demo-content">
-                    <h2>See Emerald in Action</h2>
-                    <p>Watch how Emerald automatically moderates your server and keeps it clean from inappropriate content while providing useful features to your community.</p>
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>🌿 Emerald — Your All-In-One Discord Companion 💎</h1>
+                <p>Meet Emerald, the ultimate bot built to keep your community safe, active, and thriving! 🌟<br>From moderation to leveling — Emerald does it all with style and simplicity. ⚙️</p>
+                <div class="hero-buttons">
                     <a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-plus"></i> Invite Emerald
+                        <i class="fas fa-plus"></i> Invite to Server
+                    </a>
+                    <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-discord"></i> Join Support Server
                     </a>
                 </div>
-                <div class="demo-terminal">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <div class="terminal-button close"></div>
-                            <div class="terminal-button minimize"></div>
-                            <div class="terminal-button maximize"></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Emerald Bot Features</h2>
+                    <p>Discover all the powerful features Emerald brings to your Discord server</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>🛡️ Moderation</h3>
+                        <p>Keep your server clean and under control with powerful tools. Kick, ban, mute, and warn users. Automatic logging & customizable filters. Quick commands to act fast when needed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h3>👋 Welcome & Goodbye</h3>
+                        <p>Make every member feel at home! Send beautiful welcome & leave messages (with embeds or images). Auto-assign roles to newcomers. Customizable messages for any channel.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h3>🎟️ Ticket System</h3>
+                        <p>Need help? Emerald's got you covered! Create and manage support tickets with ease. Secure, organized ticket channels. Optional transcripts for record-keeping.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3>💠 Reaction Roles</h3>
+                        <p>Let your members choose their own roles! Add emojis to messages for role selection. Perfect for self-roles, access control, or fun community roles.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>🧱 Level System</h3>
+                        <p>Keep your community active and rewarded! Gain XP for chatting. Level up & unlock special roles. Track progress on leaderboards.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>🧭 Information & Utilities</h3>
+                        <p>All the tools you need, all in one place! Server info & user lookup. Ping, uptime, and system stats. Helpful utility commands.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Section -->
+        <section class="why-choose">
+            <div class="container">
+                <div class="section-title">
+                    <h2>💚 Why Choose Emerald?</h2>
+                    <p>Discover what makes Emerald the perfect choice for your Discord server</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h3>Easy Setup</h3>
+                            <p>Perfect for any community size with simple configuration</p>
                         </div>
                     </div>
-                    <div class="terminal-body">
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">#</span> Emerald Bot Online - v2.1.4
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-rocket"></i>
                         </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">#</span> Connected to 3 servers | 2,341 users
+                        <div>
+                            <h3>Fast & Reliable</h3>
+                            <p>Lightning-fast responses with 99.9% uptime</p>
                         </div>
-                        <div class="terminal-line">
-                            <br>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-palette"></i>
                         </div>
-                        <div class="discord-message">
-                            <div class="message-author">User123:</div>
-                            <div class="message-content">This is a really cool server!</div>
+                        <div>
+                            <h3>Fully Customizable</h3>
+                            <p>Tailor Emerald to match your server's style and needs</p>
                         </div>
-                        <div class="discord-message">
-                            <div class="message-author">ToxicUser42:</div>
-                            <div class="message-content">You guys are all ******* idiots!</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
                         </div>
-                        <div class="discord-message bot-response">
-                            <div class="message-author">Emerald Bot:</div>
-                            <div class="message-content">⚠️ Deleted message from ToxicUser42 for bad word usage. User has been warned (1/3).</div>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">#</span> Auto-moderation: Removed inappropriate message in #general
-                        </div>
-                        <div class="terminal-line">
-                            <br>
-                        </div>
-                        <div class="discord-message bot-response">
-                            <div class="message-author">Emerald Bot:</div>
-                            <div class="message-content">🎉 Welcome to the server, NewUser123! Check out #rules and #roles to get started.</div>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">#</span> Welcome message sent to NewUser123
-                        </div>
-                        <div class="terminal-line">
-                            <span class="terminal-prompt">#</span> <span class="terminal-cursor"></span>
+                        <div>
+                            <h3>Active Support</h3>
+                            <p>Regular updates and dedicated support team</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Demo Section -->
+        <section class="demo" id="demo">
+            <div class="container">
+                <div class="demo-container">
+                    <div class="demo-content">
+                        <h2>See Emerald in Action</h2>
+                        <p>Watch how Emerald automatically moderates your server and keeps it clean from inappropriate content while providing useful features to your community.</p>
+                        <a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-plus"></i> Invite Emerald
+                        </a>
+                    </div>
+                    <div class="demo-terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <div class="terminal-button close"></div>
+                                <div class="terminal-button minimize"></div>
+                                <div class="terminal-button maximize"></div>
+                            </div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">#</span> Emerald Bot Online - v2.1.4
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">#</span> Connected to 3 servers | 2,341 users
+                            </div>
+                            <div class="terminal-line">
+                                <br>
+                            </div>
+                            <div class="discord-message">
+                                <div class="message-author">User123:</div>
+                                <div class="message-content">This is a really cool server!</div>
+                            </div>
+                            <div class="discord-message">
+                                <div class="message-author">ToxicUser42:</div>
+                                <div class="message-content">You guys are all ******* idiots!</div>
+                            </div>
+                            <div class="discord-message bot-response">
+                                <div class="message-author">Emerald Bot:</div>
+                                <div class="message-content">⚠️ Deleted message from ToxicUser42 for bad word usage. User has been warned (1/3).</div>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">#</span> Auto-moderation: Removed inappropriate message in #general
+                            </div>
+                            <div class="terminal-line">
+                                <br>
+                            </div>
+                            <div class="discord-message bot-response">
+                                <div class="message-author">Emerald Bot:</div>
+                                <div class="message-content">🎉 Welcome to the server, NewUser123! Check out #rules and #roles to get started.</div>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">#</span> Welcome message sent to NewUser123
+                            </div>
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">#</span> <span class="terminal-cursor"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Status Page -->
+    <div id="status" class="page">
+        <section class="status-page">
+            <div class="container">
+                <div class="status-card">
+                    <div class="status-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="status-badge">All Systems Operational</div>
+                    <h1>Service Status</h1>
+                    <p>Both the Emerald Bot and this website are fully functional and operating normally.</p>
+                    
+                    <div style="margin-top: 40px; text-align: left;">
+                        <h3 style="text-align: center;">System Status</h3>
+                        <div style="background: #f6f8fa; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #e1e4e8;">
+                                <span>Emerald Bot</span>
+                                <span style="color: var(--primary-color); font-weight: 600;">Operational</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #e1e4e8;">
+                                <span>Website</span>
+                                <span style="color: var(--primary-color); font-weight: 600;">Operational</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <span>API Services</span>
+                                <span style="color: var(--primary-color); font-weight: 600;">Operational</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 30px; font-size: 14px; color: #586069;">
+                        Last updated: <span id="current-date"></span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Page -->
+    <div id="privacy" class="page">
+        <section class="legal-page">
+            <div class="container">
+                <div class="legal-content">
+                    <h1>Privacy Policy</h1>
+                    <p>Last updated: <span id="privacy-date"></span></p>
+                    
+                    <p>Thank you for using Emerald Bot. This Privacy Policy explains how we collect, use, and protect your information when you use our Discord bot.</p>
+                    
+                    <h2>1. Information We Collect</h2>
+                    <p>Emerald Bot may collect and store the following information:</p>
+                    <ul>
+                        <li><strong>Server Information:</strong> Basic server details such as server ID, name, and configuration settings</li>
+                        <li><strong>User Information:</strong> User IDs and usernames for functionality like moderation, leveling, and welcome messages</li>
+                        <li><strong>Message Content:</strong> Limited message content for moderation purposes (filtered for inappropriate content)</li>
+                        <li><strong>Command Usage:</strong> Data about commands used to improve our services</li>
+                    </ul>
+                    
+                    <h2>2. How We Use Your Information</h2>
+                    <p>We use the collected information to:</p>
+                    <ul>
+                        <li>Provide and maintain the bot's functionality</li>
+                        <li>Improve and customize the user experience</li>
+                        <li>Monitor for abuse and enforce our Terms of Service</li>
+                        <li>Respond to user support requests</li>
+                    </ul>
+                    
+                    <h2>3. Data Storage and Security</h2>
+                    <p>We implement appropriate security measures to protect your data. However, no method of transmission over the Internet is 100% secure.</p>
+                    
+                    <h2>4. Data Retention</h2>
+                    <p>We retain data only as long as necessary to provide our services. You can request data deletion by contacting us through our support server.</p>
+                    
+                    <h2>5. Third-Party Services</h2>
+                    <p>We do not sell or share your data with third parties. The bot only interacts with Discord's API to provide its services.</p>
+                    
+                    <h2>6. Your Rights</h2>
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li>Access the personal data we hold about you</li>
+                        <li>Request correction or deletion of your data</li>
+                        <li>Object to our use of your data</li>
+                        <li>Request data portability</li>
+                    </ul>
+                    
+                    <h2>7. Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. We will notify users of any material changes through our support server.</p>
+                    
+                    <h2>8. Contact Us</h2>
+                    <p>If you have questions about this Privacy Policy, please contact us through our <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">support server</a>.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Terms of Service Page -->
+    <div id="tos" class="page">
+        <section class="legal-page">
+            <div class="container">
+                <div class="legal-content">
+                    <h1>Terms of Service</h1>
+                    <p>Last updated: <span id="tos-date"></span></p>
+                    
+                    <p>By using Emerald Bot ("the Bot"), you agree to these Terms of Service. Please read them carefully.</p>
+                    
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By inviting and using Emerald Bot, you acknowledge that you have read, understood, and agree to be bound by these Terms.</p>
+                    
+                    <h2>2. Description of Service</h2>
+                    <p>Emerald Bot is a Discord bot that provides moderation, utility, and entertainment features for Discord servers. We reserve the right to modify or discontinue the service at any time.</p>
+                    
+                    <h2>3. User Responsibilities</h2>
+                    <p>You agree to:</p>
+                    <ul>
+                        <li>Use the Bot in compliance with Discord's Terms of Service</li>
+                        <li>Not use the Bot for any illegal or unauthorized purpose</li>
+                        <li>Not abuse, harass, or exploit the Bot's features</li>
+                        <li>Not attempt to reverse engineer or modify the Bot</li>
+                    </ul>
+                    
+                    <h2>4. Prohibited Uses</h2>
+                    <p>You may not use the Bot to:</p>
+                    <ul>
+                        <li>Harass, abuse, or harm others</li>
+                        <li>Distribute spam or malicious content</li>
+                        <li>Violate any applicable laws or regulations</li>
+                        <li>Impersonate others or provide false information</li>
+                    </ul>
+                    
+                    <h2>5. Service Availability</h2>
+                    <p>We strive to maintain 99.9% uptime but cannot guarantee uninterrupted service. We reserve the right to temporarily suspend access for maintenance or security reasons.</p>
+                    
+                    <h2>6. Intellectual Property</h2>
+                    <p>All rights to the Bot, including its code, design, and features, are owned by Emerald Bot developers. You may not copy, modify, or distribute any part of the Bot without permission.</p>
+                    
+                    <h2>7. Limitation of Liability</h2>
+                    <p>We are not liable for any indirect, incidental, or consequential damages arising from your use of the Bot. Our total liability is limited to the amount you have paid for the service (if applicable).</p>
+                    
+                    <h2>8. Termination</h2>
+                    <p>We reserve the right to terminate or suspend access to the Bot for any user who violates these Terms or for any other reason at our discretion.</p>
+                    
+                    <h2>9. Changes to Terms</h2>
+                    <p>We may update these Terms from time to time. Continued use of the Bot after changes constitutes acceptance of the new Terms.</p>
+                    
+                    <h2>10. Governing Law</h2>
+                    <p>These Terms are governed by the laws of the United States. Any disputes shall be resolved in the courts of the United States.</p>
+                    
+                    <h2>11. Contact Information</h2>
+                    <p>For questions about these Terms, please contact us through our <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">support server</a>.</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -718,18 +975,17 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#features">Commands</a></li>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="status">Status</a></li>
                         <li><a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" target="_blank">Invite Bot</a></li>
                         <li><a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">Support Server</a></li>
-                        <li><a href="#docs">Documentation</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Legal</h3>
                     <ul>
-                        <li><a href="#demo">Privacy Policy</a></li>
-                        <li><a href="#docs">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#" class="nav-link" data-page="privacy">Privacy Policy</a></li>
+                        <li><a href="#" class="nav-link" data-page="tos">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -749,29 +1005,53 @@
     </footer>
 
     <script>
-        // Simple animation for the terminal
+        // Set current date for status and legal pages
+        const currentDate = new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        
+        document.getElementById('current-date').textContent = currentDate;
+        document.getElementById('privacy-date').textContent = currentDate;
+        document.getElementById('tos-date').textContent = currentDate;
+        
+        // Page navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.terminal-cursor');
-            setInterval(() => {
-                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-            }, 500);
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
             
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
+            // Function to show a specific page and hide others
+            function showPage(pageId) {
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                }
+                
+                // Scroll to top when changing pages
+                window.scrollTo(0, 0);
+            }
+            
+            // Add click event listeners to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
                 });
             });
+            
+            // Simple animation for the terminal
+            const cursor = document.querySelector('.terminal-cursor');
+            if (cursor) {
+                setInterval(() => {
+                    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+                }, 500);
+            }
         });
     </script>
 </body>
