@@ -1,141 +1,1493 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FruitTrade - Mythical Tier List</title>
-<style>
-  body {
-    background-color: #121212;
-    color: #eee;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-  }
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #facc15;
-    text-align: center;
-    text-shadow: 0 0 8px #facc15;
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 900px;
-    background-color: #1f1f1f;
-    box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  thead {
-    background: linear-gradient(90deg, #facc15, #d99a00);
-  }
-  thead th {
-    padding: 15px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #121212;
-    text-align: center;
-    border-right: 1px solid rgba(255,255,255,0.15);
-  }
-  thead th:last-child {
-    border-right: none;
-  }
-  tbody tr {
-    border-bottom: 1px solid #333;
-    transition: background-color 0.3s ease;
-  }
-  tbody tr:hover {
-    background-color: #333333;
-  }
-  tbody td {
-    padding: 15px;
-    font-size: 1rem;
-    text-align: center;
-    color: #ddd;
-    border-right: 1px solid rgba(255,255,255,0.1);
-  }
-  tbody td:first-child {
-    font-weight: 600;
-    text-align: left;
-    padding-left: 20px;
-  }
-  tbody td:last-child {
-    border-right: none;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerald Bot - Complete Command List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #10B981;
+            --primary-dark: #059669;
+            --primary-light: #34D399;
+            --discord-color: #5865F2;
+            --discord-dark: #4752C4;
+            --text-color: #1F2937;
+            --text-light: #6B7280;
+            --light-bg: #F9FAFB;
+            --card-bg: #FFFFFF;
+            --border-color: #E5E7EB;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            --discord-gradient: linear-gradient(135deg, var(--discord-color) 0%, var(--discord-dark) 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            font-size: 28px;
+            transition: var(--transition);
+        }
+        
+        .logo:hover i {
+            transform: rotate(15deg);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .cta-button, .secondary-button {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .cta-button {
+            background: var(--discord-gradient);
+            color: white;
+            border: none;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .secondary-button {
+            background-color: white;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+        }
+        
+        .secondary-button:hover {
+            background-color: var(--light-bg);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2310b981' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+            max-width: 700px;
+        }
+        
+        .search-container {
+            max-width: 600px;
+            margin: 40px auto 0;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 16px 50px 16px 20px;
+            border-radius: 50px;
+            border: 2px solid var(--border-color);
+            font-size: 16px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            font-size: 20px;
+        }
+        
+        /* Commands Section */
+        .commands-section {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+        
+        .commands-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 12px 24px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .tab-button.active {
+            background: var(--gradient);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .commands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .command-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+        
+        .command-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .command-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .command-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+        
+        .command-category {
+            background: var(--light-bg);
+            color: var(--text-light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        .command-description {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .command-usage {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        
+        .command-permissions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .permission-badge {
+            background: #e5e7eb;
+            color: var(--text-color);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        .permission-badge.admin {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        
+        .permission-badge.moderator {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+            grid-column: 1 / -1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #9CA3AF;
+            padding: 70px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column a {
+            color: #9CA3AF;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #1F2937;
+            border-radius: 50%;
+            transition: var(--transition);
+            color: #9CA3AF;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #1F2937;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .commands-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-buttons {
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .commands-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-gem"></i>
+                    <span>Emerald Bot</span>
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="commands.html" class="active">Commands</a></li>
+                        <li><a href="status.html">Status</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="tos.html">Terms</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-buttons">
+                    <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" class="secondary-button" target="_blank">
+                        <i class="fab fa-discord"></i> Support
+                    </a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" class="cta-button" target="_blank">
+                        <i class="fas fa-plus"></i> Invite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <h2>🍍 FruitTrade - Blox Fruits Tier List 🍍</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Emerald Bot Commands</h1>
+                <p>Discover all 100+ commands available with Emerald Bot. Use the search below to find specific commands or browse by category.</p>
+                
+                <div class="search-container">
+                    <input type="text" class="search-input" id="command-search" placeholder="Search for commands...">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Fruit</th>
-        <th>Grinding</th>
-        <th>PVP</th>
-        <th>Trading</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Mythical Fruits -->
-      <tr><td>Dragon(Reworked) 🐉</td><td>10/10</td><td>10/10</td><td>10/10</td></tr>
-      <tr><td>Kitsune 🦊</td><td>10/10</td><td>10/10</td><td>10/10</td></tr>
-      <tr><td>Leopard 🐆</td><td>9/10</td><td>9/10</td><td>9/10</td></tr>
-      <tr><td>Yeti ❄️</td><td>9/10</td><td>9/10</td><td>10/10</td></tr>
-      <tr><td>Gas 💨</td><td>9/10</td><td>8/10</td><td>10/10</td></tr>
-      <tr><td>Gravity(Reworked) 🌌</td><td>8/10</td><td>7/10</td><td>7/10</td></tr>
-      <tr><td>Dough 🍩</td><td>7/10</td><td>10/10</td><td>7/10</td></tr>
-      <tr><td>T-rex 🦖</td><td>8/10</td><td>7/10</td><td>8/10</td></tr>
-      <tr><td>Control ⚙️</td><td>5/10</td><td>3/10</td><td>4/10</td></tr>
-      <tr><td>Mammoth 🐘</td><td>7/10</td><td>8/10</td><td>7/10</td></tr>
-      <tr><td>Venom 🕷️</td><td>7/10</td><td>6/10</td><td>6/10</td></tr>
-      <tr><td>Spirit 👻</td><td>7/10</td><td>5/10</td><td>7/10</td></tr>
-      <tr><td>Shadow 🌑</td><td>6/10</td><td>5/10</td><td>6/10</td></tr>
-      
-      <!-- Legendary Fruits -->
-      <tr><td>Portal 🌀</td><td>6/10</td><td>7/10</td><td>8/10</td></tr>
-      <tr><td>Buddha 🧘</td><td>10/10</td><td>7/10</td><td>10/10</td></tr>
-      <tr><td>Rumble ⚡️ </td><td>7/10</td><td>6/10</td><td>7/10</td></tr>
-      <tr><td>Blizzard 🥶</td><td>5/10</td><td>4/10</td><td>6/10</td></tr>
-      <tr><td>Pain 🤕</td><td>4/10</td><td>4/10</td><td>3/10</td></tr>
-      <tr><td>Creation 🎨</td><td>5/10</td><td>3/10</td><td>4/10</td></tr>
-      <tr><td>Phoenix 🕊️</td><td>5/10</td><td>5/10</td><td>4/10</td></tr>
-      <tr><td>Sound 🎶</td><td>5/10</td><td>5/10</td><td>4/10</td></tr>
-      <tr><td>Love ❤️</td><td>3/10</td><td>3/10</td><td>1/10</td></tr>
-      <tr><td>Spider 🕷</td><td>4/10</td><td>4/10</td><td>2/10</td></tr>
-      <tr><td>Quake 🌊</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
+    <!-- Commands Section -->
+    <section class="commands-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Command Categories</h2>
+                <p>Browse commands by category or use the search above to find specific commands</p>
+            </div>
+            
+            <div class="commands-tabs">
+                <button class="tab-button active" data-category="all">All Commands</button>
+                <button class="tab-button" data-category="moderation">Moderation</button>
+                <button class="tab-button" data-category="utility">Utility</button>
+                <button class="tab-button" data-category="fun">Fun</button>
+                <button class="tab-button" data-category="music">Music</button>
+                <button class="tab-button" data-category="automod">Auto-Mod</button>
+                <button class="tab-button" data-category="tickets">Tickets</button>
+                <button class="tab-button" data-category="leveling">Leveling</button>
+                <button class="tab-button" data-category="roles">Roles</button>
+                <button class="tab-button" data-category="logging">Logging</button>
+            </div>
+            
+            <div class="commands-grid" id="commands-container">
+                <!-- Commands will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
 
-      <!-- Rare fruits -->
-      <tr><td>Magma 🌋</td><td>6/10</td><td>5/10</td><td>4/10</td></tr>
-      <tr><td>Ghost 👻</td><td>3/10</td><td>2/10</td><td>1/10</td></tr>
-      <tr><td>Light ✨</td><td>6/10</td><td>4/10</td><td>4/10</td></tr>
-      <tr><td>Rubber 🎗️</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
-      <!-- Uncommon fruits -->
-      <tr><td>Diamond(Reworked) 💎</td><td>2/10</td><td>4/10</td><td>1/10</td></tr>
-      <tr><td>Eagle 🐦</td><td>3/10</td><td>1/10</td><td>3/10</td></tr>
-      <tr><td>Ice 🧊</td><td>4/10</td><td>3/10</td><td>3/10</td></tr>
-      <tr><td>Sand 🏜️</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
-      <tr><td>Dark ⚫</td><td>3/10</td><td>1/10</td><td>2/10</td></tr>
-      <tr><td>Flame 🔥</td><td>3/10</td><td>2/10</td><td>1/10</td></tr>
-      <!-- Common fruits -->
-      <tr><td>Rocket 🚀</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
-      <tr><td>Spin 😵‍💫</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
-      <tr><td>Blade 🔪</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
-      <tr><td>Spring</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
-      <tr><td>Bomb 💣</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
-      <tr><td>Smoke 🚬</td><td>1.5/10</td><td>1/10</td><td>1/10</td></tr>
-      <tr><td>Spike 🌵</td><td>1/10</td><td>1/10</td><td>1/10</td></tr>
-    </tbody>
-  </table>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Emerald Bot</h3>
+                    <p>An intelligent Discord bot designed to make server management easier with 100+ commands and advanced features.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="commands.html">Commands</a></li>
+                        <li><a href="status.html">Status</a></li>
+                        <li><a href="https://discord.com/oauth2/authorize?client_id=1427340751880323172&permissions=8&integration_type=0&scope=bot" target="_blank">Invite Bot</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="tos.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="https://discord.com/channels/1429507288900698316/1429507289571655812" target="_blank">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Report a Bug</a></li>
+                        <li><a href="#">Feature Request</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Emerald Bot. All rights reserved. This bot is not affiliated with Discord Inc.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Command data
+        const commands = [
+            // Moderation Commands
+            {
+                name: "ban",
+                category: "moderation",
+                description: "Ban a user from the server with an optional reason",
+                usage: "/ban @user [reason]",
+                permissions: ["admin", "ban_members"]
+            },
+            {
+                name: "kick",
+                category: "moderation",
+                description: "Kick a user from the server with an optional reason",
+                usage: "/kick @user [reason]",
+                permissions: ["admin", "kick_members"]
+            },
+            {
+                name: "mute",
+                category: "moderation",
+                description: "Temporarily mute a user in text and voice channels",
+                usage: "/mute @user [duration] [reason]",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "warn",
+                category: "moderation",
+                description: "Warn a user for rule violations",
+                usage: "/warn @user [reason]",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "clear",
+                category: "moderation",
+                description: "Bulk delete messages from a channel",
+                usage: "/clear [amount] [@user]",
+                permissions: ["admin", "manage_messages"]
+            },
+            {
+                name: "lockdown",
+                category: "moderation",
+                description: "Lock all channels in the server",
+                usage: "/lockdown [reason]",
+                permissions: ["admin"]
+            },
+            {
+                name: "massban",
+                category: "moderation",
+                description: "Ban multiple users at once",
+                usage: "/massban user_ids [reason]",
+                permissions: ["admin", "ban_members"]
+            },
+            {
+                name: "masskick",
+                category: "moderation",
+                description: "Kick multiple users at once",
+                usage: "/masskick user_mentions [reason]",
+                permissions: ["admin", "kick_members"]
+            },
+            {
+                name: "softban",
+                category: "moderation",
+                description: "Ban and immediately unban to delete messages",
+                usage: "/softban @user [delete_days] [reason]",
+                permissions: ["admin", "ban_members"]
+            },
+            {
+                name: "hackban",
+                category: "moderation",
+                description: "Ban a user not currently in the server",
+                usage: "/hackban user_id [reason]",
+                permissions: ["admin", "ban_members"]
+            },
+            {
+                name: "tempban",
+                category: "moderation",
+                description: "Temporarily ban a user",
+                usage: "/tempban @user duration [reason]",
+                permissions: ["admin", "ban_members"]
+            },
+            {
+                name: "tempmute",
+                category: "moderation",
+                description: "Temporarily mute a user",
+                usage: "/tempmute @user duration [reason]",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "voicekick",
+                category: "moderation",
+                description: "Disconnect a user from voice channel",
+                usage: "/voicekick @user [reason]",
+                permissions: ["admin", "move_members"]
+            },
+            {
+                name: "voicemute",
+                category: "moderation",
+                description: "Server mute a user in voice channel",
+                usage: "/voicemute @user [reason]",
+                permissions: ["admin", "mute_members"]
+            },
+            {
+                name: "voiceunmute",
+                category: "moderation",
+                description: "Unmute a user in voice channel",
+                usage: "/voiceunmute @user [reason]",
+                permissions: ["admin", "mute_members"]
+            },
+            {
+                name: "voice_move",
+                category: "moderation",
+                description: "Move all members from one voice channel to another",
+                usage: "/voice_move source_channel target_channel",
+                permissions: ["admin", "move_members"]
+            },
+            {
+                name: "voice_disconnect",
+                category: "moderation",
+                description: "Disconnect all members from a voice channel",
+                usage: "/voice_disconnect channel",
+                permissions: ["admin", "move_members"]
+            },
+            {
+                name: "nickname",
+                category: "moderation",
+                description: "Change a user's nickname",
+                usage: "/nickname @user [new_nickname] [reason]",
+                permissions: ["admin", "manage_nicknames"]
+            },
+            {
+                name: "role",
+                category: "moderation",
+                description: "Add or remove a role from a user",
+                usage: "/role @user @role action [reason]",
+                permissions: ["admin", "manage_roles"]
+            },
+            {
+                name: "slowmode",
+                category: "moderation",
+                description: "Set slowmode for a channel",
+                usage: "/slowmode channel duration [reason]",
+                permissions: ["admin", "manage_channels"]
+            },
+            {
+                name: "lock",
+                category: "moderation",
+                description: "Lock a channel",
+                usage: "/lock [channel] [reason]",
+                permissions: ["admin", "manage_channels"]
+            },
+            {
+                name: "unlock",
+                category: "moderation",
+                description: "Unlock a channel",
+                usage: "/unlock [channel] [reason]",
+                permissions: ["admin", "manage_channels"]
+            },
+            {
+                name: "nuke",
+                category: "moderation",
+                description: "Clone and clear channel",
+                usage: "/nuke [reason]",
+                permissions: ["admin", "manage_channels"]
+            },
+            
+            // Utility Commands
+            {
+                name: "serverinfo",
+                category: "utility",
+                description: "Display detailed information about the server",
+                usage: "/serverinfo",
+                permissions: []
+            },
+            {
+                name: "userinfo",
+                category: "utility",
+                description: "Display detailed information about a user",
+                usage: "/userinfo [@user]",
+                permissions: []
+            },
+            {
+                name: "avatar",
+                category: "utility",
+                description: "Get the avatar of a user",
+                usage: "/avatar [@user]",
+                permissions: []
+            },
+            {
+                name: "help",
+                category: "utility",
+                description: "Get help with Emerald Bot commands",
+                usage: "/help [command]",
+                permissions: []
+            },
+            {
+                name: "rank",
+                category: "utility",
+                description: "Check your level rank in the server",
+                usage: "/rank [@user]",
+                permissions: []
+            },
+            {
+                name: "xp",
+                category: "utility",
+                description: "Check your XP",
+                usage: "/xp [@user]",
+                permissions: []
+            },
+            {
+                name: "leaderboard",
+                category: "utility",
+                description: "Show the level leaderboard",
+                usage: "/leaderboard",
+                permissions: []
+            },
+            {
+                name: "reminder",
+                category: "utility",
+                description: "Set a reminder",
+                usage: "/reminder time message",
+                permissions: []
+            },
+            {
+                name: "announce",
+                category: "utility",
+                description: "Make an announcement",
+                usage: "/announce channel title message [ping_everyone]",
+                permissions: ["admin"]
+            },
+            {
+                name: "poll",
+                category: "utility",
+                description: "Create a poll",
+                usage: "/poll question option1 option2 [option3] [option4] [option5]",
+                permissions: ["admin", "manage_messages"]
+            },
+            {
+                name: "audit",
+                category: "utility",
+                description: "View recent moderation actions",
+                usage: "/audit [action_type] [moderator] [limit]",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "case",
+                category: "utility",
+                description: "View a specific moderation case",
+                usage: "/case case_id",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "backup",
+                category: "utility",
+                description: "Backup server configuration",
+                usage: "/backup",
+                permissions: ["admin"]
+            },
+            {
+                name: "modstats",
+                category: "utility",
+                description: "Show moderation statistics",
+                usage: "/modstats",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "emoji_steal",
+                category: "utility",
+                description: "Copy emoji from another server",
+                usage: "/emoji_steal emoji [name]",
+                permissions: ["admin", "manage_emojis"]
+            },
+            {
+                name: "sticker_steal",
+                category: "utility",
+                description: "Copy sticker from another server",
+                usage: "/sticker_steal sticker_url name [description]",
+                permissions: ["admin", "manage_emojis"]
+            },
+            
+            // Fun Commands
+            {
+                name: "meme",
+                category: "fun",
+                description: "Get a random meme from popular subreddits",
+                usage: "/meme",
+                permissions: []
+            },
+            {
+                name: "8ball",
+                category: "fun",
+                description: "Ask the magic 8-ball a question",
+                usage: "/8ball question",
+                permissions: []
+            },
+            
+            // Music Commands
+            {
+                name: "play",
+                category: "music",
+                description: "Play a song from YouTube, Spotify, or SoundCloud",
+                usage: "/play query",
+                permissions: []
+            },
+            {
+                name: "queue",
+                category: "music",
+                description: "Display the current music queue",
+                usage: "/queue",
+                permissions: []
+            },
+            {
+                name: "skip",
+                category: "music",
+                description: "Skip the currently playing song",
+                usage: "/skip",
+                permissions: []
+            },
+            {
+                name: "stop",
+                category: "music",
+                description: "Stop the music and clear the queue",
+                usage: "/stop",
+                permissions: []
+            },
+            {
+                name: "pause",
+                category: "music",
+                description: "Pause the currently playing song",
+                usage: "/pause",
+                permissions: []
+            },
+            {
+                name: "resume",
+                category: "music",
+                description: "Resume the paused song",
+                usage: "/resume",
+                permissions: []
+            },
+            {
+                name: "volume",
+                category: "music",
+                description: "Adjust the music volume",
+                usage: "/volume level",
+                permissions: []
+            },
+            
+            // Auto-Mod Commands
+            {
+                name: "automod_config",
+                category: "automod",
+                description: "Configure auto-moderation settings",
+                usage: "/automod_config module enabled action [sensitivity]",
+                permissions: ["admin"]
+            },
+            {
+                name: "badwords",
+                category: "automod",
+                description: "Manage filtered words for auto-moderation",
+                usage: "/badwords action [word]",
+                permissions: ["admin"]
+            },
+            {
+                name: "automod_advanced",
+                category: "automod",
+                description: "Configure advanced AutoMod settings",
+                usage: "/automod_advanced module max_warnings punishment_escalation [delete_message] [send_alert] [alert_channel]",
+                permissions: ["admin"]
+            },
+            {
+                name: "automod_test",
+                category: "automod",
+                description: "Test auto-moderation rules",
+                usage: "/automod_test module",
+                permissions: ["admin"]
+            },
+            {
+                name: "whitelist_add_role",
+                category: "automod",
+                description: "Add role to automod whitelist",
+                usage: "/whitelist_add_role @role [module]",
+                permissions: ["admin"]
+            },
+            {
+                name: "whitelist_add_channel",
+                category: "automod",
+                description: "Add channel to automod whitelist",
+                usage: "/whitelist_add_channel #channel [module]",
+                permissions: ["admin"]
+            },
+            {
+                name: "whitelist_remove_role",
+                category: "automod",
+                description: "Remove role from automod whitelist",
+                usage: "/whitelist_remove_role @role",
+                permissions: ["admin"]
+            },
+            {
+                name: "whitelist_remove_channel",
+                category: "automod",
+                description: "Remove channel from automod whitelist",
+                usage: "/whitelist_remove_channel #channel",
+                permissions: ["admin"]
+            },
+            
+            // Ticket Commands
+            {
+                name: "ticket",
+                category: "tickets",
+                description: "Create a support ticket",
+                usage: "/ticket topic [category]",
+                permissions: []
+            },
+            {
+                name: "ticket_setup",
+                category: "tickets",
+                description: "Setup the ticket system for your server",
+                usage: "/ticket_setup category support_roles [log_channel]",
+                permissions: ["admin"]
+            },
+            {
+                name: "ticket_panel",
+                category: "tickets",
+                description: "Create a professional ticket panel",
+                usage: "/ticket_panel channel title description categories [color]",
+                permissions: ["admin"]
+            },
+            {
+                name: "ticket_add_role",
+                category: "tickets",
+                description: "Add a support role to ticket system",
+                usage: "/ticket_add_role @role",
+                permissions: ["admin"]
+            },
+            {
+                name: "ticket_remove_role",
+                category: "tickets",
+                description: "Remove a support role from ticket system",
+                usage: "/ticket_remove_role @role",
+                permissions: ["admin"]
+            },
+            {
+                name: "ticket_close",
+                category: "tickets",
+                description: "Close a ticket",
+                usage: "/ticket_close [channel] [reason]",
+                permissions: ["admin", "support_role"]
+            },
+            
+            // Leveling Commands
+            {
+                name: "level_setup",
+                category: "leveling",
+                description: "Setup leveling system",
+                usage: "/level_setup enabled [channel] [message] [xp_rate]",
+                permissions: ["admin"]
+            },
+            {
+                name: "level_reward",
+                category: "leveling",
+                description: "Add role reward for level",
+                usage: "/level_reward level @role",
+                permissions: ["admin"]
+            },
+            
+            // Role Commands
+            {
+                name: "reactionrole",
+                category: "roles",
+                description: "Create a reaction role",
+                usage: "/reactionrole channel message_id emoji @role",
+                permissions: ["admin"]
+            },
+            {
+                name: "reactionrole_setup",
+                category: "roles",
+                description: "Interactive reaction role setup",
+                usage: "/reactionrole_setup",
+                permissions: ["admin"]
+            },
+            {
+                name: "reactionrole_advanced",
+                category: "roles",
+                description: "Create advanced reaction role with multiple roles",
+                usage: "/reactionrole_advanced channel title description [color]",
+                permissions: ["admin"]
+            },
+            {
+                name: "reactionrole_add_role",
+                category: "roles",
+                description: "Add a role to advanced reaction role",
+                usage: "/reactionrole_add_role message_id emoji @role [description]",
+                permissions: ["admin"]
+            },
+            {
+                name: "reactionrole_remove",
+                category: "roles",
+                description: "Remove a reaction role",
+                usage: "/reactionrole_remove message_id emoji",
+                permissions: ["admin"]
+            },
+            {
+                name: "reactionrole_list",
+                category: "roles",
+                description: "List all reaction roles",
+                usage: "/reactionrole_list",
+                permissions: ["admin"]
+            },
+            
+            // Logging Commands
+            {
+                name: "log_setup",
+                category: "logging",
+                description: "Setup advanced logging system",
+                usage: "/log_setup channel [events] [webhook_url]",
+                permissions: ["admin"]
+            },
+            {
+                name: "log_disable",
+                category: "logging",
+                description: "Disable logging system",
+                usage: "/log_disable",
+                permissions: ["admin"]
+            },
+            {
+                name: "log_status",
+                category: "logging",
+                description: "Check logging system status",
+                usage: "/log_status",
+                permissions: ["admin"]
+            },
+            {
+                name: "log_test",
+                category: "logging",
+                description: "Test logging system with sample events",
+                usage: "/log_test",
+                permissions: ["admin"]
+            },
+            
+            // Auto-Reply Commands
+            {
+                name: "autoreply_setup",
+                category: "automod",
+                description: "Setup advanced auto-reply system",
+                usage: "/autoreply_setup enabled [response_chance] [cooldown]",
+                permissions: ["admin"]
+            },
+            {
+                name: "autoreply_add",
+                category: "automod",
+                description: "Add a new auto-reply trigger",
+                usage: "/autoreply_add trigger response [trigger_type] [exact_match] [case_sensitive]",
+                permissions: ["admin"]
+            },
+            {
+                name: "autoreply_list",
+                category: "automod",
+                description: "List all auto-reply triggers",
+                usage: "/autoreply_list",
+                permissions: ["admin"]
+            },
+            {
+                name: "autoreply_remove",
+                category: "automod",
+                description: "Remove an auto-reply trigger",
+                usage: "/autoreply_remove trigger",
+                permissions: ["admin"]
+            },
+            {
+                name: "autoreply_test",
+                category: "automod",
+                description: "Test an auto-reply trigger",
+                usage: "/autoreply_test trigger",
+                permissions: ["admin"]
+            },
+            
+            // Verification Commands
+            {
+                name: "verification_setup",
+                category: "utility",
+                description: "Setup verification system for new users",
+                usage: "/verification_setup channel @role [message] [emoji]",
+                permissions: ["admin"]
+            },
+            {
+                name: "verification_disable",
+                category: "utility",
+                description: "Disable verification system",
+                usage: "/verification_disable",
+                permissions: ["admin"]
+            },
+            {
+                name: "verify",
+                category: "utility",
+                description: "Manually verify a user",
+                usage: "/verify @user",
+                permissions: ["admin", "moderate_members"]
+            },
+            
+            // Anti-Raid Commands
+            {
+                name: "antiraid_setup",
+                category: "automod",
+                description: "Setup anti-raid protection",
+                usage: "/antiraid_setup enabled [join_threshold] [time_window] [action] [alert_channel]",
+                permissions: ["admin"]
+            },
+            {
+                name: "antiraid_status",
+                category: "automod",
+                description: "Check anti-raid system status",
+                usage: "/antiraid_status",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "raid_lockdown",
+                category: "automod",
+                description: "Manually activate server lockdown for raid protection",
+                usage: "/raid_lockdown [reason]",
+                permissions: ["admin"]
+            },
+            {
+                name: "raid_unlock",
+                category: "automod",
+                description: "Deactivate server lockdown from raid protection",
+                usage: "/raid_unlock [reason]",
+                permissions: ["admin"]
+            },
+            
+            // Warning Commands
+            {
+                name: "warn_count",
+                category: "moderation",
+                description: "Check how many warnings a user has",
+                usage: "/warn_count [@user]",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "warn_details",
+                category: "moderation",
+                description: "Get detailed information about a user's warnings",
+                usage: "/warn_details [@user]",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "warn_quick",
+                category: "moderation",
+                description: "Quickly check a user's warning count",
+                usage: "/warn_quick @user",
+                permissions: ["admin", "moderate_members"]
+            },
+            {
+                name: "clear_warnings",
+                category: "moderation",
+                description: "Clear all warnings for a specific user",
+                usage: "/clear_warnings @user",
+                permissions: ["admin", "moderate_members"]
+            },
+            
+            // Settings Commands
+            {
+                name: "settings",
+                category: "utility",
+                description: "Centralized settings dashboard for all bot features",
+                usage: "/settings",
+                permissions: ["admin"]
+            },
+            
+            // Voting Rewards Commands
+            {
+                name: "voting_rewards_setup",
+                category: "utility",
+                description: "Setup voting rewards for Top.gg",
+                usage: "/voting_rewards_setup enabled reward_type reward_value [reward_duration]",
+                permissions: ["admin"]
+            },
+            {
+                name: "voting_announce",
+                category: "utility",
+                description: "Set announcement channel for voting rewards",
+                usage: "/voting_announce channel [message]",
+                permissions: ["admin"]
+            },
+            {
+                name: "voting_stats",
+                category: "utility",
+                description: "Show voting statistics",
+                usage: "/voting_stats",
+                permissions: ["admin"]
+            }
+        ];
+
+        // DOM Content Loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const commandsContainer = document.getElementById('commands-container');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const searchInput = document.getElementById('command-search');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mainNav = document.getElementById('main-nav');
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            // Render commands function
+            function renderCommands(filteredCommands = commands) {
+                commandsContainer.innerHTML = '';
+                
+                if (filteredCommands.length === 0) {
+                    commandsContainer.innerHTML = '<div class="no-results"><i class="fas fa-search" style="font-size: 48px; margin-bottom: 20px;"></i><h3>No commands found</h3><p>Try adjusting your search or filter criteria</p></div>';
+                    return;
+                }
+                
+                filteredCommands.forEach(command => {
+                    const commandCard = document.createElement('div');
+                    commandCard.className = 'command-card';
+                    commandCard.setAttribute('data-category', command.category);
+                    
+                    let permissionsHTML = '';
+                    if (command.permissions && command.permissions.length > 0) {
+                        permissionsHTML = `<div class="command-permissions">${command.permissions.map(perm => {
+                            let badgeClass = 'permission-badge';
+                            if (perm === 'admin') badgeClass += ' admin';
+                            if (perm === 'moderator') badgeClass += ' moderator';
+                            return `<span class="${badgeClass}">${perm.replace('_', ' ')}</span>`;
+                        }).join('')}</div>`;
+                    }
+                    
+                    commandCard.innerHTML = `
+                        <div class="command-header">
+                            <span class="command-name">/${command.name}</span>
+                            <span class="command-category">${command.category.replace('_', ' ')}</span>
+                        </div>
+                        <p class="command-description">${command.description}</p>
+                        <div class="command-usage">${command.usage}</div>
+                        ${permissionsHTML}
+                    `;
+                    
+                    commandsContainer.appendChild(commandCard);
+                });
+            }
+            
+            // Initial render
+            renderCommands();
+            
+            // Tab functionality
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter commands
+                    let filteredCommands = commands;
+                    if (category !== 'all') {
+                        filteredCommands = commands.filter(cmd => cmd.category === category);
+                    }
+                    
+                    renderCommands(filteredCommands);
+                });
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                if (searchTerm.trim() === '') {
+                    // If search is empty, show current category
+                    const activeTab = document.querySelector('.tab-button.active');
+                    const category = activeTab.getAttribute('data-category');
+                    
+                    let filteredCommands = commands;
+                    if (category !== 'all') {
+                        filteredCommands = commands.filter(cmd => cmd.category === category);
+                    }
+                    
+                    renderCommands(filteredCommands);
+                    return;
+                }
+                
+                // Filter commands by search term
+                const filteredCommands = commands.filter(cmd => 
+                    cmd.name.toLowerCase().includes(searchTerm) || 
+                    cmd.description.toLowerCase().includes(searchTerm) ||
+                    cmd.category.toLowerCase().includes(searchTerm)
+                );
+                
+                renderCommands(filteredCommands);
+            });
+            
+            // Mobile menu toggle
+            mobileMenuBtn.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('active');
+                } else {
+                    backToTopButton.classList.remove('active');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-
