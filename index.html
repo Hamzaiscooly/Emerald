@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emerald Bot - Your All-In-One Discord Companion</title>
+    <title>Emerald Bot - Advanced Discord Moderation & Management</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-color: #10B981;
@@ -22,6 +22,7 @@
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            --discord-gradient: linear-gradient(135deg, var(--discord-color) 0%, var(--discord-dark) 100%);
         }
         
         * {
@@ -133,13 +134,12 @@
         }
         
         .cta-button {
-            background-color: var(--discord-color);
+            background: var(--discord-gradient);
             color: white;
             border: none;
         }
         
         .cta-button:hover {
-            background-color: var(--discord-dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
@@ -360,10 +360,84 @@
             flex-grow: 1;
         }
         
+        /* Commands Section */
+        .commands {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .commands-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 12px 24px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .tab-button.active {
+            background: var(--gradient);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .commands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .command-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .command-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .command-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .command-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .command-category {
+            background: var(--light-bg);
+            color: var(--text-light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        
+        .command-description {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
         /* Demo Section */
         .demo {
             padding: 100px 0;
-            background-color: var(--light-bg);
+            background-color: var(--card-bg);
         }
         
         .demo-container {
@@ -507,7 +581,7 @@
         /* Why Choose Section */
         .why-choose {
             padding: 100px 0;
-            background-color: var(--card-bg);
+            background-color: var(--light-bg);
         }
         
         .benefits-grid {
@@ -522,14 +596,15 @@
             align-items: flex-start;
             gap: 20px;
             padding: 25px;
-            background: var(--light-bg);
+            background: var(--card-bg);
             border-radius: 12px;
             transition: var(--transition);
+            box-shadow: var(--shadow);
         }
         
         .benefit-item:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
         }
         
         .benefit-icon {
@@ -551,80 +626,6 @@
         
         .benefit-content p {
             color: var(--text-light);
-        }
-        
-        /* Commands Section */
-        .commands {
-            padding: 100px 0;
-            background-color: var(--light-bg);
-        }
-        
-        .commands-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .tab-button {
-            padding: 12px 24px;
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .tab-button.active {
-            background: var(--gradient);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        
-        .commands-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .command-card {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .command-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .command-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .command-name {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
-        .command-category {
-            background: var(--light-bg);
-            color: var(--text-light);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-        }
-        
-        .command-description {
-            color: var(--text-light);
-            font-size: 14px;
         }
         
         /* Status Page Styles */
@@ -971,15 +972,15 @@
                     
                     <div class="stats">
                         <div class="stat-item">
-                            <span class="stat-number" id="server-count">1,250+</span>
+                            <span class="stat-number" id="server-count">100+</span>
                             <span class="stat-label">Servers</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" id="user-count">500,000+</span>
+                            <span class="stat-number" id="user-count">50,000+</span>
                             <span class="stat-label">Users</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number" id="command-count">50+</span>
+                            <span class="stat-number" id="command-count">100+</span>
                             <span class="stat-label">Commands</span>
                         </div>
                         <div class="stat-item">
@@ -1041,6 +1042,27 @@
                         <h3>Music Player</h3>
                         <p>High-quality music playback directly in your voice channels. Play from YouTube, Spotify, and SoundCloud with intuitive controls.</p>
                     </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Auto-Moderation</h3>
+                        <p>Automatically detect and handle spam, bad words, excessive mentions, and more with customizable filters and sensitivity settings.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Auto-Reply System</h3>
+                        <p>Set up custom triggers and responses for automatic replies. Perfect for FAQs, welcome messages, and interactive conversations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-vote-yea"></i>
+                        </div>
+                        <h3>Voting Rewards</h3>
+                        <p>Reward users for voting on top.gg with XP, roles, or custom currency. Keep your community engaged and active.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1089,6 +1111,24 @@
                             <p>Regular updates and a dedicated support team to help you with any issues.</p>
                         </div>
                     </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Advanced Security</h3>
+                            <p>Professional logging system, anti-raid protection, and comprehensive audit logs.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>100+ Commands</h3>
+                            <p>Extensive command library covering moderation, utility, fun, and server management.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1121,7 +1161,7 @@
                                 <span class="terminal-prompt">></span> Emerald Bot Online - v2.1.4
                             </div>
                             <div class="terminal-line">
-                                <span class="terminal-prompt">></span> Connected to 1,250+ servers | 500,000+ users
+                                <span class="terminal-prompt">></span> Connected to 100+ servers | 50,000+ users
                             </div>
                             <div class="terminal-line">
                                 <br>
@@ -1167,7 +1207,7 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Emerald Commands</h2>
-                    <p>Explore all the commands available with Emerald Bot</p>
+                    <p>Explore all the 100+ commands available with Emerald Bot</p>
                 </div>
                 
                 <div class="commands-tabs">
@@ -1176,9 +1216,12 @@
                     <button class="tab-button" data-category="utility">Utility</button>
                     <button class="tab-button" data-category="fun">Fun</button>
                     <button class="tab-button" data-category="music">Music</button>
+                    <button class="tab-button" data-category="automod">Auto-Mod</button>
+                    <button class="tab-button" data-category="tickets">Tickets</button>
                 </div>
                 
                 <div class="commands-grid">
+                    <!-- Moderation Commands -->
                     <div class="command-card" data-category="moderation">
                         <div class="command-header">
                             <span class="command-name">/ban</span>
@@ -1203,6 +1246,31 @@
                         <p class="command-description">Temporarily mute a user in text and voice channels.</p>
                     </div>
                     
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/warn</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Warn a user for rule violations.</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/clear</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Bulk delete messages from a channel.</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/lockdown</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Lock all channels in the server.</p>
+                    </div>
+                    
+                    <!-- Utility Commands -->
                     <div class="command-card" data-category="utility">
                         <div class="command-header">
                             <span class="command-name">/serverinfo</span>
@@ -1227,6 +1295,15 @@
                         <p class="command-description">Get the avatar of a user.</p>
                     </div>
                     
+                    <div class="command-card" data-category="utility">
+                        <div class="command-header">
+                            <span class="command-name">/help</span>
+                            <span class="command-category">Utility</span>
+                        </div>
+                        <p class="command-description">Get help with Emerald Bot commands.</p>
+                    </div>
+                    
+                    <!-- Fun Commands -->
                     <div class="command-card" data-category="fun">
                         <div class="command-header">
                             <span class="command-name">/meme</span>
@@ -1243,6 +1320,7 @@
                         <p class="command-description">Ask the magic 8-ball a question.</p>
                     </div>
                     
+                    <!-- Music Commands -->
                     <div class="command-card" data-category="music">
                         <div class="command-header">
                             <span class="command-name">/play</span>
@@ -1267,13 +1345,92 @@
                         <p class="command-description">Skip the currently playing song.</p>
                     </div>
                     
+                    <!-- Auto-Mod Commands -->
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/automod_config</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Configure auto-moderation settings.</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/badwords</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Manage filtered words for auto-moderation.</p>
+                    </div>
+                    
+                    <!-- Ticket Commands -->
+                    <div class="command-card" data-category="tickets">
+                        <div class="command-header">
+                            <span class="command-name">/ticket</span>
+                            <span class="command-category">Tickets</span>
+                        </div>
+                        <p class="command-description">Create a support ticket.</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="tickets">
+                        <div class="command-header">
+                            <span class="command-name">/ticket_setup</span>
+                            <span class="command-category">Tickets</span>
+                        </div>
+                        <p class="command-description">Setup the ticket system for your server.</p>
+                    </div>
+                    
+                    <!-- Additional commands to showcase the 100+ count -->
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/massban</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Ban multiple users at once.</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/tempban</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Temporarily ban a user.</p>
+                    </div>
+                    
                     <div class="command-card" data-category="utility">
                         <div class="command-header">
-                            <span class="command-name">/help</span>
+                            <span class="command-name">/rank</span>
                             <span class="command-category">Utility</span>
                         </div>
-                        <p class="command-description">Get help with Emerald Bot commands.</p>
+                        <p class="command-description">Check your level rank in the server.</p>
                     </div>
+                    
+                    <div class="command-card" data-category="utility">
+                        <div class="command-header">
+                            <span class="command-name">/leaderboard</span>
+                            <span class="command-category">Utility</span>
+                        </div>
+                        <p class="command-description">Show the level leaderboard.</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/log_setup</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Setup professional logging system.</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/antiraid_setup</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Configure anti-raid protection.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <p style="color: var(--text-light);">And 80+ more commands! Use <code>/help</code> in Discord to see them all.</p>
                 </div>
             </div>
         </section>
@@ -1515,7 +1672,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Emerald Bot</h3>
-                    <p>An intelligent Discord bot designed to make server management easier.</p>
+                    <p>An intelligent Discord bot designed to make server management easier with 100+ commands and advanced features.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1678,9 +1835,9 @@
             
             // Start counter animations when page loads
             setTimeout(() => {
-                animateCounter(document.getElementById('server-count'), 1250, 2000);
-                animateCounter(document.getElementById('user-count'), 500000, 2000);
-                animateCounter(document.getElementById('command-count'), 50, 1000);
+                animateCounter(document.getElementById('server-count'), 100, 2000);
+                animateCounter(document.getElementById('user-count'), 50000, 2000);
+                animateCounter(document.getElementById('command-count'), 100, 1000);
             }, 500);
         });
     </script>
