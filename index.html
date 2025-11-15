@@ -390,6 +390,35 @@
             border-color: var(--primary-color);
         }
         
+        .commands-search {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        
+        .commands-search input {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .commands-search input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+        
+        .commands-search i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+        
         .commands-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -718,6 +747,136 @@
             display: inline-block;
             width: 30px;
             font-weight: bold;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--card-bg);
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial {
+            min-width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .testimonial-dot.active {
+            background: var(--primary-color);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            background: white;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background: var(--light-bg);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            background: white;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
         }
         
         /* Footer */
@@ -1199,6 +1358,106 @@
                 </div>
             </div>
         </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What Server Owners Say</h2>
+                    <p>Hear from Discord community managers who use Emerald Bot</p>
+                </div>
+                <div class="testimonials-slider">
+                    <div class="testimonials-track">
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <p class="testimonial-content">"Emerald has completely transformed our server management. The auto-moderation features alone have saved us countless hours of manual moderation."</p>
+                            <div class="testimonial-author">Alex Johnson</div>
+                            <div class="testimonial-role">Community Manager, Tech Hub</div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <p class="testimonial-content">"The level system keeps our community engaged, and the ticket system has streamlined our support process. Emerald is an essential tool for any serious Discord server."</p>
+                            <div class="testimonial-author">Sarah Williams</div>
+                            <div class="testimonial-role">Admin, Gaming Community</div>
+                        </div>
+                        <div class="testimonial">
+                            <div class="testimonial-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <p class="testimonial-content">"Setting up Emerald was incredibly easy, and the support team was responsive when we had questions. Our server has never been more organized and secure."</p>
+                            <div class="testimonial-author">Michael Chen</div>
+                            <div class="testimonial-role">Moderator, Art Community</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <div class="testimonial-dot active" data-slide="0"></div>
+                        <div class="testimonial-dot" data-slide="1"></div>
+                        <div class="testimonial-dot" data-slide="2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Find answers to common questions about Emerald Bot</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I add Emerald Bot to my server?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Simply click the "Invite to Server" button on our website. You'll be redirected to Discord's authorization page where you can select your server and grant the necessary permissions.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What permissions does Emerald Bot need?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Emerald requires basic permissions like reading messages, sending messages, managing messages, and kicking/banning members for moderation features. You can customize permissions during the invite process.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is Emerald Bot free to use?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, Emerald Bot is completely free with all core features available. We may introduce premium features in the future, but the core functionality will always remain free.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How can I get support for Emerald Bot?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Join our Discord support server using the "Support" button on our website. Our community and support team are available to help with any questions or issues.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I suggest new features for Emerald?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We welcome feature suggestions in our Discord server. We regularly review community feedback and implement popular requests in our updates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- Commands Page -->
@@ -1218,6 +1477,11 @@
                     <button class="tab-button" data-category="music">Music</button>
                     <button class="tab-button" data-category="automod">Auto-Mod</button>
                     <button class="tab-button" data-category="tickets">Tickets</button>
+                </div>
+                
+                <div class="commands-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="command-search" placeholder="Search for commands...">
                 </div>
                 
                 <div class="commands-grid">
@@ -1789,6 +2053,74 @@
                             card.style.display = 'none';
                         }
                     });
+                });
+            });
+            
+            // Command search functionality
+            const commandSearch = document.getElementById('command-search');
+            
+            commandSearch.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                commandCards.forEach(card => {
+                    const commandName = card.querySelector('.command-name').textContent.toLowerCase();
+                    const commandDescription = card.querySelector('.command-description').textContent.toLowerCase();
+                    
+                    if (commandName.includes(searchTerm) || commandDescription.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Testimonials slider functionality
+            const testimonialTrack = document.querySelector('.testimonials-track');
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            let currentSlide = 0;
+            
+            function showTestimonial(slideIndex) {
+                testimonialTrack.style.transform = `translateX(-${slideIndex * 100}%)`;
+                
+                testimonialDots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                testimonialDots[slideIndex].classList.add('active');
+                currentSlide = slideIndex;
+            }
+            
+            testimonialDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showTestimonial(slideIndex);
+                });
+            });
+            
+            // Auto-advance testimonials
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % testimonialDots.length;
+                showTestimonial(currentSlide);
+            }, 5000);
+            
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    
+                    // Close all other FAQ answers
+                    faqQuestions.forEach(q => {
+                        if (q !== this) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current FAQ answer
+                    this.classList.toggle('active');
+                    answer.classList.toggle('active');
                 });
             });
             
