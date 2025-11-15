@@ -1466,17 +1466,22 @@
             <div class="container">
                 <div class="section-title">
                     <h2>Emerald Commands</h2>
-                    <p>Explore all the 100+ commands available with Emerald Bot</p>
+                    <p>Explore all the commands available with Emerald Bot</p>
                 </div>
                 
                 <div class="commands-tabs">
                     <button class="tab-button active" data-category="all">All Commands</button>
-                    <button class="tab-button" data-category="moderation">Moderation</button>
-                    <button class="tab-button" data-category="utility">Utility</button>
-                    <button class="tab-button" data-category="fun">Fun</button>
-                    <button class="tab-button" data-category="music">Music</button>
-                    <button class="tab-button" data-category="automod">Auto-Mod</button>
+                    <button class="tab-button" data-category="logging">Logging</button>
+                    <button class="tab-button" data-category="autoreply">Auto Reply</button>
+                    <button class="tab-button" data-category="voting">Voting</button>
+                    <button class="tab-button" data-category="reactionroles">Reaction Roles</button>
                     <button class="tab-button" data-category="tickets">Tickets</button>
+                    <button class="tab-button" data-category="automod">Auto-Mod</button>
+                    <button class="tab-button" data-category="moderation">Moderation</button>
+                    <button class="tab-button" data-category="leveling">Leveling</button>
+                    <button class="tab-button" data-category="verification">Verification</button>
+                    <button class="tab-button" data-category="antiraid">Anti-Raid</button>
+                    <button class="tab-button" data-category="utility">Utility</button>
                 </div>
                 
                 <div class="commands-search">
@@ -1485,154 +1490,129 @@
                 </div>
                 
                 <div class="commands-grid">
-                    <!-- Moderation Commands -->
-                    <div class="command-card" data-category="moderation">
+                    <!-- Professional Logging System -->
+                    <div class="command-card" data-category="logging">
                         <div class="command-header">
-                            <span class="command-name">/ban</span>
-                            <span class="command-category">Moderation</span>
+                            <span class="command-name">/log_setup</span>
+                            <span class="command-category">Logging</span>
                         </div>
-                        <p class="command-description">Ban a user from the server with an optional reason.</p>
+                        <p class="command-description">Setup professional logging system for your server</p>
                     </div>
                     
-                    <div class="command-card" data-category="moderation">
+                    <div class="command-card" data-category="logging">
                         <div class="command-header">
-                            <span class="command-name">/kick</span>
-                            <span class="command-category">Moderation</span>
+                            <span class="command-name">/log_status</span>
+                            <span class="command-category">Logging</span>
                         </div>
-                        <p class="command-description">Kick a user from the server with an optional reason.</p>
+                        <p class="command-description">Check logging system status and configuration</p>
                     </div>
                     
-                    <div class="command-card" data-category="moderation">
+                    <div class="command-card" data-category="logging">
                         <div class="command-header">
-                            <span class="command-name">/mute</span>
-                            <span class="command-category">Moderation</span>
+                            <span class="command-name">/log_test</span>
+                            <span class="command-category">Logging</span>
                         </div>
-                        <p class="command-description">Temporarily mute a user in text and voice channels.</p>
+                        <p class="command-description">Test the logging system with a sample event</p>
                     </div>
                     
-                    <div class="command-card" data-category="moderation">
+                    <div class="command-card" data-category="logging">
                         <div class="command-header">
-                            <span class="command-name">/warn</span>
-                            <span class="command-category">Moderation</span>
+                            <span class="command-name">/log_disable</span>
+                            <span class="command-category">Logging</span>
                         </div>
-                        <p class="command-description">Warn a user for rule violations.</p>
+                        <p class="command-description">Disable logging system for your server</p>
                     </div>
                     
-                    <div class="command-card" data-category="moderation">
+                    <!-- Auto Reply System -->
+                    <div class="command-card" data-category="autoreply">
                         <div class="command-header">
-                            <span class="command-name">/clear</span>
-                            <span class="command-category">Moderation</span>
+                            <span class="command-name">/autoreply_setup</span>
+                            <span class="command-category">Auto Reply</span>
                         </div>
-                        <p class="command-description">Bulk delete messages from a channel.</p>
+                        <p class="command-description">Enable auto-reply system for your server</p>
                     </div>
                     
-                    <div class="command-card" data-category="moderation">
+                    <div class="command-card" data-category="autoreply">
                         <div class="command-header">
-                            <span class="command-name">/lockdown</span>
-                            <span class="command-category">Moderation</span>
+                            <span class="command-name">/autoreply_add</span>
+                            <span class="command-category">Auto Reply</span>
                         </div>
-                        <p class="command-description">Lock all channels in the server.</p>
+                        <p class="command-description">Add new trigger for auto-reply system</p>
                     </div>
                     
-                    <!-- Utility Commands -->
-                    <div class="command-card" data-category="utility">
+                    <div class="command-card" data-category="autoreply">
                         <div class="command-header">
-                            <span class="command-name">/serverinfo</span>
-                            <span class="command-category">Utility</span>
+                            <span class="command-name">/autoreply_list</span>
+                            <span class="command-category">Auto Reply</span>
                         </div>
-                        <p class="command-description">Display detailed information about the server.</p>
+                        <p class="command-description">List all auto-reply triggers</p>
                     </div>
                     
-                    <div class="command-card" data-category="utility">
+                    <div class="command-card" data-category="autoreply">
                         <div class="command-header">
-                            <span class="command-name">/userinfo</span>
-                            <span class="command-category">Utility</span>
+                            <span class="command-name">/autoreply_remove</span>
+                            <span class="command-category">Auto Reply</span>
                         </div>
-                        <p class="command-description">Display detailed information about a user.</p>
+                        <p class="command-description">Remove auto-reply trigger</p>
                     </div>
                     
-                    <div class="command-card" data-category="utility">
+                    <div class="command-card" data-category="autoreply">
                         <div class="command-header">
-                            <span class="command-name">/avatar</span>
-                            <span class="command-category">Utility</span>
+                            <span class="command-name">/autoreply_test</span>
+                            <span class="command-category">Auto Reply</span>
                         </div>
-                        <p class="command-description">Get the avatar of a user.</p>
+                        <p class="command-description">Test auto-reply trigger</p>
                     </div>
                     
-                    <div class="command-card" data-category="utility">
+                    <!-- Voting Rewards -->
+                    <div class="command-card" data-category="voting">
                         <div class="command-header">
-                            <span class="command-name">/help</span>
-                            <span class="command-category">Utility</span>
+                            <span class="command-name">/voting_rewards_setup</span>
+                            <span class="command-category">Voting</span>
                         </div>
-                        <p class="command-description">Get help with Emerald Bot commands.</p>
+                        <p class="command-description">Setup voting rewards system</p>
                     </div>
                     
-                    <!-- Fun Commands -->
-                    <div class="command-card" data-category="fun">
+                    <div class="command-card" data-category="voting">
                         <div class="command-header">
-                            <span class="command-name">/meme</span>
-                            <span class="command-category">Fun</span>
+                            <span class="command-name">/voting_announce</span>
+                            <span class="command-category">Voting</span>
                         </div>
-                        <p class="command-description">Get a random meme from popular subreddits.</p>
+                        <p class="command-description">Set announcement channel for voting</p>
                     </div>
                     
-                    <div class="command-card" data-category="fun">
+                    <div class="command-card" data-category="voting">
                         <div class="command-header">
-                            <span class="command-name">/8ball</span>
-                            <span class="command-category">Fun</span>
+                            <span class="command-name">/voting_stats</span>
+                            <span class="command-category">Voting</span>
                         </div>
-                        <p class="command-description">Ask the magic 8-ball a question.</p>
+                        <p class="command-description">Show voting statistics</p>
                     </div>
                     
-                    <!-- Music Commands -->
-                    <div class="command-card" data-category="music">
+                    <!-- Enhanced Reaction Roles -->
+                    <div class="command-card" data-category="reactionroles">
                         <div class="command-header">
-                            <span class="command-name">/play</span>
-                            <span class="command-category">Music</span>
+                            <span class="command-name">/reactionrole_advanced</span>
+                            <span class="command-category">Reaction Roles</span>
                         </div>
-                        <p class="command-description">Play a song from YouTube, Spotify, or SoundCloud.</p>
+                        <p class="command-description">Create multi-role reaction panel</p>
                     </div>
                     
-                    <div class="command-card" data-category="music">
+                    <div class="command-card" data-category="reactionroles">
                         <div class="command-header">
-                            <span class="command-name">/queue</span>
-                            <span class="command-category">Music</span>
+                            <span class="command-name">/reactionrole_add_role</span>
+                            <span class="command-category">Reaction Roles</span>
                         </div>
-                        <p class="command-description">Display the current music queue.</p>
+                        <p class="command-description">Add role to reaction panel</p>
                     </div>
                     
-                    <div class="command-card" data-category="music">
-                        <div class="command-header">
-                            <span class="command-name">/skip</span>
-                            <span class="command-category">Music</span>
-                        </div>
-                        <p class="command-description">Skip the currently playing song.</p>
-                    </div>
-                    
-                    <!-- Auto-Mod Commands -->
-                    <div class="command-card" data-category="automod">
-                        <div class="command-header">
-                            <span class="command-name">/automod_config</span>
-                            <span class="command-category">Auto-Mod</span>
-                        </div>
-                        <p class="command-description">Configure auto-moderation settings.</p>
-                    </div>
-                    
-                    <div class="command-card" data-category="automod">
-                        <div class="command-header">
-                            <span class="command-name">/badwords</span>
-                            <span class="command-category">Auto-Mod</span>
-                        </div>
-                        <p class="command-description">Manage filtered words for auto-moderation.</p>
-                    </div>
-                    
-                    <!-- Ticket Commands -->
+                    <!-- Professional Tickets -->
                     <div class="command-card" data-category="tickets">
                         <div class="command-header">
-                            <span class="command-name">/ticket</span>
+                            <span class="command-name">/ticket_panel</span>
                             <span class="command-category">Tickets</span>
                         </div>
-                        <p class="command-description">Create a support ticket.</p>
+                        <p class="command-description">Create ticket panel</p>
                     </div>
                     
                     <div class="command-card" data-category="tickets">
@@ -1640,16 +1620,57 @@
                             <span class="command-name">/ticket_setup</span>
                             <span class="command-category">Tickets</span>
                         </div>
-                        <p class="command-description">Setup the ticket system for your server.</p>
+                        <p class="command-description">Setup ticket system for your server</p>
                     </div>
                     
-                    <!-- Additional commands to showcase the 100+ count -->
+                    <!-- Advanced AutoMod -->
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/automod_advanced</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Configure advanced AutoMod settings</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/automod_config</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Basic AutoMod setup</p>
+                    </div>
+                    
+                    <!-- Advanced Moderation -->
                     <div class="command-card" data-category="moderation">
                         <div class="command-header">
                             <span class="command-name">/massban</span>
                             <span class="command-category">Moderation</span>
                         </div>
-                        <p class="command-description">Ban multiple users at once.</p>
+                        <p class="command-description">Ban multiple users at once</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/masskick</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Kick multiple users at once</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/softban</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Ban & unban to delete messages</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/hackban</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Ban users not in server</p>
                     </div>
                     
                     <div class="command-card" data-category="moderation">
@@ -1657,44 +1678,371 @@
                             <span class="command-name">/tempban</span>
                             <span class="command-category">Moderation</span>
                         </div>
-                        <p class="command-description">Temporarily ban a user.</p>
+                        <p class="command-description">Temporarily ban a user</p>
                     </div>
                     
-                    <div class="command-card" data-category="utility">
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/tempmute</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Temporarily mute a user</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/voicekick</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Disconnect user from voice channel</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/voicemute</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Server mute user in voice channel</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/voiceunmute</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Unmute user in voice channel</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/voice_move</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Move voice channel members</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/voice_disconnect</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Clear voice channel</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/nickname</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Change user nickname</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/role</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Add/remove roles from user</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/lockdown</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Lock all channels in server</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/unlockdown</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Unlock all channels in server</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/slowmode</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Set channel slowmode</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/lock</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Lock specific channel</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/unlock</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Unlock specific channel</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/clear</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Bulk delete messages</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="moderation">
+                        <div class="command-header">
+                            <span class="command-name">/nuke</span>
+                            <span class="command-category">Moderation</span>
+                        </div>
+                        <p class="command-description">Clone and clear channel</p>
+                    </div>
+                    
+                    <!-- Auto-Moderation -->
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/badwords</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Manage filtered words for auto-moderation</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/whitelist_add_role</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Add role to auto-mod whitelist</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/whitelist_add_channel</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Add channel to auto-mod whitelist</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="automod">
+                        <div class="command-header">
+                            <span class="command-name">/automod_test</span>
+                            <span class="command-category">Auto-Mod</span>
+                        </div>
+                        <p class="command-description">Test auto-mod rules</p>
+                    </div>
+                    
+                    <!-- Reaction Roles -->
+                    <div class="command-card" data-category="reactionroles">
+                        <div class="command-header">
+                            <span class="command-name">/reactionrole_setup</span>
+                            <span class="command-category">Reaction Roles</span>
+                        </div>
+                        <p class="command-description">Interactive reaction role setup</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="reactionroles">
+                        <div class="command-header">
+                            <span class="command-name">/reactionrole</span>
+                            <span class="command-category">Reaction Roles</span>
+                        </div>
+                        <p class="command-description">Create reaction role</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="reactionroles">
+                        <div class="command-header">
+                            <span class="command-name">/reactionrole_remove</span>
+                            <span class="command-category">Reaction Roles</span>
+                        </div>
+                        <p class="command-description">Remove reaction role</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="reactionroles">
+                        <div class="command-header">
+                            <span class="command-name">/reactionrole_list</span>
+                            <span class="command-category">Reaction Roles</span>
+                        </div>
+                        <p class="command-description">List all reaction roles</p>
+                    </div>
+                    
+                    <!-- Ticket System -->
+                    <div class="command-card" data-category="tickets">
+                        <div class="command-header">
+                            <span class="command-name">/ticket</span>
+                            <span class="command-category">Tickets</span>
+                        </div>
+                        <p class="command-description">Create support ticket</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="tickets">
+                        <div class="command-header">
+                            <span class="command-name">/ticket_close</span>
+                            <span class="command-category">Tickets</span>
+                        </div>
+                        <p class="command-description">Close ticket</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="tickets">
+                        <div class="command-header">
+                            <span class="command-name">/ticket_add_role</span>
+                            <span class="command-category">Tickets</span>
+                        </div>
+                        <p class="command-description">Add support role to tickets</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="tickets">
+                        <div class="command-header">
+                            <span class="command-name">/ticket_remove_role</span>
+                            <span class="command-category">Tickets</span>
+                        </div>
+                        <p class="command-description">Remove support role from tickets</p>
+                    </div>
+                    
+                    <!-- Level System -->
+                    <div class="command-card" data-category="leveling">
+                        <div class="command-header">
+                            <span class="command-name">/level_setup</span>
+                            <span class="command-category">Leveling</span>
+                        </div>
+                        <p class="command-description">Setup leveling system</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="leveling">
+                        <div class="command-header">
+                            <span class="command-name">/level_reward</span>
+                            <span class="command-category">Leveling</span>
+                        </div>
+                        <p class="command-description">Add role reward for level</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="leveling">
                         <div class="command-header">
                             <span class="command-name">/rank</span>
+                            <span class="command-category">Leveling</span>
+                        </div>
+                        <p class="command-description">Check your rank</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="leveling">
+                        <div class="command-header">
+                            <span class="command-name">/xp</span>
+                            <span class="command-category">Leveling</span>
+                        </div>
+                        <p class="command-description">Check your XP</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="leveling">
+                        <div class="command-header">
+                            <span class="command-name">/leaderboard</span>
+                            <span class="command-category">Leveling</span>
+                        </div>
+                        <p class="command-description">Show level leaderboard</p>
+                    </div>
+                    
+                    <!-- Verification -->
+                    <div class="command-card" data-category="verification">
+                        <div class="command-header">
+                            <span class="command-name">/verification_setup</span>
+                            <span class="command-category">Verification</span>
+                        </div>
+                        <p class="command-description">Setup verification system</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="verification">
+                        <div class="command-header">
+                            <span class="command-name">/verification_disable</span>
+                            <span class="command-category">Verification</span>
+                        </div>
+                        <p class="command-description">Disable verification system</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="verification">
+                        <div class="command-header">
+                            <span class="command-name">/verify</span>
+                            <span class="command-category">Verification</span>
+                        </div>
+                        <p class="command-description">Manually verify user</p>
+                    </div>
+                    
+                    <!-- Anti-Raid -->
+                    <div class="command-card" data-category="antiraid">
+                        <div class="command-header">
+                            <span class="command-name">/antiraid_setup</span>
+                            <span class="command-category">Anti-Raid</span>
+                        </div>
+                        <p class="command-description">Configure raid protection</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="antiraid">
+                        <div class="command-header">
+                            <span class="command-name">/antiraid_status</span>
+                            <span class="command-category">Anti-Raid</span>
+                        </div>
+                        <p class="command-description">Check raid protection status</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="antiraid">
+                        <div class="command-header">
+                            <span class="command-name">/raid_lockdown</span>
+                            <span class="command-category">Anti-Raid</span>
+                        </div>
+                        <p class="command-description">Manual raid lockdown</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="antiraid">
+                        <div class="command-header">
+                            <span class="command-name">/raid_unlock</span>
+                            <span class="command-category">Anti-Raid</span>
+                        </div>
+                        <p class="command-description">Remove raid lockdown</p>
+                    </div>
+                    
+                    <!-- Logging & Utility -->
+                    <div class="command-card" data-category="utility">
+                        <div class="command-header">
+                            <span class="command-name">/userinfo</span>
                             <span class="command-category">Utility</span>
                         </div>
-                        <p class="command-description">Check your level rank in the server.</p>
+                        <p class="command-description">Get user information</p>
                     </div>
                     
                     <div class="command-card" data-category="utility">
                         <div class="command-header">
-                            <span class="command-name">/leaderboard</span>
+                            <span class="command-name">/serverinfo</span>
                             <span class="command-category">Utility</span>
                         </div>
-                        <p class="command-description">Show the level leaderboard.</p>
+                        <p class="command-description">Get server information</p>
                     </div>
                     
-                    <div class="command-card" data-category="automod">
+                    <div class="command-card" data-category="utility">
                         <div class="command-header">
-                            <span class="command-name">/log_setup</span>
-                            <span class="command-category">Auto-Mod</span>
+                            <span class="command-name">/modstats</span>
+                            <span class="command-category">Utility</span>
                         </div>
-                        <p class="command-description">Setup professional logging system.</p>
+                        <p class="command-description">View moderation statistics</p>
                     </div>
                     
-                    <div class="command-card" data-category="automod">
+                    <div class="command-card" data-category="utility">
                         <div class="command-header">
-                            <span class="command-name">/antiraid_setup</span>
-                            <span class="command-category">Auto-Mod</span>
+                            <span class="command-name">/audit</span>
+                            <span class="command-category">Utility</span>
                         </div>
-                        <p class="command-description">Configure anti-raid protection.</p>
+                        <p class="command-description">View audit log</p>
+                    </div>
+                    
+                    <div class="command-card" data-category="utility">
+                        <div class="command-header">
+                            <span class="command-name">/case</span>
+                            <span class="command-category">Utility</span>
+                        </div>
+                        <p class="command-description">View specific moderation case</p>
                     </div>
                 </div>
                 
                 <div style="text-align: center; margin-top: 40px;">
-                    <p style="color: var(--text-light);">And 80+ more commands! Use <code>/help</code> in Discord to see them all.</p>
+                    <p style="color: var(--text-light);">And many more commands! Use <code>/help</code> in Discord to see them all.</p>
                 </div>
             </div>
         </section>
